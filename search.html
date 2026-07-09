@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Search | Eastokyo</title>
+    <meta
+      content="Search Eastokyo's satirical news archive."
+      name="description"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/article.css" rel="stylesheet" />
+    <link href="css/mobile.css" rel="stylesheet" />
+    <link href="manifest.json" rel="manifest" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="top-bar">
+        <p class="edition-label">Tokyo Edition</p>
+        <p class="date-label">Wednesday, July 8, 2026</p>
+        <a class="disclaimer-link" href="disclaimer.html">Satire Disclaimer</a>
+      </div>
+      <div class="brand-row">
+        <a class="logo-link" href="index.html">
+          <img alt="Eastokyo logo" class="site-logo" src="eastokyo-logo.png" />
+        </a>
+        <form class="search-form" role="search">
+          <label class="sr-only" for="site-search"> Search Eastokyo </label>
+          <input
+            autocomplete="off"
+            id="site-search"
+            placeholder="Search scandals, trains, cats, committees..."
+            type="search"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <nav class="main-nav">
+        <button class="nav-toggle" type="button">Menu</button>
+        <ul class="nav-list">
+          <li><a href="category.html?section=political">Political</a></li>
+          <li><a href="category.html?section=tokyo">Tokyo</a></li>
+          <li><a href="category.html?section=japan">Japan</a></li>
+          <li><a href="category.html?section=world">World</a></li>
+          <li><a href="category.html?section=business">Business</a></li>
+          <li><a href="category.html?section=technology">Technology</a></li>
+          <li><a href="category.html?section=culture">Culture</a></li>
+          <li>
+            <a href="category.html?section=entertainment">Entertainment</a>
+          </li>
+          <li><a href="category.html?section=sports">Sports</a></li>
+          <li><a href="category.html?section=opinion">Opinion</a></li>
+          <li>
+            <a href="category.html?section=investigations">Investigations</a>
+          </li>
+          <li><a href="category.html?section=weird">Weird</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="breaking-news">
+      <div class="ticker-label">Breaking</div>
+      <div class="ticker-window">
+        <ul class="ticker-track" id="breaking-ticker">
+          <li>Searching the archives for fresh scandals...</li>
+        </ul>
+      </div>
+    </section>
+    <main class="page-shell search-page">
+      <section class="search-hero">
+        <p class="section-kicker">Eastokyo Archive</p>
+        <h1>SEARCH</h1>
+        <p>
+          Every scandal, committee, vending machine, temple cat, bureaucratic
+          disaster, and emotionally unstable train announcement can be found
+          here. Probably.
+        </p>
+      </section>
+      <div class="search-layout">
+        <aside class="search-sidebar">
+          <h2>Search Tips</h2>
+          <div class="tag-cloud">
+            <a href="search.html?q=tokyo">Tokyo</a>
+            <a href="search.html?q=politics">Politics</a>
+            <a href="search.html?q=committee">Committee</a>
+            <a href="search.html?q=ai">AI</a>
+            <a href="search.html?q=cat">Cat</a>
+            <a href="search.html?q=vending">Vending</a>
+            <a href="search.html?q=train">Train</a>
+            <a href="search.html?q=japan">Japan</a>
+          </div>
+          <div class="search-note">
+            <h3>Editorial Advice</h3>
+            <p>
+              If your search returns zero results, the government has probably
+              formed a committee to delay them.
+            </p>
+          </div>
+        </aside>
+        <h2 id="search-heading">Search Eastokyo</h2>
+        <p id="search-count">0 results found</p>
+        <section class="search-results" id="search-results">
+          <div class="search-empty">
+            <h2>Ready To Search</h2>
+            <p>
+              Type something into the search box above. We'll handle the satire.
+            </p>
+          </div>
+        </section>
+      </div>
+      <nav class="page-navigation">
+        <a class="nav-button back-button" href="index.html">
+          Back To Front Page
+        </a>
+        <a class="nav-button forward-button" href="category.html?section=tokyo">
+          Browse Tokyo News
+        </a>
+      </nav>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <h2>Eastokyo</h2>
+          <p>
+            Satirical news from Tokyo, Japan, and the increasingly dramatic rest
+            of the world.
+          </p>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>News</h3>
+          <ul>
+            <li><a href="category.html?section=political">Political</a></li>
+            <li><a href="category.html?section=business">Business</a></li>
+            <li><a href="category.html?section=culture">Culture</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Site</h3>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="disclaimer.html">Disclaimer</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="category.html">Categories</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Eastokyo. All satire reserved.</p>
+    </footer>
+    <script defer="" src="js/articles.js"></script>
+    <script defer="" src="js/search.js"></script>
+    <script defer="" src="js/ticker.js"></script>
+    <script defer="" src="js/main.js"></script>
+  </body>
+</html>

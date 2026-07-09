@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Eastokyo | Satirical News from Tokyo and Beyond</title>
+    <meta
+      content="Eastokyo is a satirical English-language news outlet covering Tokyo, Japan, politics, culture, business, technology, weird news, and more."
+      name="description"
+    />
+    <style>
+      :root {
+        --ink: #0b0b0b;
+        --paper: #fffdf6;
+        --paper-warm: #fff1cf;
+        --red: #e60012;
+        --blue: #0057ff;
+        --metro: #00a3e0;
+        --jr: #00a040;
+        --yellow: #ffd900;
+        --orange: #ff7a00;
+        --pink: #ff4fb8;
+        --cyan: #00d9ff;
+        --green: #00d66b;
+        --purple: #7b2cff;
+        --muted: #4f4a40;
+        --shadow: 5px 5px 0 var(--ink);
+        --big-shadow: 8px 8px 0 var(--ink);
+        --max: 1220px;
+        --sans: Arial, Helvetica, sans-serif;
+        --display: "Arial Black", Impact, var(--sans);
+        --serif: Georgia, "Times New Roman", serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: var(--serif);
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.045) 1px,
+            transparent 1px
+          ),
+          linear-gradient(0deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+          radial-gradient(
+            circle at 8% 4%,
+            rgba(230, 0, 18, 0.22),
+            transparent 18rem
+          ),
+          radial-gradient(
+            circle at 92% 2%,
+            rgba(0, 87, 255, 0.2),
+            transparent 19rem
+          ),
+          radial-gradient(
+            circle at 40% 20%,
+            rgba(255, 217, 0, 0.18),
+            transparent 20rem
+          ),
+          #fffaf0;
+        background-size: 28px 28px, 28px 28px, auto, auto, auto, auto;
+      }
+
+      body::before {
+        content: "東 京 号 外  ·  EASTOKYO  ·  SATIRE  ·  EXIT A7  ·  深夜版  ·";
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        padding: 6px 0 7px;
+        background: var(--ink);
+        color: var(--yellow);
+        border-top: 4px solid var(--red);
+        font: 900 clamp(0.65rem, 2vw, 0.95rem) / 1 var(--display);
+        letter-spacing: 0.14em;
+        text-align: center;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 49;
+        pointer-events: none;
+        opacity: 0.1;
+        mix-blend-mode: multiply;
+        background-image: radial-gradient(var(--ink) 0.75px, transparent 0.8px);
+        background-size: 4px 4px;
+      }
+
+      img,
+      picture,
+      video,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:hover {
+        color: var(--red);
+      }
+
+      .site-header,
+      .breaking-news,
+      .page-shell,
+      .site-footer-inner {
+        width: min(var(--max), calc(100% - 22px));
+        margin-inline: auto;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+
+      .site-header {
+        position: relative;
+        z-index: 10;
+        padding-top: 10px;
+      }
+
+      .top-bar {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 10px;
+        font: 900 0.72rem/1 var(--display);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      .edition-label,
+      .date-label,
+      .disclaimer-link {
+        margin: 0;
+        border: 3px solid var(--ink);
+        padding: 8px 10px;
+        box-shadow: 3px 3px 0 var(--ink);
+        text-align: center;
+      }
+
+      .edition-label {
+        background: var(--red);
+        color: white;
+      }
+      .date-label {
+        background: white;
+      }
+      .disclaimer-link {
+        background: var(--yellow);
+      }
+
+      .brand-row {
+        position: relative;
+        display: grid;
+        gap: 12px;
+        padding: 12px;
+        background: white;
+        border: 5px solid var(--ink);
+        box-shadow: var(--big-shadow);
+        overflow: hidden;
+      }
+
+      .brand-row::before {
+        content: "新宿 · 渋谷 · 上野 · 神保町 · 秋葉原 · 銀座";
+        position: absolute;
+        right: -26px;
+        top: 8px;
+        transform: rotate(8deg);
+        color: rgba(230, 0, 18, 0.16);
+        font: 900 clamp(2.7rem, 12vw, 7rem) / 0.85 var(--display);
+        letter-spacing: -0.08em;
+        pointer-events: none;
+      }
+
+      .logo-link {
+        position: relative;
+        z-index: 1;
+        display: block;
+        justify-self: center;
+        width: min(310px, 100%);
+        border: 4px solid var(--ink);
+        background: var(--paper);
+        box-shadow: 5px 5px 0 var(--red);
+      }
+
+      .site-logo {
+        height: auto;
+        max-height: 86px;
+        object-fit: contain;
+        padding: 8px;
+      }
+
+      .search-form {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 4px solid var(--ink);
+        background: white;
+        box-shadow: 5px 5px 0 var(--blue);
+        overflow: hidden;
+      }
+
+      .search-form input,
+      .search-form button {
+        min-width: 0;
+        border: 0;
+        padding: 12px;
+        font: 900 0.9rem var(--sans);
+      }
+
+      .search-form input {
+        background: #fff;
+      }
+      .search-form button {
+        border-top: 4px solid var(--ink);
+        background: var(--ink);
+        color: var(--yellow);
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .main-nav {
+        padding-top: 14px;
+      }
+
+      .nav-list {
+        display: flex;
+        gap: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow-x: auto;
+        border: 4px solid var(--ink);
+        background: var(--ink);
+        box-shadow: 4px 4px 0 var(--ink);
+        scrollbar-width: thin;
+      }
+
+      .nav-list a {
+        display: block;
+        padding: 11px 12px;
+        min-width: max-content;
+        background: var(--yellow);
+        border-right: 3px solid var(--ink);
+        font: 900 0.78rem/1 var(--display);
+        text-transform: uppercase;
+      }
+
+      .nav-list li:nth-child(2n) a {
+        background: white;
+      }
+      .nav-list li:nth-child(3n) a {
+        background: var(--cyan);
+      }
+      .nav-list li:nth-child(4n) a {
+        background: var(--pink);
+        color: white;
+      }
+      .nav-list li:nth-child(5n) a {
+        background: var(--jr);
+        color: white;
+      }
+      .nav-list a:hover {
+        background: var(--red);
+        color: white;
+      }
+
+      .breaking-news {
+        display: grid;
+        margin-top: 16px;
+        border: 5px solid var(--ink);
+        box-shadow: var(--big-shadow);
+        background: white;
+        overflow: hidden;
+      }
+
+      .ticker-label {
+        padding: 10px 12px;
+        background: var(--red);
+        color: white;
+        text-align: center;
+        font: 900 0.9rem var(--display);
+        text-transform: uppercase;
+        border-bottom: 5px solid var(--ink);
+      }
+
+      .ticker-window {
+        overflow: hidden;
+        min-width: 0;
+      }
+
+      .ticker-track {
+        display: flex;
+        gap: 52px;
+        width: max-content;
+        margin: 0;
+        padding: 11px 16px;
+        list-style: none;
+        white-space: nowrap;
+        font: 900 0.86rem/1 var(--display);
+        animation: ticker 90s linear infinite;
+      }
+
+      @keyframes ticker {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .page-shell {
+        padding: 28px 0 76px;
+      }
+
+      .section-heading {
+        position: relative;
+        display: inline-block;
+        max-width: 100%;
+        margin: 0 0 18px;
+        padding: 11px 13px 8px;
+        background: var(--ink);
+        color: var(--yellow);
+        box-shadow: 6px 6px 0 var(--red);
+        font: 900 clamp(2.2rem, 14vw, 5rem) / 0.88 var(--display);
+        text-transform: uppercase;
+        letter-spacing: -0.07em;
+        overflow-wrap: anywhere;
+      }
+
+      .section-heading::after {
+        content: " / 号外";
+        color: white;
+        letter-spacing: -0.04em;
+      }
+
+      .station-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin: 0 0 18px;
+      }
+
+      .station-pill {
+        border: 3px solid var(--ink);
+        padding: 8px 9px;
+        box-shadow: 3px 3px 0 var(--ink);
+        background: white;
+        font: 900 0.78rem/1 var(--display);
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .station-pill:nth-child(1) {
+        background: var(--jr);
+        color: white;
+      }
+      .station-pill:nth-child(2) {
+        background: var(--metro);
+        color: white;
+      }
+      .station-pill:nth-child(3) {
+        background: var(--yellow);
+      }
+
+      .media-frame {
+        position: relative;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        background: var(--ink);
+        border-bottom: 5px solid var(--ink);
+        isolation: isolate;
+      }
+
+      .media-frame::after {
+        content: attr(data-tag);
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        z-index: 2;
+        max-width: calc(100% - 16px);
+        padding: 5px 7px;
+        background: var(--yellow);
+        border: 3px solid var(--ink);
+        box-shadow: 3px 3px 0 var(--ink);
+        font: 900 0.7rem/1 var(--display);
+        text-transform: uppercase;
+      }
+
+      .media-frame:not([data-tag])::after {
+        display: none;
+      }
+      .media-frame.square {
+        aspect-ratio: 1 / 1;
+      }
+      .media-frame.landscape {
+        aspect-ratio: 4 / 3;
+      }
+      .media-frame.wide {
+        aspect-ratio: 16 / 10;
+      }
+      .media-frame.ultra {
+        aspect-ratio: 21 / 9;
+      }
+      .media-frame.tall {
+        aspect-ratio: 4 / 5;
+      }
+      .media-frame.poster {
+        aspect-ratio: 3 / 4;
+      }
+
+      .hero-grid,
+      .secondary-stories,
+      .card-grid,
+      .homepage-sidebar,
+      .district-grid,
+      .ad-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero-grid {
+        margin-bottom: 34px;
+      }
+
+      .hero-story,
+      .compact-card,
+      .article-card,
+      .sidebar-widget,
+      .wide-feature,
+      .poster-feature,
+      .ad-card,
+      .micro-card {
+        min-width: 0;
+        max-width: 100%;
+        overflow: hidden;
+        border: 5px solid var(--ink);
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-story {
+        position: relative;
+        background: white;
+      }
+
+      .hero-story::before {
+        content: "緊急";
+        position: absolute;
+        z-index: 4;
+        top: 8px;
+        left: 8px;
+        padding: 8px 10px;
+        background: var(--red);
+        color: white;
+        border: 3px solid var(--ink);
+        box-shadow: 3px 3px 0 var(--ink);
+        font: 900 1rem/1 var(--display);
+      }
+
+      .story-content,
+      .card-body,
+      .wide-body,
+      .sidebar-widget,
+      .poster-body,
+      .micro-card,
+      .ad-card {
+        padding: 18px;
+      }
+
+      .story-content {
+        position: relative;
+        background: linear-gradient(
+            135deg,
+            rgba(255, 217, 0, 0.65),
+            transparent 48%
+          ),
+          white;
+        overflow: hidden;
+      }
+
+      .story-content::before {
+        content: "東京";
+        position: absolute;
+        right: -9px;
+        bottom: -18px;
+        color: rgba(230, 0, 18, 0.14);
+        font: 900 clamp(5rem, 25vw, 13rem) / 0.8 var(--display);
+        letter-spacing: -0.12em;
+        pointer-events: none;
+      }
+
+      .section-kicker {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        margin: 0 0 10px;
+        padding: 6px 9px;
+        background: var(--red);
+        color: white;
+        border: 3px solid var(--ink);
+        box-shadow: 3px 3px 0 var(--ink);
+        font: 900 0.74rem/1 var(--display);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        overflow-wrap: anywhere;
+      }
+
+      .hero-story h2,
+      .wide-feature h2,
+      .poster-feature h2,
+      .block-header h2,
+      .compact-card h3,
+      .article-card h3,
+      .sidebar-widget h2,
+      .micro-card h3,
+      .ad-card h3,
+      .site-footer h2,
+      .site-footer h3 {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        font-family: var(--display);
+        line-height: 0.99;
+        text-transform: uppercase;
+        letter-spacing: -0.045em;
+      }
+
+      .hero-story h2 {
+        font-size: clamp(2.25rem, 10vw, 5.6rem);
+      }
+      .compact-card h3,
+      .article-card h3 {
+        font-size: clamp(1.15rem, 5.5vw, 1.9rem);
+      }
+      .wide-feature h2 {
+        font-size: clamp(1.9rem, 8vw, 4.2rem);
+      }
+      .poster-feature h2 {
+        font-size: clamp(1.7rem, 7vw, 3.6rem);
+      }
+      .micro-card h3,
+      .ad-card h3 {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+      }
+
+      .hero-story p:not(.section-kicker),
+      .wide-feature p:not(.section-kicker),
+      .article-card p:not(.section-kicker),
+      .visual-widget p,
+      .poster-feature p:not(.section-kicker),
+      .micro-card p,
+      .ad-card p {
+        position: relative;
+        z-index: 1;
+        color: var(--muted);
+        font-weight: 800;
+        line-height: 1.42;
+      }
+
+      .read-more,
+      .nav-button {
+        position: relative;
+        z-index: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 12px;
+        padding: 11px 14px;
+        background: var(--ink);
+        color: white;
+        border: 3px solid var(--ink);
+        box-shadow: 4px 4px 0 var(--yellow);
+        font: 900 0.82rem/1 var(--display);
+        text-transform: uppercase;
+      }
+
+      .secondary-stories .compact-card:nth-child(1) {
+        background: var(--yellow);
+      }
+      .secondary-stories .compact-card:nth-child(2) {
+        background: var(--cyan);
+      }
+      .secondary-stories .compact-card:nth-child(3) {
+        background: var(--pink);
+        color: white;
+      }
+      .secondary-stories .compact-card:nth-child(3) p:not(.section-kicker) {
+        color: white;
+      }
+
+      .ad-grid {
+        margin: 28px 0 34px;
+      }
+
+      .ad-card {
+        position: relative;
+        background: var(--yellow);
+      }
+      .ad-card:nth-child(2) {
+        background: var(--cyan);
+      }
+      .ad-card:nth-child(3) {
+        background: var(--red);
+        color: white;
+      }
+      .ad-card:nth-child(3) p {
+        color: white;
+      }
+
+      .ad-card::before {
+        content: "広告";
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        padding: 5px 7px;
+        border: 3px solid var(--ink);
+        background: white;
+        color: var(--ink);
+        box-shadow: 3px 3px 0 var(--ink);
+        font: 900 0.68rem/1 var(--display);
+      }
+
+      .content-layout {
+        display: grid;
+        gap: 30px;
+      }
+      .category-block {
+        margin-bottom: 32px;
+      }
+
+      .block-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 15px;
+        border-bottom: 7px solid var(--ink);
+      }
+
+      .block-header h2 {
+        padding: 7px 10px 2px;
+        background: var(--yellow);
+        border: 4px solid var(--ink);
+        border-bottom: 0;
+        font-size: clamp(1.65rem, 8vw, 3.2rem);
+      }
+
+      .block-header a {
+        margin-bottom: 9px;
+        font: 900 0.78rem/1 var(--display);
+        color: var(--red);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .district-politics .block-header h2 {
+        background: var(--red);
+        color: white;
+      }
+      .district-business .block-header h2 {
+        background: var(--blue);
+        color: white;
+      }
+      .district-tech .block-header h2 {
+        background: var(--cyan);
+      }
+      .district-weird .block-header h2 {
+        background: var(--pink);
+        color: white;
+      }
+
+      .article-card:nth-child(2n) {
+        background: white;
+      }
+      .article-card:nth-child(3n) {
+        background: var(--paper-warm);
+      }
+
+      .poster-feature {
+        position: relative;
+        display: grid;
+        margin: 10px 0 34px;
+        background: var(--ink);
+        color: white;
+      }
+
+      .poster-feature .media-frame {
+        border-bottom-color: var(--yellow);
+      }
+      .poster-body {
+        background: radial-gradient(
+            circle at 92% 10%,
+            rgba(255, 217, 0, 0.35),
+            transparent 10rem
+          ),
+          var(--ink);
+      }
+      .poster-body p:not(.section-kicker) {
+        color: #fff5c7;
+      }
+
+      .homepage-sidebar {
+        align-self: start;
+      }
+      .sidebar-widget {
+        background: var(--yellow);
+      }
+      .sidebar-widget:nth-child(2) {
+        background: white;
+      }
+      .sidebar-widget:nth-child(3) {
+        background: var(--pink);
+        color: white;
+      }
+      .sidebar-widget:nth-child(3) a {
+        color: inherit;
+      }
+
+      .sidebar-widget h2 {
+        margin-bottom: 14px;
+        padding-bottom: 8px;
+        border-bottom: 5px solid var(--ink);
+        font-size: 1.45rem;
+      }
+
+      .ranked-list {
+        margin: 0;
+        padding-left: 25px;
+      }
+      .ranked-list li {
+        margin-bottom: 12px;
+        font: 900 0.98rem/1.18 var(--display);
+      }
+      .ranked-list li::marker {
+        color: var(--red);
+        font-size: 1.25em;
+      }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      .tag-cloud a {
+        padding: 8px 10px;
+        background: white;
+        color: var(--ink);
+        border: 3px solid var(--ink);
+        box-shadow: 3px 3px 0 var(--ink);
+        font: 900 0.8rem/1 var(--display);
+        text-transform: uppercase;
+      }
+      .tag-cloud a:nth-child(2n) {
+        background: var(--cyan);
+      }
+      .tag-cloud a:nth-child(3n) {
+        background: var(--yellow);
+      }
+
+      .wide-feature {
+        display: grid;
+        margin-top: 30px;
+        background: white;
+      }
+
+      .wide-body {
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          white 0 48%,
+          var(--yellow) 48% 70%,
+          var(--cyan) 70%
+        );
+        overflow: hidden;
+      }
+      .wide-body::before {
+        content: "極秘";
+        position: absolute;
+        right: -8px;
+        top: 10px;
+        color: rgba(0, 0, 0, 0.12);
+        font: 900 clamp(4rem, 20vw, 10rem) / 0.8 var(--display);
+        letter-spacing: -0.14em;
+      }
+
+      .micro-strip {
+        display: grid;
+        gap: 14px;
+        margin: 28px 0 34px;
+      }
+
+      .micro-card {
+        min-height: 140px;
+        display: grid;
+        align-content: center;
+        background: white;
+      }
+      .micro-card:nth-child(2) {
+        background: var(--green);
+        color: white;
+        transform: rotate(-1deg);
+      }
+      .micro-card:nth-child(3) {
+        background: var(--purple);
+        color: white;
+        transform: rotate(1deg);
+      }
+      .micro-card:nth-child(2) p,
+      .micro-card:nth-child(3) p {
+        color: white;
+      }
+
+      .page-navigation {
+        display: grid;
+        gap: 12px;
+        margin-top: 34px;
+        padding-top: 24px;
+        border-top: 7px solid var(--ink);
+      }
+      .nav-button {
+        width: 100%;
+      }
+      .back-button {
+        background: var(--blue);
+      }
+      .forward-button {
+        background: var(--red);
+      }
+
+      .site-footer {
+        background: var(--yellow);
+        border-top: 8px solid var(--ink);
+        padding: 36px 0 58px;
+      }
+      .footer-grid {
+        display: grid;
+        gap: 20px;
+      }
+      .site-footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .site-footer li {
+        margin-bottom: 8px;
+        font-weight: 800;
+      }
+      .copyright {
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      @media (min-width: 700px) {
+        .site-header,
+        .breaking-news,
+        .page-shell,
+        .site-footer-inner {
+          width: min(var(--max), calc(100% - 40px));
+        }
+
+        .top-bar {
+          grid-template-columns: auto 1fr auto;
+          align-items: center;
+        }
+        .brand-row {
+          grid-template-columns: 250px minmax(0, 1fr);
+          align-items: center;
+          gap: 22px;
+        }
+        .logo-link {
+          justify-self: start;
+        }
+        .search-form {
+          grid-template-columns: minmax(0, 1fr) auto;
+        }
+        .search-form button {
+          border-top: 0;
+          border-left: 4px solid var(--ink);
+        }
+        .breaking-news {
+          grid-template-columns: auto minmax(0, 1fr);
+        }
+        .ticker-label {
+          border-bottom: 0;
+          border-right: 5px solid var(--ink);
+        }
+        .station-strip {
+          grid-template-columns: repeat(6, minmax(0, 1fr));
+        }
+
+        .secondary-stories,
+        .card-grid,
+        .ad-grid,
+        .micro-strip {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .secondary-stories .compact-card:first-child {
+          grid-column: span 2;
+        }
+        .secondary-stories .compact-card:first-child .media-frame {
+          aspect-ratio: 16 / 9;
+        }
+        .micro-card:first-child {
+          grid-column: span 2;
+        }
+        .poster-feature {
+          grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+        }
+        .poster-feature .media-frame {
+          border-bottom: 0;
+          border-right: 6px solid var(--yellow);
+        }
+        .page-navigation {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1.4fr 0.7fr 0.7fr;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        .page-shell {
+          padding-top: 38px;
+        }
+        .hero-grid {
+          grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
+          align-items: stretch;
+        }
+        .hero-grid .section-heading,
+        .hero-grid .station-strip {
+          grid-column: 1 / -1;
+        }
+        .hero-story {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
+        }
+        .hero-story .media-frame {
+          aspect-ratio: auto;
+          min-height: 560px;
+          border-bottom: 0;
+          border-right: 6px solid var(--ink);
+        }
+        .secondary-stories {
+          grid-template-columns: 1fr;
+          align-content: start;
+        }
+        .secondary-stories .compact-card:first-child {
+          grid-column: auto;
+        }
+        .secondary-stories .compact-card:nth-child(1) {
+          transform: translateX(10px);
+        }
+        .secondary-stories .compact-card:nth-child(2) {
+          transform: translateX(-18px);
+        }
+        .secondary-stories .compact-card:nth-child(3) {
+          transform: translateX(12px);
+        }
+        .content-layout {
+          grid-template-columns: minmax(0, 1fr) 328px;
+          align-items: start;
+        }
+        .homepage-sidebar {
+          position: sticky;
+          top: 16px;
+        }
+        .ad-grid {
+          grid-template-columns: 1.2fr 0.8fr 1fr;
+        }
+        .card-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .district-business .card-grid article:first-child,
+        .district-weird .card-grid article:nth-child(2) {
+          transform: translateY(18px);
+        }
+        .poster-feature {
+          grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+        }
+        .wide-feature {
+          grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+          align-items: stretch;
+        }
+        .wide-feature .media-frame {
+          aspect-ratio: auto;
+          min-height: 440px;
+          border-bottom: 0;
+          border-right: 6px solid var(--ink);
+        }
+        .micro-strip {
+          grid-template-columns: 1.3fr 0.75fr 0.95fr;
+          align-items: stretch;
+        }
+        .micro-card:first-child {
+          grid-column: auto;
+        }
+      }
+    </style>
+    <link href="manifest.json" rel="manifest" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="top-bar">
+        <p class="edition-label">Tokyo Edition · 東京都</p>
+        <p class="date-label">Wednesday, July 8, 2026 · Exit A7</p>
+        <a class="disclaimer-link" href="disclaimer.html">Satire Disclaimer</a>
+      </div>
+      <div class="brand-row">
+        <a aria-label="Eastokyo homepage" class="logo-link" href="index.html">
+          <img alt="Eastokyo logo" class="site-logo" src="eastokyo-logo.png" />
+        </a>
+        <form class="search-form" role="search">
+          <label class="sr-only" for="site-search">Search Eastokyo</label>
+          <input
+            id="site-search"
+            placeholder="Search scandals, stations, mascots, ministries..."
+            type="search"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <nav aria-label="Primary navigation" class="main-nav">
+        <ul class="nav-list">
+          <li><a href="category.html?section=political">Political</a></li>
+          <li><a href="category.html?section=tokyo">Tokyo</a></li>
+          <li><a href="category.html?section=japan">Japan</a></li>
+          <li><a href="category.html?section=world">World</a></li>
+          <li><a href="category.html?section=business">Business</a></li>
+          <li><a href="category.html?section=technology">Technology</a></li>
+          <li><a href="category.html?section=culture">Culture</a></li>
+          <li>
+            <a href="category.html?section=entertainment">Entertainment</a>
+          </li>
+          <li><a href="category.html?section=sports">Sports</a></li>
+          <li><a href="category.html?section=opinion">Opinion</a></li>
+          <li>
+            <a href="category.html?section=investigations">Investigations</a>
+          </li>
+          <li><a href="category.html?section=weird">Weird</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section aria-label="Breaking news ticker" class="breaking-news">
+      <div class="ticker-label">Breaking · 速報</div>
+      <div class="ticker-window">
+        <ul class="ticker-track" id="breaking-ticker">
+          <li>
+            Tokyo officials deny vending machines have formed a shadow cabinet.
+          </li>
+          <li>
+            Finance ministry announces emergency committee to study committees.
+          </li>
+          <li>
+            Local man achieves inner peace after reading apartment recycling
+            rules.
+          </li>
+          <li>
+            Tokyo officials deny vending machines have formed a shadow cabinet.
+          </li>
+          <li>
+            Finance ministry announces emergency committee to study committees.
+          </li>
+          <li>
+            Local man achieves inner peace after reading apartment recycling
+            rules.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <main class="page-shell">
+      <section aria-labelledby="top-stories-heading" class="hero-grid">
+        <h1 class="section-heading" id="top-stories-heading">Top Stories</h1>
+        <div aria-label="Eastokyo district labels" class="station-strip">
+          <span class="station-pill">JY-17 Shibuya</span>
+          <span class="station-pill">M-08 Shinjuku</span>
+          <span class="station-pill">AKB Weird</span>
+        </div>
+        <article class="hero-story">
+          <a
+            class="media-frame wide"
+            data-tag="Main gate"
+            href="article.html?slug=tokyo-polite-standing"
+          >
+            <img alt="Tokyo skyline at night" src="tokyo-skyline-main.jpg" />
+          </a>
+          <div class="story-content">
+            <p class="section-kicker">Tokyo</p>
+            <h2>
+              <a href="article.html?slug=tokyo-polite-standing"
+                >Tokyo Announces Bold Plan to Solve Crowding by Asking Everyone
+                to Stand Slightly More Politely</a
+              >
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              luctus, sapien at dignissim fermentum, velit sem cursus magna,
+              vitae posuere justo arcu non risus.
+            </p>
+            <a class="read-more" href="article.html?slug=tokyo-polite-standing"
+              >Read full story</a
+            >
+          </div>
+        </article>
+        <div class="secondary-stories">
+          <article class="compact-card">
+            <a
+              class="media-frame landscape"
+              data-tag="Kasumigaseki"
+              href="article.html?slug=lawmakers-promise-historic-reform-immediately-after-lunch-possibly-next-fiscal-year"
+            >
+              <img alt="Japanese government building" src="diet-building.jpg" />
+            </a>
+            <div class="card-body">
+              <p class="section-kicker">Political</p>
+              <h3>
+                <a
+                  href="article.html?slug=lawmakers-promise-historic-reform-immediately-after-lunch-possibly-next-fiscal-year"
+                  >Lawmakers Promise Historic Reform Immediately After Lunch,
+                  Possibly Next Fiscal Year</a
+                >
+              </h3>
+            </div>
+          </article>
+          <article class="compact-card">
+            <a
+              class="media-frame square"
+              data-tag="Platform 4"
+              href="article.html?slug=nation-briefly-united-by-train-delay-apology-more-detailed-than-most-novels"
+            >
+              <img alt="Busy Tokyo train platform" src="train-platform.jpg" />
+            </a>
+            <div class="card-body">
+              <p class="section-kicker">Japan</p>
+              <h3>
+                <a
+                  href="article.html?slug=nation-briefly-united-by-train-delay-apology-more-detailed-than-most-novels"
+                  >Nation Briefly United by Train Delay Apology More Detailed
+                  Than Most Novels</a
+                >
+              </h3>
+            </div>
+          </article>
+          <article class="compact-card">
+            <a
+              class="media-frame tall"
+              data-tag="Night sign"
+              href="article.html?slug=new-lifestyle-trend-encourages-citizens-to-romanticize-being-extremely-busy"
+            >
+              <img alt="Neon street in Tokyo" src="neon-street.jpg" />
+            </a>
+            <div class="card-body">
+              <p class="section-kicker">Culture</p>
+              <h3>
+                <a
+                  href="article.html?slug=new-lifestyle-trend-encourages-citizens-to-romanticize-being-extremely-busy"
+                  >New Lifestyle Trend Encourages Citizens to Romanticize Being
+                  Extremely Busy</a
+                >
+              </h3>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section aria-label="Eastokyo visual ad breaks" class="ad-grid">
+        <article class="ad-card">
+          <h3>Government Certified Silence™</h3>
+          <p>
+            Now available near every elevator, meeting room, and family
+            restaurant.
+          </p>
+        </article>
+        <article class="ad-card">
+          <h3>Emotional Support Umbrella</h3>
+          <p>For when the forecast says rain but your soul says resignation.</p>
+        </article>
+        <article class="ad-card">
+          <h3>Exit Anxiety?</h3>
+          <p>
+            Try our new subway-compatible panic map. Seventeen exits. One
+            destiny.
+          </p>
+        </article>
+      </section>
+      <section aria-label="Poster feature" class="poster-feature">
+        <a
+          class="media-frame poster"
+          data-tag="Poster edition"
+          href="article.html?slug=shibuya-crossing-temporarily-achieves-sentience-immediately-opens-pop-up-cafe"
+        >
+          <img alt="Shibuya crossing" src="shibuya-crossing.jpg" />
+        </a>
+        <div class="poster-body">
+          <p class="section-kicker">Photo Dispatch</p>
+          <h2>
+            <a
+              href="article.html?slug=shibuya-crossing-temporarily-achieves-sentience-immediately-opens-pop-up-cafe"
+              >Shibuya Crossing Temporarily Achieves Sentience, Immediately
+              Opens Pop-Up Cafe</a
+            >
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed Tokyo
+            keeps moving anyway.
+          </p>
+          <a
+            class="read-more"
+            href="article.html?slug=shibuya-crossing-temporarily-achieves-sentience-immediately-opens-pop-up-cafe"
+            >Enter dispatch</a
+          >
+        </div>
+      </section>
+      <div class="content-layout">
+        <section aria-label="Latest news sections" class="news-sections">
+          <section class="category-block district-politics">
+            <div class="block-header">
+              <h2>Politics</h2>
+              <a href="category.html?section=political">View all</a>
+            </div>
+            <div class="card-grid">
+              <article class="article-card">
+                <a
+                  class="media-frame landscape"
+                  data-tag="Ministry file"
+                  href="article.html?slug=committee-committee"
+                >
+                  <img
+                    alt="Political meeting room"
+                    src="political-meeting.jpg"
+                  />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Political</p>
+                  <h3>
+                    <a href="article.html?slug=committee-committee"
+                      >Committee Forms Subcommittee to Investigate Why
+                      Committees Keep Forming</a
+                    >
+                  </h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                </div>
+              </article>
+              <article class="article-card">
+                <a
+                  class="media-frame square"
+                  data-tag="Press zone"
+                  href="article.html?slug=official-statement-clarifies-previous-clarification-was-not-official"
+                >
+                  <img
+                    alt="Press conference microphones"
+                    src="press-conference.jpg"
+                  />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Political</p>
+                  <h3>
+                    <a
+                      href="article.html?slug=official-statement-clarifies-previous-clarification-was-not-official"
+                      >Official Statement Clarifies Previous Clarification Was
+                      Not Official</a
+                    >
+                  </h3>
+                  <p>Praesent vitae lorem sed magna gravida bibendum.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section aria-label="Micro features" class="micro-strip">
+            <article class="micro-card">
+              <p class="section-kicker">Tiny Tokyo</p>
+              <h3>
+                <a
+                  href="article.html?slug=one-perfectly-folded-train-etiquette-poster-solves-nothing-beautifully"
+                  >One Perfectly Folded Train Etiquette Poster Solves Nothing
+                  Beautifully</a
+                >
+              </h3>
+            </article>
+            <article class="micro-card">
+              <h3>
+                <a href="article.html?slug=jr-21-platform-rumor-index">JR-21</a>
+              </h3>
+              <p>Platform rumor index rising.</p>
+            </article>
+            <article class="micro-card">
+              <h3>
+                <a
+                  href="article.html?slug=one-perfectly-folded-train-etiquette-poster-solves-nothing-beautifully"
+                  >危険</a
+                >
+              </h3>
+              <p>Danger: mascot diplomacy ahead.</p>
+            </article>
+          </section>
+          <section class="category-block district-business">
+            <div class="block-header">
+              <h2>Business</h2>
+              <a href="category.html?section=business">View all</a>
+            </div>
+            <div class="card-grid">
+              <article class="article-card">
+                <a
+                  class="media-frame tall"
+                  data-tag="Marunouchi"
+                  href="article.html?slug=startup-raises-yen4-billion-to-reinvent-waiting-in-line"
+                >
+                  <img
+                    alt="Tokyo business district"
+                    src="business-district.jpg"
+                  />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Business</p>
+                  <h3>
+                    <a
+                      href="article.html?slug=startup-raises-yen4-billion-to-reinvent-waiting-in-line"
+                      >Startup Raises ¥4 Billion to Reinvent Waiting in Line</a
+                    >
+                  </h3>
+                  <p>
+                    Donec ullamcorper, neque at facilisis finibus, justo mi
+                    luctus enim.
+                  </p>
+                </div>
+              </article>
+              <article class="article-card">
+                <a
+                  class="media-frame landscape"
+                  data-tag="Konbini report"
+                  href="article.html?slug=convenience-store-chain-adds-premium-tier-for-people-who-miss-their-train"
+                >
+                  <img
+                    alt="Japanese convenience store"
+                    src="convenience-store.jpg"
+                  />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Business</p>
+                  <h3>
+                    <a
+                      href="article.html?slug=convenience-store-chain-adds-premium-tier-for-people-who-miss-their-train"
+                      >Convenience Store Chain Adds Premium Tier for People Who
+                      Miss Their Train</a
+                    >
+                  </h3>
+                  <p>
+                    Suspendisse potenti. Sed non erat sit amet magna tincidunt.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section class="category-block district-tech">
+            <div class="block-header">
+              <h2>Technology</h2>
+              <a href="category.html?section=technology">View all</a>
+            </div>
+            <div class="card-grid">
+              <article class="article-card">
+                <a
+                  class="media-frame square"
+                  data-tag="Akihabara"
+                  href="article.html?slug=robot-refuses-promotion-after-learning-managerial-responsibilities"
+                >
+                  <img alt="Humanoid robot display" src="robot.jpg" />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Technology</p>
+                  <h3>
+                    <a
+                      href="article.html?slug=robot-refuses-promotion-after-learning-managerial-responsibilities"
+                      >Robot Refuses Promotion After Learning Managerial
+                      Responsibilities</a
+                    >
+                  </h3>
+                  <p>
+                    Aliquam erat volutpat. Mauris pharetra risus vel nisi
+                    luctus.
+                  </p>
+                </div>
+              </article>
+              <article class="article-card">
+                <a
+                  class="media-frame tall"
+                  data-tag="Server shrine"
+                  href="article.html?slug=ai-apology"
+                >
+                  <img alt="Server room lights" src="server-room.jpg" />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Technology</p>
+                  <h3>
+                    <a href="article.html?slug=ai-apology"
+                      >AI Tool Generates Apology Email Before Company Makes
+                      Mistake</a
+                    >
+                  </h3>
+                  <p>Curabitur nec sapien sed mi volutpat laoreet.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section class="category-block district-weird">
+            <div class="block-header">
+              <h2>Weird</h2>
+              <a href="category.html?section=weird">View all</a>
+            </div>
+            <div class="card-grid">
+              <article class="article-card">
+                <a
+                  class="media-frame landscape"
+                  data-tag="Temple desk"
+                  href="article.html?slug=temple-cat-accepts-new-role-as-unofficial-tourism-minister"
+                >
+                  <img alt="Cat near temple steps" src="cat-temple.jpg" />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Weird</p>
+                  <h3>
+                    <a
+                      href="article.html?slug=temple-cat-accepts-new-role-as-unofficial-tourism-minister"
+                      >Temple Cat Accepts New Role as Unofficial Tourism
+                      Minister</a
+                    >
+                  </h3>
+                  <p>
+                    Vestibulum ante ipsum primis in faucibus orci luctus et
+                    ultrices.
+                  </p>
+                </div>
+              </article>
+              <article class="article-card">
+                <a
+                  class="media-frame square"
+                  data-tag="Machine bloc"
+                  href="article.html?slug=vending-machine-seen-blinking-morse-code-during-cabinet-reshuffle"
+                >
+                  <img
+                    alt="Japanese vending machines"
+                    src="vending-machines.jpg"
+                  />
+                </a>
+                <div class="card-body">
+                  <p class="section-kicker">Weird</p>
+                  <h3>
+                    <a
+                      href="article.html?slug=vending-machine-seen-blinking-morse-code-during-cabinet-reshuffle"
+                      >Vending Machine Seen Blinking Morse Code During Cabinet
+                      Reshuffle</a
+                    >
+                  </h3>
+                  <p>
+                    Morbi tincidunt, lectus nec faucibus pharetra, arcu arcu
+                    luctus enim.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+        <aside aria-label="Sidebar" class="homepage-sidebar">
+          <section class="sidebar-widget">
+            <h2>Most Read</h2>
+            <ol class="ranked-list">
+              <li>
+                <a
+                  href="article.html?slug=salaryman-discovers-third-emotion-during-commute"
+                  >Salaryman Discovers Third Emotion During Commute</a
+                >
+              </li>
+              <li>
+                <a
+                  href="article.html?slug=tokyo-cafe-introduces-standing-room-nap-service"
+                  >Tokyo Cafe Introduces Standing Room Nap Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="article.html?slug=experts-warn-cherry-blossoms-becoming-too-influential"
+                  >Experts Warn Cherry Blossoms Becoming Too Influential</a
+                >
+              </li>
+              <li>
+                <a
+                  href="article.html?slug=government-launches-app-to-track-lost-umbrellas"
+                  >Government Launches App to Track Lost Umbrellas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="article.html?slug=mascot-denies-rumors-of-mayoral-ambition"
+                  >Mascot Denies Rumors of Mayoral Ambition</a
+                >
+              </li>
+            </ol>
+          </section>
+          <section class="sidebar-widget visual-widget">
+            <h2>Station Notice</h2>
+            <div class="media-frame tall" data-tag="Notice board">
+              <img alt="Tokyo night street" src="neon-street.jpg" />
+            </div>
+            <p>
+              All emotional baggage must be carried in front of you during peak
+              hours.
+            </p>
+          </section>
+          <section class="sidebar-widget">
+            <h2>Sections</h2>
+            <div class="tag-cloud">
+              <a href="category.html?section=tokyo">Tokyo</a>
+              <a href="category.html?section=japan">Japan</a>
+              <a href="category.html?section=world">World</a>
+              <a href="category.html?section=opinion">Opinion</a>
+              <a href="category.html?section=sports">Sports</a>
+              <a href="category.html?section=investigations">Investigations</a>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <section class="wide-feature">
+        <a
+          class="media-frame ultra"
+          data-tag="Investigation"
+          href="article.html?slug=inside-the-secret-world-of-people-who-actually-understand-municipal-forms"
+        >
+          <img alt="Tokyo street magazine feature" src="magazine-feature.jpg" />
+        </a>
+        <div class="wide-body">
+          <p class="section-kicker">Investigations</p>
+          <h2>
+            <a
+              href="article.html?slug=inside-the-secret-world-of-people-who-actually-understand-municipal-forms"
+              >Inside the Secret World of People Who Actually Understand
+              Municipal Forms</a
+            >
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam luctus
+            enim sit amet neque faucibus, vitae tincidunt erat cursus.
+          </p>
+          <a
+            class="read-more"
+            href="article.html?slug=inside-the-secret-world-of-people-who-actually-understand-municipal-forms"
+            >Continue reading</a
+          >
+        </div>
+      </section>
+      <nav aria-label="Homepage navigation" class="page-navigation">
+        <a class="nav-button back-button" href="disclaimer.html"
+          >Back: Disclaimer</a
+        >
+        <a class="nav-button forward-button" href="category.html?section=tokyo"
+          >Forward: Tokyo News</a
+        >
+      </nav>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <div class="footer-grid">
+          <div>
+            <h2>Eastokyo</h2>
+            <p>
+              Satirical news from Tokyo, Japan, and the increasingly dramatic
+              rest of the world.
+            </p>
+          </div>
+          <div>
+            <h3>Company</h3>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="disclaimer.html">Disclaimer</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>News</h3>
+            <ul>
+              <li><a href="category.html?section=political">Political</a></li>
+              <li><a href="category.html?section=business">Business</a></li>
+              <li><a href="category.html?section=culture">Culture</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Site</h3>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="disclaimer.html">Disclaimer</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+              <li><a href="terms.html">Terms</a></li>
+              <li><a href="search.html">Search</a></li>
+              <li><a href="category.html">Categories</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="copyright">© 2026 Eastokyo. All satire reserved.</p>
+      </div>
+    </footer>
+    <script defer="" src="js/articles.js"></script>
+    <script defer="" src="js/search.js"></script>
+    <script defer="" src="js/ticker.js"></script>
+    <script defer="" src="js/main.js"></script>
+  </body>
+</html>

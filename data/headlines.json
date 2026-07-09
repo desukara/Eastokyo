@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "headline": "Tokyo Announces Bold Plan to Solve Crowding by Asking Everyone to Stand Slightly More Politely",
+    "slug": "tokyo-polite-standing",
+    "section": "Tokyo",
+    "breaking": true,
+    "priority": 1
+  },
+  {
+    "id": 2,
+    "headline": "Government Creates Committee To Investigate Why There Are So Many Committees",
+    "slug": "committee-committee",
+    "section": "Political",
+    "breaking": true,
+    "priority": 2
+  },
+  {
+    "id": 3,
+    "headline": "AI Writes CEO Apology Before Company Makes Mistake",
+    "slug": "ai-apology",
+    "section": "Technology",
+    "breaking": false,
+    "priority": 3
+  },
+  {
+    "id": 4,
+    "headline": "Temple Cat Accepts New Position As Deputy Minister Of Side-Eye",
+    "slug": "temple-cat-side-eye",
+    "section": "Weird",
+    "breaking": true,
+    "priority": 4
+  },
+  {
+    "id": 5,
+    "headline": "Finance Ministry Announces Emergency Meeting About Last Emergency Meeting",
+    "slug": "finance-emergency-meeting",
+    "section": "Political",
+    "breaking": false,
+    "priority": 5
+  },
+  {
+    "id": 6,
+    "headline": "Convenience Store Introduces Premium Existential Dread Bento",
+    "slug": "existential-bento",
+    "section": "Culture",
+    "breaking": false,
+    "priority": 6
+  },
+  {
+    "id": 7,
+    "headline": "Salaryman Finally Leaves Office, Immediately Feels Guilty",
+    "slug": "salaryman-guilt",
+    "section": "Japan",
+    "breaking": false,
+    "priority": 7
+  },
+  {
+    "id": 8,
+    "headline": "Vending Machine Refuses To Dispense Coffee Until Customer Makes Eye Contact",
+    "slug": "vending-eye-contact",
+    "section": "Weird",
+    "breaking": false,
+    "priority": 8
+  },
+  {
+    "id": 9,
+    "headline": "Shibuya Crossing Briefly Achieves Sentience, Politely Waits For Green Light",
+    "slug": "shibuya-sentience",
+    "section": "Tokyo",
+    "breaking": true,
+    "priority": 9
+  },
+  {
+    "id": 10,
+    "headline": "Experts Confirm Tokyo Apartments Continue Winning Hide-And-Seek Championships",
+    "slug": "tiny-apartments",
+    "section": "Tokyo",
+    "breaking": false,
+    "priority": 10
+  },
+  {
+    "id": 11,
+    "headline": "Bullet Train Apologizes For Arriving 14 Seconds Late",
+    "slug": "bullet-train-apology",
+    "section": "Japan",
+    "breaking": false,
+    "priority": 11
+  },
+  {
+    "id": 12,
+    "headline": "Scientists Discover New Form Of Bureaucracy Hidden Inside Existing Bureaucracy",
+    "slug": "bureaucracy-discovery",
+    "section": "Political",
+    "breaking": false,
+    "priority": 12
+  },
+  {
+    "id": 13,
+    "headline": "Local Pigeon Denies Allegations Of Running Organized Bread Crime Syndicate",
+    "slug": "pigeon-syndicate",
+    "section": "Weird",
+    "breaking": false,
+    "priority": 13
+  },
+  {
+    "id": 14,
+    "headline": "Robot Issues Formal Apology Before Replacing Employee",
+    "slug": "robot-apology",
+    "section": "Technology",
+    "breaking": false,
+    "priority": 14
+  },
+  {
+    "id": 15,
+    "headline": "Cherry Blossoms Announce They Will Again Ignore Everyone's Schedule",
+    "slug": "cherry-blossoms",
+    "section": "Culture",
+    "breaking": false,
+    "priority": 15
+  }
+]

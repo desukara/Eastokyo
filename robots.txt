@@ -1,0 +1,30 @@
+# ==========================================
+# Eastokyo Robots.txt
+# https://www.eastokyo.com/
+# ==========================================
+
+User-agent: *
+Allow: /
+
+# Block system folders
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /node_modules/
+
+# Block development files
+Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.tmp$
+Disallow: /*.sql$
+Disallow: /*.env$
+
+# Allow important assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap
+Sitemap: https://www.eastokyo.com/sitemap.xml

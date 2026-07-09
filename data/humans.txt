@@ -1,0 +1,101 @@
+/* TEAM */
+
+Site:
+Eastokyo
+
+Website:
+https://www.eastokyo.com/
+
+Description:
+Satirical news from Tokyo, Japan, and the increasingly dramatic rest of the world.
+
+Founder:
+Eastokyo Editorial Desk
+
+Editor-in-Chief:
+Still trapped somewhere inside Shinjuku Station.
+
+Editorial Team:
+Coffee.
+Deadlines.
+Questionable judgment.
+Excellent manners.
+
+Lead Reporter:
+Temple Cat
+
+Political Correspondent:
+Waiting outside another committee meeting.
+
+Technology Desk:
+Currently asking AI to explain the printer.
+
+Culture Desk:
+Professionally overthinking convenience stores.
+
+Weird News Desk:
+Just another Tuesday.
+
+Legal Department:
+Has advised us not to mention them again.
+
+Favorite Beverage:
+Canned coffee from a vending machine.
+
+Favorite Office Equipment:
+Fax machine (for emotional support).
+
+Favorite Station:
+The one where the train actually arrives.
+
+Mascot:
+A temple cat with suspicious government clearance.
+
+Mission:
+Publish satirical stories that celebrate the wonderfully strange, polite, organized, chaotic, and endlessly fascinating life of Japan.
+
+/* THANKS */
+
+Our readers.
+
+People with a sense of humor.
+
+Tokyo.
+
+Japan.
+
+Every commuter who has apologized after someone else stepped on their foot.
+
+Every convenience store.
+
+Every ramen shop.
+
+Every neighborhood cat.
+
+Everyone who understands this is satire.
+
+/* TECHNOLOGY */
+
+HTML5
+
+CSS3
+
+JavaScript
+
+Responsive Design
+
+RSS
+
+Progressive Web App
+
+No frameworks.
+No bloat.
+No committees.
+
+/* CONTACT */
+
+https://www.eastokyo.com/contact.html
+
+/* LAST UPDATED */
+
+2026-07-08
