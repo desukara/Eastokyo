@@ -23,7 +23,7 @@ window.EASTOKYO_ARTICLES = [
 
 <p>"The Yamanote Line is JR," a station worker told him. "Okay, cool," Corcoran said. "So where's the JY platform?" "This is the JR platform." "So they're the same?" "Yes." "Then what's JY?" "JR." The white-gloved station worker delivered this with the patience of a man reciting scripture, pointed at a sign, bowed slightly, and walked directly to another tourist already pointing at the same sign. This is, apparently, the system working as intended.</p>
 
-<p>Corcoran eventually reached Ikebukuro after finally grasping that the JY line runs on the JR railway. Whether assigning nearly identical two-letter abbreviations to both the operator and its train lines was meant to help anyone remains unclear. All he wanted was the East Exit. Google Maps said it was five minutes away. Five minutes later, it was still five minutes away. An hour later, still five minutes. By the second hour, Google Maps had stopped giving directions and started making promises it had no intention of keeping, which is when Ikebukuro dropped the pretense of being there to help at all.</p>
+<p>Corcoran eventually reached Ikebukuro after finally grasping that the JY line runs on the JR railway. Whether assigning nearly identical two-letter abbreviations to both the operator and its train lines was meant to help anyone remains unclear. All he wanted was the East Exit. Google Maps said it was five minutes away. Five minutes later, it was still five minutes away. An hour later, still five minutes. By the second hour, GPS dropped the pretense of being there to help at all.</p>
 
 <blockquote>
     <p>Google Maps had stopped giving directions and started making promises it had no intention of keeping.</p>
