@@ -17,133 +17,53 @@ window.EASTOKYO_ARTICLES = [
     body: `
   <p><strong>By James Simmons, reporting from somewhere inside Ikebukuro Station</strong></p>
 
-  <p>Ikebukuro Station serves roughly 2.6 million passengers a day, has 40 exits, and, by Corcoran's count, at least one dimension not listed on any map.</p>
+<p>Ikebukuro Station serves roughly 2.6 million passengers a day, has 40 exits, and, by Corcoran's count, at least one dimension not listed on any map.</p>
 
-  <p>Johnny Corcoran landed in Tokyo acting like he owned the place, which is a classic New Yorker move: half a clue, a hundred and fifty percent confidence, no exceptions made for the world's busiest transit system. That confidence lasted about five minutes, and to its credit, five minutes is longer than expected.</p>
+<p>Johnny Corcoran landed in Tokyo acting like he owned the place, which is a classic New Yorker move: half a clue, a hundred and fifty percent confidence, no exceptions made for the world's busiest transit system. That confidence lasted about five minutes, and to its credit, five minutes is longer than expected.</p>
 
-  <p>It started in Shinjuku Station, a place so large it is less a train station than its own underground city with its own zoning laws, when Corcoran ran headfirst into the matter of the JR platforms and the JY platforms.</p>
+<p>It started in Shinjuku Station, a place so large it is less a train station than its own underground city with its own zoning laws, when Corcoran ran headfirst into the matter of the JR platforms and the JY platforms.</p>
 
-  <p>"The Yamanote Line is JR," a station worker told him.</p>
+<p>"The Yamanote Line is JR," a station worker told him. "Okay, cool," Corcoran said. "So where's the JY platform?" "This is the JR platform." "So they're the same?" "Yes." "Then what's JY?" "JR."</p>
 
-  <p>"Okay, cool," Corcoran said. "So where's the JY platform?"</p>
+<p>The white-gloved station worker delivered this with the patience of a man reciting scripture, pointed at a sign, bowed slightly, and walked directly to another tourist already pointing at the same sign. This is, apparently, the system working as intended.</p>
 
-  <p>"This is the JR platform."</p>
+<p>Corcoran eventually reached Ikebukuro after finally grasping that the JY line runs on the JR railway. Whether assigning nearly identical two-letter abbreviations to both the operator and its train lines was meant to help anyone remains unclear.</p>
 
-  <p>"So they're the same?"</p>
+<p>All he wanted was the East Exit. Google Maps said it was five minutes away. Five minutes later, it was still five minutes away. An hour later, still five minutes. By the second hour, Google Maps had stopped giving directions and started making promises it had no intention of keeping, which is when Ikebukuro dropped the pretense of being there to help at all.</p>
 
-  <p>"Yes."</p>
+<blockquote>
+  <p>Google Maps had stopped giving directions and started making promises it had no intention of keeping.</p>
+</blockquote>
 
-  <p>"Then what's JY?"</p>
+<p>A tourist materialized from nowhere, the way they do in this station, and offered a piece of institutional wisdom: the English signs are only for tourists. Corcoran pointed out, reasonably, that he was in fact a tourist. The man said "irregardless" and moved on with his day.</p>
 
-  <p>"JR."</p>
+<p>What followed was a full itinerary — three staircases, two corridors, a passing reference to Sunshine City — capped off with a warning delivered as casually as a weather report: whatever you do, don't use Exit 32. The man then vanished before anyone could ask why, which is the traditional Ikebukuro way of ending a conversation.</p>
 
-  <p>The white-gloved station worker delivered this with the patience of a man reciting scripture, pointed at a sign, bowed slightly, and walked directly to another tourist already pointing at the same sign. This is, apparently, the system working as intended.</p>
+<p>The directions seemed correct, in the sense that they described real, physical locations. Bakery. FamilyMart. Another FamilyMart. Sushi restaurant. None of it was actually getting closer to anything. Corcoran's GPS blue dot drifted straight through a concrete wall, was refreshed, and drifted through the same wall again, confirming that even Google Maps had joined him in being lost.</p>
 
-  <p>Corcoran eventually reached Ikebukuro after finally grasping that the JY line runs on the JR railway. Whether assigning nearly identical two-letter abbreviations to both the operator and its train lines was meant to help anyone remains unclear.</p>
+<p>An older Canadian woman lowered her newspaper just enough to make eye contact. "East Exit?" he asked. "Yeah." "No." "It exists, doesn't it?" "Oh, it's real." "So where is it?" "Not from here." She returned to her newspaper, having said everything that needed saying.</p>
 
-  <p>All he wanted was the East Exit.</p>
+<p>By this point the station had stopped bothering to maintain the illusion that it was a train station. There was a real estate office advertising convenient access to Sunshine City, which is either a joke or a listing — it's genuinely hard to tell. Further in, a kindergarten ran with no windows, no explanation offered, and more unsettlingly, none requested.</p>
 
-  <p>Google Maps said it was five minutes away. Five minutes later, it was still five minutes away. An hour later, still five minutes. By the second hour, Google Maps had stopped giving directions and started making promises it had no intention of keeping, which is when Ikebukuro dropped the pretense of being there to help at all.</p>
+<p>A man carrying groceries confirmed, matter-of-factly, that people lived down here. Asked if he ever left, he simply repeated the word "leave" back, blank and uncomprehending, in the exact same register the station worker had used on the JR/JY platforms — minus the bow.</p>
 
-  <blockquote>
-    <p>Google Maps had stopped giving directions and started making promises it had no intention of keeping.</p>
-  </blockquote>
+<p>Time, it should be noted, does not behave normally inside Ikebukuro. Two hours feel like four. Four feel like six. Six feel like you've started paying rent. Somewhere nearby, a man kept restarting the same thirty seconds of the same J-pop song without ever reaching the chorus, and by the twentieth restart even the song seemed to have given up on finding the East Exit too.</p>
 
-  <p>A tourist materialized from nowhere, the way they do in this station, and offered a piece of institutional wisdom: the English signs are only for tourists.</p>
+<p>The strangest detail, in the end, wasn't the wall-walking GPS or the windowless kindergarten. It was that nobody else down there looked lost. Not confident, not confused — simply there, the way furniture is there.</p>
 
-  <p>Corcoran pointed out, reasonably, that he was in fact a tourist. The man said "irregardless" and moved on with his day.</p>
+<p>Eventually the vortex spit Corcoran back into daylight. A sign read <strong>IKEBUKURO STATION</strong>. Relief arrived, then promptly left again, when it became clear this was not an exit but another entrance. The station had not guided him anywhere. It had quietly folded space until he ended up exactly where he started, which — depending on how you look at it — is either a failure of urban planning or a perfectly executed one.</p>
 
-  <p>What followed was a full itinerary—three staircases, two corridors, a passing reference to Sunshine City—capped off with a warning delivered as casually as a weather report: whatever you do, don't use Exit 32.</p>
+<p>Maybe the East Exit wasn't missing. Maybe the station had simply decided he wasn't ready for it.</p>
 
-  <p>The man then vanished before anyone could ask why, which is the traditional Ikebukuro way of ending a conversation.</p>
+<p>Proof arrived about thirty seconds later, in the form of a backpacker from Washington State striding toward the entrance with the confidence of someone who had watched three YouTube videos on Tokyo transit and considered the matter closed. "Excuse me — you in the Yankees shirt. East Exit?" Corcoran started to answer. She cut him off. "Yeah, I already know the English signs are just for tourists. Just give me the shortcut."</p>
 
-  <p>The directions seemed correct, in the sense that they described real, physical locations.</p>
+<p>He studied her for a second, then made a decision. "Go past the bakery. Hang a left at the FamilyMart. Right after the second staircase, cut through Sunshine City, down one escalator, up another. If you hit another FamilyMart, you've gone too far." A pause, for effect. "Use Exit 32."</p>
 
-  <p>Bakery. FamilyMart. Another FamilyMart. Sushi restaurant.</p>
+<p>She smiled, satisfied. "See? There's always a shortcut." Then, turning back one last time: "Wait — what's the deal with Exit 32?" "You'll see," Corcoran said.</p>
 
-  <p>None of it was actually getting closer to anything. Corcoran's GPS blue dot drifted straight through a concrete wall, was refreshed, and drifted through the same wall again, confirming that even Google Maps had joined him in being lost.</p>
+<p>She disappeared into the station. A few seconds later, another backpacker walked up. "Excuse me—" "East Exit?" Corcoran didn't let him finish. "Bakery. FamilyMart. Another FamilyMart." A pause. "Whatever you do—" "—don't use Exit 32." The backpacker thanked him and disappeared into the station.</p>
 
-  <p>An older Canadian woman lowered her newspaper just enough to make eye contact.</p>
-
-  <p>"East Exit?" he asked.</p>
-
-  <p>"Yeah."</p>
-
-  <p>"No."</p>
-
-  <p>"It exists, doesn't it?"</p>
-
-  <p>"Oh, it's real."</p>
-
-  <p>"So where is it?"</p>
-
-  <p>"Not from here."</p>
-
-  <p>She returned to her newspaper, having said everything that needed saying.</p>
-
-  <p>By this point the station had stopped bothering to maintain the illusion that it was a train station.</p>
-
-  <p>There was a real estate office advertising convenient access to Sunshine City, which is either a joke or a listing—it's genuinely hard to tell.</p>
-
-  <p>Further in, a kindergarten ran with no windows, no explanation offered, and more unsettlingly, none requested.</p>
-
-  <p>A man carrying groceries confirmed, matter-of-factly, that people lived down here. Asked if he ever left, he simply repeated the word "leave" back, blank and uncomprehending, in the exact same register the station worker had used on the JR/JY platforms—minus the bow.</p>
-
-  <p>Time, it should be noted, does not behave normally inside Ikebukuro. Two hours feel like four. Four feel like six. Six feel like you've started paying rent.</p>
-
-  <p>Somewhere nearby, a man kept restarting the same thirty seconds of the same J-pop song without ever reaching the chorus, and by the twentieth restart even the song seemed to have given up on finding the East Exit too.</p>
-
-  <p>The strangest detail, in the end, wasn't the wall-walking GPS or the windowless kindergarten. It was that nobody else down there looked lost.</p>
-
-  <p>Not confident, not confused—simply there, the way furniture is there.</p>
-
-  <p>Eventually the vortex spit Corcoran back into daylight. A sign read <strong>IKEBUKURO STATION</strong>.</p>
-
-  <p>Relief arrived, then promptly left again, when it became clear this was not an exit but another entrance.</p>
-
-  <p>The station had not guided him anywhere. It had quietly folded space until he ended up exactly where he started, which—depending on how you look at it—is either a failure of urban planning or a perfectly executed one.</p>
-
-  <p>Maybe the East Exit wasn't missing. Maybe the station had simply decided he wasn't ready for it.</p>
-
-  <p>Proof arrived about thirty seconds later, in the form of a backpacker from Washington State striding toward the entrance with the confidence of someone who had watched three YouTube videos on Tokyo transit and considered the matter closed.</p>
-
-  <p>"Excuse me—you in the Yankees shirt. East Exit?"</p>
-
-  <p>Corcoran started to answer. She cut him off.</p>
-
-  <p>"Yeah, I already know the English signs are just for tourists. Just give me the shortcut."</p>
-
-  <p>He studied her for a second, then made a decision.</p>
-
-  <p>"Go past the bakery. Hang a left at the FamilyMart. Right after the second staircase, cut through Sunshine City, down one escalator, up another. If you hit another FamilyMart, you've gone too far."</p>
-
-  <p>A pause, for effect.</p>
-
-  <p>"Use Exit 32."</p>
-
-  <p>She smiled, satisfied. "See? There's always a shortcut."</p>
-
-  <p>Then, turning back one last time: "Wait—what's the deal with Exit 32?"</p>
-
-  <p>"You'll see," Corcoran said.</p>
-
-  <p>She disappeared into the station. A few seconds later, another backpacker walked up.</p>
-
-  <p>"Excuse me—"</p>
-
-  <p>"East Exit?" Corcoran didn't let him finish. "Bakery. FamilyMart. Another FamilyMart."</p>
-
-  <p>A pause.</p>
-
-  <p>"Whatever you do—"</p>
-
-  <p>"—don't use Exit 32."</p>
-
-  <p>The backpacker thanked him and disappeared into the station.</p>
-
-  <p>"Irregardless," Corcoran added, to no one, out of habit.</p>
-
-  <p>Corcoran looked up just as another tourist started walking toward him.</p>
+<p>"Irregardless," Corcoran added, to no one, out of habit. Corcoran looked up just as another tourist started walking toward him.</p>
 `,
   },
   {
