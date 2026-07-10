@@ -38,7 +38,7 @@ window.EASTOKYO_ARTICLES = [
 
 <p>A man carrying groceries confirmed, matter-of-factly, that people lived down here. Asked if he ever left, he simply repeated the word "leave" back, blank and uncomprehending, in the exact same register the station worker had used on the JR/JY platforms — minus the bow. Time, it should be noted, does not behave normally inside Ikebukuro. Two hours feel like four. Four feel like six. Six feel like you've started paying rent. Somewhere nearby, a man kept restarting the same thirty seconds of the same J-pop song without ever reaching the chorus, and by the twentieth restart even the song seemed to have given up on finding the East Exit too.</p>
 
-<p>The strangest detail, in the end, wasn't the wall-walking GPS or the windowless kindergarten. It was that nobody else down there looked lost. Not confident, not confused — simply there, the way furniture is there.</p>
+<p>The strangest detail, in the end, wasn't the wall-walking GPS or the windowless kindergarten. It was that nobody else down there looked lost. Not confident or confused — just there, the way wallpaper is there.</p>
 
 <p>Eventually the vortex spit Corcoran back into daylight. A sign read <strong>IKEBUKURO STATION</strong>. Relief arrived, then promptly left again, when it became clear this was not an exit but another entrance. The station had not guided him anywhere. It had quietly folded space until he ended up exactly where he started, which — depending on how you look at it — is either a failure of urban planning or a perfectly executed one.</p>
 
