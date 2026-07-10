@@ -6,8 +6,8 @@ window.EASTOKYO_ARTICLES = [
       "THE EAST EXIT WON",
     slug: "tokyo-polite-standing",
     image: "tokyo-skyline-main.jpg",
-    author: "Eastokyo Staff",
-    date: "2026-07-08",
+    author: "James Simmons",
+    date: "2026-06-08",
     featured: true,
     popular: true,
     readingTime: 7,
@@ -15,9 +15,8 @@ window.EASTOKYO_ARTICLES = [
     excerpt:
       "One guy's search for the East Exit, and how Tokyo's most confusing train station clowned him.",
     body: `
-  <p><strong>By James Simmons, reporting from somewhere inside Ikebukuro Station</strong></p>
-
-<p>Ikebukuro Station serves roughly 2.6 million passengers a day, has 40 exits, and, by Corcoran's count, at least one dimension not listed on any map.</p>
+  
+  <p>Ikebukuro Station serves roughly 2.6 million passengers a day, has 40 exits, and, by Corcoran's count, at least one dimension not listed on any map.</p>
 
 <p>Johnny Corcoran landed in Tokyo acting like he owned the place, which is a classic New Yorker move: half a clue, a hundred and fifty percent confidence, no exceptions made for the world's busiest transit system. That confidence lasted about five minutes, and to its credit, five minutes is longer than expected. It started in Shinjuku Station, a place so large it is less a train station than its own underground city with its own zoning laws, when Corcoran ran headfirst into the matter of the JR platforms and the JY platforms.</p>
 
