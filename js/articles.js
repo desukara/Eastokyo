@@ -48,8 +48,7 @@ window.EASTOKYO_ARTICLES = [
     id: 2,
     section: "Political",
     title:
-      "Committee Forms Subcommittee to Investigate Why Committees Keep Forming",
-    slug: "lawmakers-promise-historic-reform-immediately-after-lunch-possibly-next-fiscal-year",
+      "SUNGLASSES SEE THROUGH THE BS",
     image: "political-meeting.jpg",
     author: "James Simmons",
     date: "2026-05-12",
