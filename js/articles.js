@@ -120,7 +120,7 @@ window.EASTOKYO_ARTICLES = [
 
 <p>She tracked seventeen things per visit, including timing, bow depth in degrees (estimated), and how the receipt was handled. By day six she was grading the clerk's facial expressions on a five-point scale she called the Whitmore Warmth Index. By day nine, that index had a second section in the binder, sorting all social behavior — hers and everyone else's — into three tiers: Questionable, Apologizable, and Unforgivable.</p>
 
-<p>TomoMart corporate declined to identify the employee, saying only that "he has served many customers." The footage shows no meaningful change in his behavior across the eleven visits. It shows her face getting more stern by the day, and, on day nine, a bow to the cashier at Lawson’s after accusing him of being careless about wet floor signs.</p>
+<p>TomoMart corporate declined to identify the employee, saying only that "he has served many customers." The footage shows no meaningful change in his behavior across the eleven visits. It shows Whitmore's face getting more aggressive by the day, and, on day nine, a bow to the cashier at the store after falsely accusing him of being careless about wet floor signs.</p>
 
 <p>A therapist in Portland, asked to review an anonymized version of the spreadsheet for an unrelated segment on travel anxiety, called it "social anxiety pretending to be cultural research." She didn't know whose case she was looking at but has since asked to be kept updated.</p>
 
@@ -134,7 +134,7 @@ window.EASTOKYO_ARTICLES = [
 
 <p>In response to inquiries about why she gave them to a total stranger, she said she gives them to plenty of people. Asked how many, she pulled out a small notebook — kept since 2003 — and read off a tally: 349 people offered the glasses, 217 who took them, 16 who, by her count, gave them back within the hour. Whitmore is the only name with a question mark instead of a return date.</p>
 
-<p>In response to questions about why she was chosen, she said Whitmore had bowed to her four times in the first ninety seconds. Most visitors bow zero to two times before she cuts them off by talking. It was the first four-bow visit in the notebook's twenty-two-year history.</p>
+<p>On the question of why Whitmore was selected, she said Whitmore had bowed to her four times in the first ninety seconds. Most visitors bow zero to two times before she cuts them off by talking. It was the first four-bow visit in the notebook's twenty-two-year history.</p>
 
 <p>She said, when asked directly, that the glasses go opaque for everyone eventually, not just Whitmore — and that it tends to happen fastest for the people checking hardest to see if it's happening.</p>
 
