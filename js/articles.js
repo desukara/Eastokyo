@@ -25,7 +25,7 @@ window.EASTOKYO_ARTICLES = [
 
 <p>A tourist stepped out of a side corridor and offered a piece of institutional wisdom: the English signs are only for tourists. Corcoran pointed out, reasonably, that he was in fact a tourist. The man said "irregardless" and moved on with his day. What followed was a full itinerary — three staircases, two corridors, a passing reference to Sunshine City. He mentioned Exit 32 without changing his blank expression. Whatever you do, he said, don't use Exit 32. The man then vanished before further questions could be asked.</p>
 
-<p>Every landmark existed. None of them led anywhere. Bakery. FamilyMart. Another FamilyMart. Sushi restaurant. None of it got him any closer. Corcoran's GPS blue dot drifted straight through a concrete wall, was refreshed, and drifted through the same wall again. Google Maps was searching for a signal.</p>
+<p>Every landmark existed. Bakery. FamilyMart. Another FamilyMart. Sushi restaurant. None of it got him any closer. Corcoran's GPS blue dot drifted straight through a concrete wall, was refreshed, and drifted through the same wall again. Google Maps was searching for a signal.</p>
 
 <p>An older Canadian woman lowered her newspaper just enough to make eye contact. "East Exit?" he asked. "Yeah." "No." "It exists, doesn't it?" "Oh, it's real." "So where is it?" "Not from here." She returned to her newspaper, having said everything that needed saying.</p>
 
