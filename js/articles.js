@@ -159,7 +159,7 @@ window.EASTOKYO_ARTICLES = [
 <p>Not calling her back.</p>
 
 <blockquote>
-  Satire remains the only public service currently operating ahead of schedule.
+  The hardest audience to stop performing for is the one in your head.
 </blockquote>
 
 <p>Further updates will be issued once the newsroom locates the correct stamp, folder, and emotionally appropriate umbrella.</p>
