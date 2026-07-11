@@ -49,7 +49,7 @@ window.EASTOKYO_ARTICLES = [
     section: "Political",
     title:
       "Committee Forms Subcommittee to Investigate Why Committees Keep Forming",
-    slug: "committee-committee",
+    slug: "lawmakers-promise-historic-reform-immediately-after-lunch-possibly-next-fiscal-year",
     image: "political-meeting.jpg",
     author: "Eastokyo Staff",
     date: "2026-07-08",
@@ -59,7 +59,111 @@ window.EASTOKYO_ARTICLES = [
     tags: ["committee", "political", "satire"],
     excerpt:
       "The first meeting has been postponed until enough committees can review it.",
-    body: "<p>Eastokyo correspondents confirmed the situation after several minutes of grave observation, two vending-machine coffees, and one unnecessary laminated notice.</p>\n    <p>The story, titled <strong>Committee Forms Subcommittee to Investigate Why Committees Keep Forming</strong>, has already prompted officials, commuters, and at least one deeply invested mascot to request a calmer explanation.</p>\n    <p>Analysts described the development as extremely Tokyo: practical, ceremonial, and somehow already scheduled for a follow-up meeting.</p>\n    <blockquote>\n      Satire remains the only public service currently operating ahead of schedule.\n    </blockquote>\n    <p>Further updates will be issued once the newsroom locates the correct stamp, folder, and emotionally appropriate umbrella.</p>",
+    body: `
+<p>I did not intend to spend four months on this story. It began as six hundred words about a tourist, an unusually detailed vacation binder, and a funny pair of sunglasses. It ends as a case file. What follows was assembled from forty-one interviews, security footage from a shrine, one 312-page binder provided with the subject's permission, a convenience-store loyalty record that became unexpectedly relevant to the investigation, and several hours of video supplied by the subject's travel companion, Regina Smith. Smith declined to be quoted directly but did not decline to be interviewed. Nobody agrees on every detail. Everyone agrees that Claire Whitmore was the most polite person they had ever met, and that this was, somehow, the problem.</p>
+
+<h2>I. The Binder</h2>
+
+<p>Claire Whitmore arrived at Haneda Airport carrying what she called, without irony or apology, her Japan Operational Procedures. The binder was 312 pages long, divided into thirteen behavioral sections, and reinforced with plastic tabs designed to survive weather, panic, and repeated consultation in crowded public spaces. It contained escalator-positioning diagrams, convenience-store payment sequences, emergency bow contingencies, train-platform flowcharts, and an appendix titled Situations in Which It Is Better to Shut Up Than Risk Being Rude. The first page stated the objective in capital letters: CREATE NO SOCIAL FRICTION.</p>
+
+<p>Her family described the binder as entirely consistent with her character. There had been German Operational Procedures in 2019, discontinued after an unresolved disagreement over proper handshake firmness, and Swedish Operational Procedures in 2021, abandoned when Whitmore could not obtain a reliable answer regarding the socially acceptable duration of eye contact during a toast. Three acquaintances recalled seeing the same sentence highlighted in multiple binders: Observe what others are doing before doing anything yourself. To Whitmore, this was not travel advice. It was a governing philosophy.</p>
+
+<p>She would not enter a café until she had watched at least three customers enter ahead of her. Employees at a bakery in Kichijoji remembered a woman standing outside their door for twenty-eight minutes, studying the handle, the line, and the location of the tray return. They assumed she was waiting for someone. Her notes from that morning read: Bakery protocol remains inconsistent. At a nearby crossing, she noticed that nobody was pressing the pedestrian signal button and concluded there must be a local custom against touching it. She waited through three light cycles. A child walked over, struck the button with both hands, and returned to eating an ice cream cone. Whitmore recorded: Children appear exempt from signaling etiquette. Research inconclusive.</p>
+
+<p>By the third day, the binder was no longer helping her navigate Japan. It was helping her document every possible way she might fail to navigate Japan correctly. She began recording the angle of her bows, the duration of clerks' pauses, and whether strangers' smiles appeared spontaneous or socially required. Smith's video from that period shows Whitmore entering and leaving the same hotel lobby four times because she could not determine whether the receptionist expected a second acknowledgment after the first greeting. The receptionist, when contacted, did not remember her.</p>
+
+<h2>II. The Groundskeeper</h2>
+
+<p>On the fourth morning, Whitmore visited Kagehara Shrine and found a groundskeeper sweeping near the purification basin. The groundskeeper, who would identify herself only as being "old enough," was smoking a cigarette and reading her horoscope. Believing she had interrupted a sacred or private moment, Whitmore moved quietly to one side and waited. After approximately two minutes, the groundskeeper looked up and said, "You're blocking the breeze."</p>
+
+<p>Whitmore apologized and bowed. The groundskeeper waved her away. Whitmore interpreted the gesture as evidence that the first apology had been insufficient and bowed again, lower this time. According to Whitmore, the groundskeeper sighed and told her that Americans seemed to believe respect could be measured by the number and depth of their bows. "It doesn't work like a vending machine," she reportedly said. "You don't put in three bows and get enlightenment."</p>
+
+<p>What happened next depends on whom you ask. Whitmore maintains that the groundskeeper removed a pair of oversized black sunglasses and said they were magic. More specifically, she claims the woman said the glasses showed people as they really were and had developed the general opinion that most people were full of shit. When contacted for this story, the groundskeeper confirmed only that she had given a tourist her sunglasses because the tourist asked politely and she wanted to finish reading her horoscope in peace. Neither party disputes that Whitmore accepted them.</p>
+
+<p>The glasses were inexpensive-looking, with thick black frames and lenses dark enough to conceal the wearer's eyes completely. There was no visible brand name. Smith filmed Whitmore turning them over in her hands, asking whether accepting them might itself be rude, and consulting the binder for a section on unsolicited ceremonial objects. No such section existed. Whitmore put them on.</p>
+
+<h2>III. The Officer, the Biker, and the First Two Data Points</h2>
+
+<p>Her first recorded use of the glasses was on a police officer directing traffic outside the shrine. Without them, witnesses described a man entirely in command of the intersection, moving taxis, pedestrians, and delivery bicycles with small, decisive gestures. Through the glasses, Whitmore said she saw a fourteen-year-old version of the same officer standing inside the uniform and repeating one sentence to himself: Please don't let me get robbed today.</p>
+
+<p>She removed the glasses. The officer remained calm and authoritative. She put them back on. The frightened teenager returned. Her notes read: Checked twice. Same result both times. Possible age regression. Possible symbolic projection. Do not stare.</p>
+
+<p>The second subject was a heavily tattooed man parking a motorcycle near the shrine gate, someone Whitmore later admitted she had been avoiding because she was uncertain whether prolonged eye contact might be interpreted as judgment. Through the glasses, the man appeared to be an elderly woman explaining the light and watering requirements of African violets. Whitmore laughed out loud. The motorcyclist looked at her. She bowed twice in rapid succession.</p>
+
+<p>At that moment, according to both Whitmore and Smith's footage, the lenses turned completely opaque. Two words appeared across them in white capital letters: STOP PERFORMING.</p>
+
+<p>Whitmore removed the glasses so quickly that she nearly dropped them. She spent the next forty minutes trying to determine whether the message referred to the laugh, the bows, the avoidance of eye contact, or the decision to wear the glasses in public. She opened a new section in the binder and labeled it Anomalies. By lunch, the section contained seventeen pages.</p>
+
+<h2>IV. The TomoMart Ledger</h2>
+
+<p>The case might have ended at the shrine had Whitmore not begun visiting the same TomoMart convenience store every morning for eleven consecutive days. She purchased the same salmon rice ball at increasingly precise times in an attempt to determine how customers bought inexpensive food without appearing hurried, selfish, indecisive, or insufficiently grateful. She tracked seventeen variables per visit, including queue distance, tray use, payment timing, bow depth, receipt handling, eye contact, bag refusal, and whether the cashier's expression changed after she spoke Japanese.</p>
+
+<p>By the sixth visit, she had begun grading the clerk's facial expressions on a five-point scale she called the Whitmore Warmth Index. A neutral expression received a three. A visible smile received a four unless the smile appeared professionally mandated, in which case it returned to a three. A sigh counted as a two unless it occurred after another customer's difficult transaction, in which case Whitmore marked it Not Applicable. By the ninth visit, the index had expanded into a classification system for all observed social behavior: Questionable, Apologizable, and Unforgivable.</p>
+
+<p>TomoMart corporate declined to identify the employee, saying only that he had served many customers and did not remember this particular one. Security footage shows no meaningful change in his behavior across the eleven visits. It does show Whitmore becoming increasingly severe. On day two, she smiles and leaves. On day five, she hesitates over the receipt tray. On day seven, she returns to the entrance after leaving because she believes she may have exited too abruptly. On day nine, she stands outside for six minutes entering data into the binder while the clerk serves twenty-three other customers without incident.</p>
+
+<p>A therapist in Portland reviewed an anonymized portion of the spreadsheet for what she believed was an unrelated interview about travel anxiety. She described it as "social anxiety disguised as cultural research." She did not know whose records she was reading and has since asked to receive updates. Whitmore rejected the description, noting in the binder's margin that a culturally responsible traveler should distinguish anxiety from preparation. Below that sentence, in different ink, she added: Distinction becoming difficult.</p>
+
+<p>One evening, Smith recorded Whitmore rehearsing a single sentence in the hotel mirror: "No, after you." She repeated it with different levels of warmth, humility, and firmness for nineteen minutes before using it downstairs with a waiter approaching the same doorway. The waiter stepped aside. Whitmore stepped aside. Both waited. The exchange lasted eleven seconds. The waiter did not remember it when contacted months later. Smith has watched the recording eleven times.</p>
+
+<p>Smith also tried the sunglasses on once. She looked at her reflection in the hotel television while the screen was turned off. For four seconds, the lenses showed her face without alteration. They then went opaque and displayed the same message: STOP PERFORMING. Smith removed them and refused to wear them again.</p>
+
+<h2>V. Escalation</h2>
+
+<p>Whitmore continued using the glasses throughout Tokyo. A businessman asleep on the train appeared, through the lenses, as a small dog pretending not to be frightened by thunder. A fashionable couple in Omotesando appeared as two exhausted office workers carrying cardboard cutouts of themselves. A restaurant host who seemed impatient appeared as a man mentally repeating the names of every table because the reservation system had crashed ten minutes earlier.</p>
+
+<p>The results did not make Whitmore more compassionate. At least not immediately. They made her more methodical. She began comparing what people displayed publicly with what the glasses appeared to reveal privately. She created columns for External Presentation, Internal State, Social Threat, and Recommended Response. Her notes grew denser. The glasses went opaque more frequently.</p>
+
+<p>STOP PERFORMING appeared when she bowed to a woman whose umbrella she had accidentally touched. It appeared when she apologized to a vending machine after pressing the wrong button. It appeared while she waited for a restaurant employee to finish saying that no apology was necessary. On one occasion, the message appeared before she had done anything at all.</p>
+
+<p>This last incident disturbed her most. She was standing alone in an elevator, preparing to greet whoever might be waiting when the doors opened. Before the elevator reached the lobby, the lenses turned black. Whitmore later wrote: Device may now be anticipating behavior. Alternative explanation: behavior begins before visible action. Underneath, she drew a line and wrote: How far before?</p>
+
+<p>Smith says the trip changed after that. Whitmore stopped asking how to behave correctly and began asking whether every attempt to behave correctly was itself a performance. She started declining help because she feared appearing eager to demonstrate gratitude. Then she accepted help because declining might appear proud. She stopped bowing, worried that not bowing was an aggressive effort to appear relaxed, and resumed bowing with movements so small they resembled involuntary nods.</p>
+
+<p>At dinner on the twelfth night, Smith asked her to take off the glasses and leave them in the hotel room. Whitmore agreed immediately, then spent ten minutes deciding whether immediate agreement suggested performative openness to criticism. The glasses were already folded on the table. Neither woman remembers placing them there.</p>
+
+<h2>VI. What the Groundskeeper Says Now</h2>
+
+<p>I located the groundskeeper again in March. She was still at Kagehara Shrine, sweeping the same area near the purification basin. She no longer had the sunglasses and said Whitmore had never returned them. When asked why she would give such an object to a total stranger, she replied that she gave them to plenty of people.</p>
+
+<p>She then removed a small notebook from her coat. The notebook contained a tally dating back to 2003: 349 people offered the glasses, 217 who accepted them, and 16 who returned them within the first hour. Most entries contained a date, a brief description, and a mark indicating how long the person kept them. Whitmore's entry was the only one followed by a question mark instead of a return date.</p>
+
+<p>The groundskeeper said Whitmore had been selected because she bowed four times in the first ninety seconds. Most visitors, she explained, bowed between zero and two times before she interrupted them by speaking. Whitmore's was the first recorded four-bow encounter in the notebook's history.</p>
+
+<p>Asked directly whether the glasses were supernatural, the groundskeeper shrugged. Asked whether the people seen through them were real, she said that depended on which people the question referred to. Asked what STOP PERFORMING meant, she returned to sweeping and said, "It means stop performing."</p>
+
+<p>She added that the glasses eventually went opaque for everyone, not just Whitmore. It happened fastest, she said, to the people who checked most often to see whether it was happening. Then she asked whether the interview was over because the wind had changed direction and I was standing in the wrong place.</p>
+
+<h2>VII. The Final Morning</h2>
+
+<p>Whitmore returned to the United States on schedule. Hotel records show that she filed a lost-item report on her final morning. In the space provided for the description, she wrote: Large black sunglasses. Sentimental value. Not exactly mine to keep anyway. Housekeeping searched the room and reported that no matching item had been found. The incident log marked the case closed. Whitmore requested a copy of the log for her personal records and was denied.</p>
+
+<p>Airport footage supplied by Smith shows Whitmore at the check-in counter without the glasses. She appears calmer than in earlier recordings. She accepts her boarding documents, thanks the employee once, and walks away without checking whether her gratitude was received correctly. Thirty seconds later, she returns to ask whether she thanked the employee too enthusiastically. The employee tells her she was fine. Whitmore apologizes for asking.</p>
+
+<p>Her family says the Japan Operational Procedures binder has been retired, though Whitmore declines to say whether it was destroyed or replaced. She no longer carries written instructions while traveling. She does, however, keep a small notebook in her bag. She says it is for ordinary reminders.</p>
+
+<p>Two weeks after returning home, she filmed herself adjusting her collar in the reflection of a dark television screen. She checked it once, then twice, then a third time. She stood perfectly still afterward, looking into the glass as though waiting for something to appear. The room was empty. She sent the recording to Smith without a caption. Smith did not reply.</p>
+
+<h2>VIII. Where This Leaves Us</h2>
+
+<p>This article required forty-one interviews, one incident report, a spreadsheet, a 312-page binder, a corporate statement, several months of correspondence, and two visits to a shrine. I did not consider that number unusual until I wrote it down.</p>
+
+<p>Since the first version of this story circulated among editors, the therapist's phrase "Whitmore's Syndrome" has appeared on at least two expatriate forums as shorthand for the compulsive fear of being observed doing a foreign country incorrectly. It has been used to describe eleven tourists, three long-term residents, and one discussion-board participant who diagnosed the condition in their own comment before anyone else could accuse them of it.</p>
+
+<p>Whitmore dislikes the phrase. She says it turns a serious concern about respect into a joke about nervous tourists. She is probably right. She also requested that I clarify that she did not bow four times intentionally, that the TomoMart visits were not conducted as a formal experiment, and that the binder's use of the word Unforgivable was provisional rather than moral. She sent these clarifications in a fourteen-page document with numbered headings.</p>
+
+<p>Walking away from my final interview with her, I caught my reflection in the window of a parked car. My collar was folded inward. I adjusted it, checked the result, and checked it again. For a moment, I considered using the opposite window to confirm that the first reflection had been accurate.</p>
+
+<p>Then the words arrived in her voice.</p>
+
+<p>Not calling her back.</p>
+
+<blockquote>
+  Satire remains the only public service currently operating ahead of schedule.
+</blockquote>
+
+<p>Further updates will be issued once the newsroom locates the correct stamp, folder, and emotionally appropriate umbrella.</p>
+`,
   },
   {
     id: 3,
@@ -244,7 +348,7 @@ window.EASTOKYO_ARTICLES = [
     section: "Political",
     title:
       "Lawmakers Promise Historic Reform Immediately After Lunch, Possibly Next Fiscal Year",
-    slug: "lawmakers-promise-historic-reform-immediately-after-lunch-possibly-next-fiscal-year",
+    slug: "year",
     image: "diet-building.jpg",
     author: "Eastokyo Staff",
     date: "2026-07-08",
