@@ -86,7 +86,7 @@ window.EASTOKYO_ARTICLES = [
 
 <h2>II. The Priestess</h2>
 
-<p>On the fourth morning, she visited Kagehara Shrine and found a groundskeeper sweeping near the purification basin. The groundskeeper, who would only say she was "old enough," was smoking a cigarette and reading her horoscope.</p>
+<p>On the fourth morning, she visited Kagehara Shrine and found a groundskeeper near the purification basin. The groundskeeper, who would only say she was "old enough," was smoking a cigarette and reading her horoscope.</p>
 
 <p>Believing she'd interrupted a sacred pause, Whitmore waited respectfully to one side.</p>
 
