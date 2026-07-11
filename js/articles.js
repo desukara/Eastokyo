@@ -29,7 +29,7 @@ window.EASTOKYO_ARTICLES = [
 
 <p>An older Canadian woman lowered her newspaper just enough to make eye contact. "East Exit?" he asked. "Yeah." "No." "It exists, doesn't it?" "Oh, it's real." "So where is it?" "Not from here." She returned to her newspaper, having said everything that needed saying.</p>
 
-<p>The station had stopped pretending to be a train station. There was a real estate office advertising convenient access to Sunshine City. Further in, a kindergarten ran with no windows, no explanation offered, and more unsettlingly, none requested. A man carrying groceries confirmed, in the tone of someone confirming the weather, that people lived down here. Asked if he ever left, he repeated the word "leave" back, blank and uncomprehending, in the exact same register the station worker had used on the JR/JY platforms — minus the bow.</p>
+<p>The station had stopped pretending to be a train station. There was a real estate office advertising convenient access to Sunshine City. Further in, a kindergarten ran with no windows, no explanation offered, and more unsettlingly, none requested. A man carrying groceries confirmed, in a flat tone of voice, that people lived down here. Asked if he ever left, he repeated the word "leave" back, blank and uncomprehending, in the exact same register the station worker had used on the JR/JY platforms — minus the bow.</p>
 
 <p>Time inside Ikebukuro follows local conditions. Two hours feel like four. Four feel like six. Six feel like you've started paying rent. Somewhere nearby, a man kept restarting the same thirty seconds of the same J-pop song without ever reaching the chorus, and by the twentieth restart even the song seemed to have given up on finding the East Exit too.</p>
 
