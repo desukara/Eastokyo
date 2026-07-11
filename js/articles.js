@@ -49,6 +49,7 @@ window.EASTOKYO_ARTICLES = [
     section: "Political",
     title:
       "SUNGLASSES SEE THROUGH THE BS",
+      slug: "lawmakers-promise-historic-reform-immediately-after-lunch-possibly-next-fiscal-year",
     image: "political-meeting.jpg",
     author: "James Simmons",
     date: "2026-05-12",
