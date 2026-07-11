@@ -51,14 +51,14 @@ window.EASTOKYO_ARTICLES = [
       "Committee Forms Subcommittee to Investigate Why Committees Keep Forming",
     slug: "lawmakers-promise-historic-reform-immediately-after-lunch-possibly-next-fiscal-year",
     image: "political-meeting.jpg",
-    author: "Eastokyo Staff",
-    date: "2026-07-08",
+    author: "James Simmons",
+    date: "2026-05-12",
     featured: false,
     popular: true,
     readingTime: 5,
     tags: ["committee", "political", "satire"],
     excerpt:
-      "The first meeting has been postponed until enough committees can review it.",
+      "She traveled to Japan determined to create absolutely no social friction. Instead, she built a 312-page operating manual, graded convenience-store cashiers, accepted a mysterious pair of sunglasses from a shrine groundskeeper, and slowly discovered that nobody had been judging her except herself.",
     body: `
 <p>I did not intend to spend four months on this story. It began as six hundred words about a tourist, an unusually detailed vacation binder, and a funny pair of sunglasses. It ends as a case file. What follows was assembled from forty-one interviews, security footage from a shrine, one 312-page binder provided with the subject's permission, a convenience-store loyalty record that became unexpectedly relevant to the investigation, and several hours of video supplied by the subject's travel companion, Regina Smith. Smith declined to be quoted directly but did not decline to be interviewed. Nobody agrees on every detail. Everyone agrees that Claire Whitmore was the most polite person they had ever met, and that this was, somehow, the problem.</p>
 
