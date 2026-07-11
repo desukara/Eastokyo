@@ -162,7 +162,7 @@ window.EASTOKYO_ARTICLES = [
   The hardest audience to stop performing for is the one in your head.
 </blockquote>
 
-<p>Further updates will be issued once the newsroom locates the correct stamp, folder, and emotionally appropriate umbrella.</p>
+<p>No journalists were emotionally prepared during the reporting of this story.</p>
 `,
   },
   {
