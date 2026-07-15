@@ -2,114 +2,217 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta
       name="description"
-      content="Eastokyo Travel Magazine — stories, neighborhoods, food, culture, and hidden corners of East Tokyo. Coming soon."
+      content="Eastokyo Travel Magazine — long-form travel journalism, photography, and stories from Tokyo."
     />
-    <title>Eastokyo Travel Magazine — Coming Soon</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
+    <title>Eastokyo Travel Magazine</title>
 
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
+
   <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="logo" href="#" aria-label="Eastokyo home">
-          <span class="logo-mark">東</span>
-          <span class="logo-text">EASTOKYO</span>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="site-shell site-header__inner">
+        <a
+          class="masthead"
+          href="index.html"
+          aria-label="Eastokyo Travel Magazine homepage"
+        >
+          <span class="masthead__name">EASTOKYO</span>
+          <span class="masthead__descriptor">Travel Magazine</span>
         </a>
 
-        <button
-          class="sound-toggle"
-          id="sound-toggle"
-          type="button"
-          aria-pressed="false"
-        >
-          <span class="sound-dot"></span>
-          Tokyo ambience
-        </button>
-      </header>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <a href="#cover-story">Cover Story</a>
+          <a href="#latest-stories">Stories</a>
+          <a href="#about-eastokyo">About</a>
+        </nav>
+      </div>
+    </header>
 
-      <main class="hero">
-        <div class="hero-visual" aria-hidden="true">
-          <div class="sun"></div>
-          <div class="grid"></div>
-          <div class="train-line train-line-one"></div>
-          <div class="train-line train-line-two"></div>
+    <main id="main-content">
+      <section
+        class="cover-story"
+        id="cover-story"
+        aria-labelledby="cover-story-title"
+      >
+        <div class="site-shell cover-story__layout">
+          <a
+            class="cover-story__media"
+            href="article-01.html"
+            aria-label="Read the cover story"
+          >
+            <div
+              class="image-placeholder image-placeholder--cover"
+              role="img"
+              aria-label="Cover story photograph placeholder"
+            >
+              <span>Cover Photograph</span>
+            </div>
+          </a>
 
-          <div class="city city-back">
-            <span></span><span></span><span></span><span></span><span></span>
+          <div class="cover-story__content">
+            <p class="story-label">Cover Story</p>
+
+            <h1 id="cover-story-title">
+              <a href="article-01.html">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              </a>
+            </h1>
+
+            <p class="cover-story__standfirst">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <a class="story-link" href="article-01.html">Read the story</a>
           </div>
+        </div>
+      </section>
 
-          <div class="city city-front">
-            <span></span><span></span><span></span><span></span><span></span>
+      <section
+        class="latest-stories"
+        id="latest-stories"
+        aria-labelledby="latest-stories-title"
+      >
+        <div class="site-shell">
+          <header class="section-heading">
+            <p class="section-heading__label">More from Eastokyo</p>
+
+            <h2 id="latest-stories-title">Stories</h2>
+          </header>
+
+          <div class="story-grid">
+            <article class="story-card">
+              <a
+                class="story-card__media"
+                href="article-02.html"
+                aria-label="Open story two"
+              >
+                <div
+                  class="image-placeholder image-placeholder--story"
+                  role="img"
+                  aria-label="Story photograph placeholder"
+                >
+                  <span>Story Photograph</span>
+                </div>
+              </a>
+
+              <div class="story-card__content">
+                <h3>
+                  <a href="article-02.html">Lorem ipsum dolor sit amet</a>
+                </h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <a
+                class="story-card__media"
+                href="article-03.html"
+                aria-label="Open story three"
+              >
+                <div
+                  class="image-placeholder image-placeholder--story"
+                  role="img"
+                  aria-label="Story photograph placeholder"
+                >
+                  <span>Story Photograph</span>
+                </div>
+              </a>
+
+              <div class="story-card__content">
+                <h3>
+                  <a href="article-03.html">
+                    Consectetur adipiscing elit sed do
+                  </a>
+                </h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card">
+              <a
+                class="story-card__media"
+                href="article-04.html"
+                aria-label="Open story four"
+              >
+                <div
+                  class="image-placeholder image-placeholder--story"
+                  role="img"
+                  aria-label="Story photograph placeholder"
+                >
+                  <span>Story Photograph</span>
+                </div>
+              </a>
+
+              <div class="story-card__content">
+                <h3>
+                  <a href="article-04.html">
+                    Eiusmod tempor incididunt ut labore
+                  </a>
+                </h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor.
+                </p>
+              </div>
+            </article>
           </div>
+        </div>
+      </section>
 
-          <div class="lantern lantern-one">旅</div>
-          <div class="lantern lantern-two">東京</div>
+      <section
+        class="about-strip"
+        id="about-eastokyo"
+        aria-labelledby="about-title"
+      >
+        <div class="site-shell about-strip__inner">
+          <p class="story-label">About the Magazine</p>
+
+          <h2 id="about-title">
+            Long-form travel journalism with Tokyo at its center.
+          </h2>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-shell site-footer__inner">
+        <div class="site-footer__masthead">
+          <p class="site-footer__name">EASTOKYO</p>
+
+          <p class="site-footer__descriptor">Travel Magazine</p>
         </div>
 
-        <section class="hero-content">
-          <p class="eyebrow">Independent travel magazine · Tokyo, Japan</p>
-
-          <h1>
-            Discover the
-            <span>other side of Tokyo.</span>
-          </h1>
-
-          <p class="intro">
-            Eastokyo is a new travel magazine exploring the neighborhoods,
-            people, food, design, and everyday magic of Tokyo’s eastern side.
-          </p>
-
-          <div class="coming-soon">
-            <span class="line"></span>
-            <strong>Coming soon</strong>
-            <span class="line"></span>
-          </div>
-
-          <form class="signup-form" id="signup-form">
-            <label class="sr-only" for="email">Email address</label>
-            <div class="input-wrap">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Your email address"
-                autocomplete="email"
-                required
-              />
-              <button type="submit">Join the first issue</button>
-            </div>
-            <p class="form-message" id="form-message" aria-live="polite"></p>
-          </form>
-
-          <div class="topics" aria-label="Magazine topics">
-            <span>Neighborhoods</span>
-            <span>Food</span>
-            <span>Culture</span>
-            <span>Design</span>
-            <span>Hidden Tokyo</span>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <p>Eastokyo Travel Magazine</p>
-        <p>Tokyo stories, east of the ordinary.</p>
-        <p>© <span id="year"></span> eastokyo.com</p>
-      </footer>
-    </div>
-
-    <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
-
-    <script src="script.js"></script>
+        <p class="site-footer__copyright">
+          &copy;
+          <span id="current-year">2026</span>
+          Eastokyo Travel Magazine.
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
