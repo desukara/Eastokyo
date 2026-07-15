@@ -1,2 +1,0 @@
-# Eastokyo
-Created with CodeSandbox
