@@ -882,8 +882,8 @@ a {
 }
 
 .image-placeholder--article-hero {
+  width: 100%;
   aspect-ratio: 4 / 5;
-  min-height: 24rem;
 }
 
 .article-hero__figure .image-placeholder {
@@ -1427,5 +1427,20 @@ a {
 
   .section-heading__label {
     margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 699px) {
+  .article-hero__figure,
+  .article-figure,
+  .article-spread,
+  .story-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    min-width: 0;
   }
 }
