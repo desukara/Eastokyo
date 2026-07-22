@@ -1,1 +1,50 @@
 /* Homepage-specific composition and presentation. */
+
+.feature-preview__media {
+  display: grid;
+  place-items: center;
+  min-height: clamp(20rem, 52vw, 42rem);
+  margin: 0;
+  padding: clamp(2rem, 6vw, 5rem);
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(243, 184, 63, 0.9), transparent 30%),
+    linear-gradient(135deg, var(--carmine), var(--terracotta) 54%, var(--cobalt));
+  isolation: isolate;
+}
+
+.feature-preview__mark {
+  position: relative;
+  z-index: 1;
+  width: min(76%, 34rem);
+  height: auto;
+  filter: drop-shadow(0 1.4rem 2.4rem rgba(18, 15, 13, 0.24));
+}
+
+.feature-preview__media-label {
+  position: absolute;
+  left: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+  max-width: 24ch;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid currentColor;
+  color: var(--paper-light);
+  background: rgba(23, 23, 23, 0.88);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+@media (max-width: 42rem) {
+  .feature-preview__media {
+    min-height: 22rem;
+  }
+
+  .feature-preview__mark {
+    width: min(88%, 24rem);
+  }
+}
