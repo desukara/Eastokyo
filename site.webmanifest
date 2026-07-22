@@ -1,0 +1,11 @@
+{
+  "name": "Eastokyo",
+  "short_name": "Eastokyo",
+  "description": "Photography and stories from East Tokyo.",
+  "lang": "en",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4ecdf",
+  "theme_color": "#171717",
+  "icons": []
+}
