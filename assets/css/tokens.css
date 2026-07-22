@@ -1,3 +1,80 @@
 :root {
-  /* Eastokyo design tokens will be defined during the visual redesign. */
+  /* Core palette: warm, expressive, editorial. */
+  --color-paper: #f3e6d2;
+  --color-paper-soft: #fbf4e8;
+  --color-paper-deep: #dfc8a7;
+  --color-ink: #171313;
+  --color-ink-soft: #463c39;
+  --color-muted: #74655f;
+
+  --color-carmine: #c82d3f;
+  --color-vermilion: #e24a2a;
+  --color-terracotta: #bb593f;
+  --color-saffron: #e6a51f;
+  --color-ochre: #bd7a20;
+  --color-cobalt: #2252a3;
+  --color-emerald: #16705f;
+  --color-midnight: #182743;
+
+  --color-rule: rgba(23, 19, 19, 0.28);
+  --color-rule-strong: rgba(23, 19, 19, 0.72);
+  --color-focus: var(--color-cobalt);
+
+  /* Compatibility aliases for the current prototype. */
+  --paper: var(--color-paper);
+  --paper-light: var(--color-paper-soft);
+  --paper-deep: var(--color-paper-deep);
+  --ink: var(--color-ink);
+  --ink-soft: var(--color-ink-soft);
+  --muted: var(--color-muted);
+  --rule: var(--color-rule);
+  --rule-strong: var(--color-rule-strong);
+  --vermilion: var(--color-vermilion);
+  --vermilion-deep: var(--color-carmine);
+  --indigo: var(--color-midnight);
+  --gold: var(--color-saffron);
+
+  /* Typography: bold sans display, elegant serif reading. */
+  --font-display: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: clamp(2.5rem, 7vw, 6rem);
+  --font-size-display: clamp(4rem, 15vw, 12rem);
+
+  --line-height-tight: 0.88;
+  --line-height-heading: 0.98;
+  --line-height-body: 1.65;
+
+  --letter-spacing-tight: -0.055em;
+  --letter-spacing-wide: 0.14em;
+
+  /* Layout and rhythm. */
+  --page-max: 90rem;
+  --reading-max: 68ch;
+  --gutter: clamp(1rem, 3vw, 2.5rem);
+
+  --space-1: 0.4rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4.5rem;
+  --space-8: 6rem;
+  --space-9: 9rem;
+
+  --radius-sm: 0.2rem;
+  --radius-round: 999px;
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-precise: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-medium: 420ms;
+  --duration-slow: 800ms;
 }
