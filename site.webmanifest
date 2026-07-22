@@ -1,5 +1,5 @@
 {
-  "name": "Eastokyo",
+  "name": "Eastokyo Magazine",
   "short_name": "Eastokyo",
   "description": "Photography and stories from East Tokyo.",
   "lang": "en",
@@ -7,5 +7,12 @@
   "display": "standalone",
   "background_color": "#f4ecdf",
   "theme_color": "#171717",
-  "icons": []
+  "icons": [
+    {
+      "src": "assets/images/brand/eastokyo-crow.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
 }
