@@ -1,7 +1,14 @@
 @import url("../../style.css");
+@import url("./tokens.css");
+@import url("./components.css");
+@import url("./home.css");
+@import url("./utilities.css");
 
 /*
- * Temporary compatibility entry point.
- * Existing styles remain intact at the repository root until the redesign
- * deliberately separates global, component, homepage, and story rules.
+ * Eastokyo's CSS entry point.
+ *
+ * The original root stylesheet is imported first for compatibility while its
+ * rules are deliberately migrated into the new system. Design tokens and the
+ * new modular stylesheets load afterward so the redesign can progress without
+ * breaking the existing prototype.
  */
