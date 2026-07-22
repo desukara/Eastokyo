@@ -1,0 +1,7 @@
+@import url("../../style.css");
+
+/*
+ * Temporary compatibility entry point.
+ * Existing styles remain intact at the repository root until the redesign
+ * deliberately separates global, component, homepage, and story rules.
+ */
