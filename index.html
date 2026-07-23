@@ -17,7 +17,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=6" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=6" />
     <link rel="manifest" href="site.webmanifest?v=3" />
-    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/global.css?v=7" />
     <script type="module" src="assets/js/main.js"></script>
   </head>
 
@@ -46,8 +46,8 @@
         </a>
 
         <nav class="primary-nav" aria-label="Primary navigation">
-          <a href="#introduction">Introduction</a>
-          <a href="#first-story">First Story</a>
+          <a href="#issue-zero">Issue Zero</a>
+          <a href="#stories">Stories</a>
           <a href="#about-eastokyo">About</a>
         </nav>
       </div>
@@ -56,26 +56,27 @@
     <main id="main-content">
       <section
         class="home-intro"
-        id="introduction"
+        id="issue-zero"
         aria-labelledby="home-intro-title"
       >
         <div class="site-shell home-intro__layout">
           <div class="home-intro__heading">
-            <p class="section-kicker">An independent publication</p>
+            <p class="section-kicker">Issue Zero · East Tokyo</p>
 
             <h1 id="home-intro-title">
-              Photography and stories from East Tokyo.
+              Photography and stories from the city east of its center.
             </h1>
           </div>
 
           <div class="home-intro__statement">
             <p>
-              Eastokyo is a magazine about the people, places, streets, and
-              everyday life of the city east of its center.
+              Eastokyo is an independent magazine about the people, places,
+              streets, and everyday life of East Tokyo.
             </p>
 
             <p>
-              It looks closely, stays awhile, and tells one story properly.
+              We look closely, stay awhile, and tell local stories with patience,
+              original photography, and a strong sense of place.
             </p>
           </div>
         </div>
@@ -83,7 +84,6 @@
 
       <section
         class="feature-preview"
-        id="first-story"
         aria-labelledby="feature-preview-title"
       >
         <div class="site-shell feature-preview__layout">
@@ -96,24 +96,70 @@
               height="256"
             />
             <figcaption class="feature-preview__media-label">
-              Eastokyo Magazine — first feature in production
+              Eastokyo Magazine · Issue Zero
             </figcaption>
           </figure>
 
           <div class="feature-preview__content">
-            <p class="section-kicker">The first feature</p>
+            <p class="section-kicker">The opening edition</p>
 
-            <h2 id="feature-preview-title">The opening story is being made.</h2>
+            <h2 id="feature-preview-title">A closer look at East Tokyo.</h2>
 
             <p class="feature-preview__standfirst">
-              Eastokyo will launch with one complete long-form feature, built
-              around original photography and careful reporting from East Tokyo.
+              Issue Zero brings together field notes, photographic essays, and
+              long-form reporting from neighborhoods too often reduced to a stop
+              on somebody else’s itinerary.
             </p>
 
             <p class="feature-preview__status" aria-label="Publication status">
-              <span>Status</span>
-              In production
+              <span>Edition</span>
+              Preview release
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="story-preview" id="stories" aria-labelledby="stories-title">
+        <div class="site-shell">
+          <header class="section-heading story-preview__heading">
+            <p class="section-heading__label">From Issue Zero</p>
+            <h2 id="stories-title">Three stories in development.</h2>
+            <p>
+              Editorial previews from the first Eastokyo edition. Full features
+              will be published with original reporting and photography.
+            </p>
+          </header>
+
+          <div class="story-preview__grid">
+            <article class="story-card">
+              <p class="story-card__meta">Photo essay · Sumida</p>
+              <h3>Morning Along the River</h3>
+              <p>
+                Before the commuter rush, the Sumida belongs to delivery bicycles,
+                quiet exercise groups, fishermen, and the first light on the water.
+              </p>
+              <span class="story-card__status">Preview · Full story forthcoming</span>
+            </article>
+
+            <article class="story-card">
+              <p class="story-card__meta">Profile · Katsushika</p>
+              <h3>The Workshop at the End of the Arcade</h3>
+              <p>
+                A family repair shop holds decades of neighborhood memory in its
+                tools, handwritten ledgers, and daily conversations across the counter.
+              </p>
+              <span class="story-card__status">Preview · Full story forthcoming</span>
+            </article>
+
+            <article class="story-card">
+              <p class="story-card__meta">Night notes · Koto</p>
+              <h3>After the Last Train</h3>
+              <p>
+                Late kitchens, shuttered storefronts, and the workers who keep the
+                eastern wards moving long after most journeys have ended.
+              </p>
+              <span class="story-card__status">Preview · Full story forthcoming</span>
+            </article>
           </div>
         </div>
       </section>
@@ -165,18 +211,19 @@
       >
         <div class="site-shell coming-soon__layout">
           <div class="coming-soon__heading">
-            <p class="section-kicker">Coming soon</p>
-            <h2 id="coming-soon-title">The first issue begins here.</h2>
+            <p class="section-kicker">The first edition</p>
+            <h2 id="coming-soon-title">Issue Zero begins here.</h2>
           </div>
 
           <div class="coming-soon__note">
             <p>
-              The magazine is currently in development. The first feature will
-              appear here when the writing, photography, and design are ready.
+              Eastokyo is building its first complete edition around original
+              photography, careful reporting, and a distinctly local point of view.
             </p>
 
             <p>
-              No filler. No invented archive. Just the work, when it is finished.
+              This launch page introduces the editorial direction while the full
+              stories move through writing, photography, and design.
             </p>
           </div>
         </div>
@@ -229,7 +276,7 @@
           </span>
         </a>
 
-        <p class="site-footer__location">East Tokyo, Japan</p>
+        <p class="site-footer__location">Independent publishing · East Tokyo, Japan</p>
 
         <p class="site-footer__copyright">
           &copy; <span id="current-year">2026</span> Eastokyo Magazine.
