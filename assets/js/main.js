@@ -1,3 +1,6 @@
 "use strict";
 
-/* Eastokyo JavaScript module entry point. */
+import "./navigation.js";
+import "./page-transitions.js";
+import "./reading-progress.js";
+import "./share.js";
