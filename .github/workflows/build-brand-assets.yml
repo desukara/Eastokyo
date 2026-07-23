@@ -1,0 +1,48 @@
+name: Build brand assets
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/build_brand_assets.py
+      - assets/images/brand/eastokyo-crow.jpg
+      - .github/workflows/build-brand-assets.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install image tooling
+        run: python -m pip install --disable-pip-version-check pillow numpy
+
+      - name: Generate and validate production assets
+        run: python scripts/build_brand_assets.py
+
+      - name: Commit generated binary assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/images/brand
+          if git diff --cached --quiet; then
+            echo "Brand assets are already current."
+            exit 0
+          fi
+          git commit -m "Generate validated Eastokyo brand assets"
+          git push origin HEAD:main
