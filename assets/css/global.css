@@ -1,14 +1,4 @@
-@import url("../../style.css");
 @import url("./tokens.css");
 @import url("./components.css");
 @import url("./home.css");
 @import url("./utilities.css");
-
-/*
- * Eastokyo's CSS entry point.
- *
- * The original root stylesheet is imported first for compatibility while its
- * rules are deliberately migrated into the new system. Design tokens and the
- * new modular stylesheets load afterward so the redesign can progress without
- * breaking the existing prototype.
- */
