@@ -39,6 +39,118 @@
   text-transform: uppercase;
 }
 
+.story-preview {
+  padding: clamp(4.5rem, 9vw, 8rem) 0;
+  border-top: 1px solid var(--ink);
+  background: var(--paper-light);
+}
+
+.story-preview__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 0.7fr);
+  align-items: end;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.story-preview__heading .section-heading__label {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.story-preview__heading h2 {
+  margin: 0;
+}
+
+.story-preview__heading > p:last-child {
+  max-width: 38rem;
+  margin: 0;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.65;
+}
+
+.story-preview__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+}
+
+.story-card {
+  display: flex;
+  min-height: 25rem;
+  flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 45%),
+    var(--paper-light);
+}
+
+.story-card:nth-child(2) {
+  background:
+    linear-gradient(180deg, rgba(243, 184, 63, 0.24), transparent 55%),
+    var(--paper-light);
+}
+
+.story-card:nth-child(3) {
+  background:
+    linear-gradient(180deg, rgba(35, 73, 137, 0.16), transparent 55%),
+    var(--paper-light);
+}
+
+.story-card__meta,
+.story-card__status {
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.story-card__meta {
+  margin: 0 0 2rem;
+}
+
+.story-card h3 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.8rem, 3vw, 3.1rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+
+.story-card > p:not(.story-card__meta) {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.story-card__status {
+  display: block;
+  margin-top: auto;
+  padding-top: 2rem;
+  color: var(--carmine);
+}
+
+@media (max-width: 56rem) {
+  .story-preview__heading {
+    grid-template-columns: 1fr;
+  }
+
+  .story-preview__heading .section-heading__label {
+    grid-column: auto;
+  }
+
+  .story-preview__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-card {
+    min-height: 20rem;
+  }
+}
+
 @media (max-width: 42rem) {
   .feature-preview__media {
     min-height: 22rem;
