@@ -9,9 +9,9 @@
   "theme_color": "#171717",
   "icons": [
     {
-      "src": "assets/images/brand/eastokyo-crow.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "assets/images/brand/eastokyo-crow.jpg?v=2",
+      "sizes": "256x256",
+      "type": "image/jpeg",
       "purpose": "any"
     }
   ]
