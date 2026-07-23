@@ -1,5 +1,6 @@
 name: Build brand assets
 
+# This workflow generates the production binaries from the approved master artwork.
 on:
   push:
     branches:
