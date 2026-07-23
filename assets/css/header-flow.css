@@ -1,0 +1,5 @@
+/* Let the masthead scroll away with the page. */
+.site-header {
+  position: relative;
+  top: auto;
+}
