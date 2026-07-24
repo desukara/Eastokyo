@@ -1,0 +1,117 @@
+/* Final live-site polish: navigation, focus states, anchor spacing, and safer text wrapping. */
+
+:where(a, button):focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+:where(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+:where(.story-card h3 a, .field-note h3 a, .issue-index__list a) {
+  overflow-wrap: anywhere;
+}
+
+#stories,
+#field-notes,
+#focus,
+#about-eastokyo {
+  scroll-margin-top: 8rem;
+}
+
+.primary-nav a,
+.contents-strip__links a,
+.issue-index__list a,
+.site-footer a {
+  transition: opacity var(--duration-fast) ease, color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.primary-nav a:hover,
+.primary-nav a:focus-visible,
+.contents-strip__links a:hover,
+.contents-strip__links a:focus-visible,
+.issue-index__list a:hover,
+.issue-index__list a:focus-visible,
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--carmine);
+}
+
+.story-card h3 a:hover,
+.story-card h3 a:focus-visible,
+.field-note h3 a:hover,
+.field-note h3 a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.12em;
+}
+
+@media (max-width: 900px) {
+  .site-header__inner {
+    flex-wrap: wrap;
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  .masthead {
+    margin-bottom: 0.45rem;
+  }
+
+  .primary-nav {
+    display: flex;
+    width: 100%;
+    gap: 1.4rem;
+    overflow-x: auto;
+    padding: 0.65rem 0 0.75rem;
+    border-top: 1px solid rgba(23, 19, 19, 0.14);
+    scrollbar-width: none;
+    white-space: nowrap;
+  }
+
+  .primary-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .primary-nav a {
+    flex: 0 0 auto;
+  }
+
+  #stories,
+  #field-notes,
+  #focus,
+  #about-eastokyo {
+    scroll-margin-top: 9.5rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .primary-nav {
+    gap: 1rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+  }
+
+  .issue-ribbon__inner p,
+  .contents-strip__links a {
+    line-height: 1.45;
+  }
+
+  .story-link {
+    line-height: 1.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
