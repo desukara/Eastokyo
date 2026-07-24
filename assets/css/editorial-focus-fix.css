@@ -1,0 +1,14 @@
+/* Desktop proportion fix for the homepage editorial focus section */
+@media (min-width: 901px) {
+  .editorial-focus {
+    padding: clamp(4rem, 6vw, 6rem) 0;
+  }
+
+  .editorial-focus .section-heading h2 {
+    max-width: 18ch;
+    margin-bottom: 2rem;
+    font-size: clamp(3.4rem, 4.6vw, 5.2rem);
+    line-height: .9;
+    letter-spacing: -.06em;
+  }
+}
