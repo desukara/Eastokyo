@@ -1,0 +1,27 @@
+/* Desktop hero composition fix: keep the cover image visible beside the headline. */
+@media (min-width: 901px) {
+  .photo-hero__content {
+    padding-right: 54%;
+  }
+
+  .photo-hero h1 {
+    max-width: none;
+    font-size: clamp(4.25rem, 6.2vw, 6.75rem);
+    line-height: 0.82;
+    letter-spacing: -0.07em;
+  }
+
+  .photo-hero__dek {
+    max-width: 31rem;
+  }
+
+  .photo-hero__image {
+    object-position: 64% 56%;
+  }
+
+  .photo-hero__shade {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.05) 25%, rgba(0,0,0,.68) 100%),
+      linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.42) 38%, rgba(0,0,0,.06) 62%, transparent 72%);
+  }
+}
