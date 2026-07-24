@@ -84,7 +84,7 @@
   }
 
   .editorial-focus {
-    padding-block: clamp(4rem, 6vw, 5.5rem);
+    padding: clamp(4rem, 6vw, 5.5rem) 0 clamp(2.75rem, 4vw, 3.75rem);
   }
 
   .editorial-focus__number {
