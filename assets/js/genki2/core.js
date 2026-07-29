@@ -1,4 +1,4 @@
-import { createVoiceEngine } from "./voice.js";
+import { createVoiceEngine } from "./voice.js?v=3";
 
 const idleLines = [
   "You stopped. I noticed.",
@@ -89,15 +89,16 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
     clearTimeout(fallbackTimer);
     clearTimeout(idleTimer);
     const token = ++speechToken;
+    state.speaking = false;
+    window.EastokyoGenki2?.setSpeaking(false);
+    render();
     if (soundIsOn() && voice.available) {
       voice.speakJapanese(text, {
-        onStart: () => beginSpeech(token),
         onEnd: () => finishSpeech(token),
         onError: () => finishSpeech(token)
       });
       fallbackTimer = window.setTimeout(() => finishSpeech(token), 6000);
     } else {
-      beginSpeech(token);
       fallbackTimer = window.setTimeout(() => finishSpeech(token), 1900);
     }
   }
