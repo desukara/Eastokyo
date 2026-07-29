@@ -12,7 +12,6 @@ function waitForVoices() {
   refreshVoices();
   if (voices.length) return Promise.resolve(voices);
   if (voicesReady) return voicesReady;
-
   voicesReady = new Promise((resolve) => {
     const finish = () => resolve(refreshVoices());
     synth.addEventListener("voiceschanged", finish, { once: true });
@@ -47,22 +46,11 @@ async function speak(text, options = {}) {
     options.onError?.();
     return null;
   }
-
   const {
-    lang = "en-US",
-    rate = 1,
-    pitch = 1,
-    volume = 1,
-    preferredNames = [],
-    cancel = true,
-    onStart,
-    onEnd,
-    onBoundary,
-    onError
+    lang = "en-US", rate = 1, pitch = 1, volume = 1,
+    preferredNames = [], cancel = true, onStart, onEnd, onBoundary, onError
   } = options;
-
   if (cancel) synth.cancel();
-
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = lang;
   utterance.rate = rate;
@@ -72,7 +60,6 @@ async function speak(text, options = {}) {
   utterance.onend = () => onEnd?.(utterance);
   utterance.onerror = () => onError?.(utterance);
   utterance.onboundary = (event) => onBoundary?.(event, utterance);
-
   const voice = await selectVoice(lang, preferredNames);
   if (voice) utterance.voice = voice;
   synth.speak(utterance);
@@ -84,23 +71,52 @@ export function createVoiceEngine() {
     available: Boolean(synth),
     stop() {
       synth?.cancel();
+      window.EastokyoGenki2?.setSpeaking(false);
     },
     speakEnglish(text, callbacks = {}) {
+      const userStart = callbacks.onStart;
+      const userEnd = callbacks.onEnd;
+      const userError = callbacks.onError;
       return speak(text, {
         lang: "en-US",
         rate: .88,
         pitch: .62,
         preferredNames: ["david", "google uk english male", "daniel", "alex", "mark", "male"],
-        ...callbacks
+        ...callbacks,
+        onStart: (...args) => {
+          window.EastokyoGenki2?.setSpeaking(true);
+          userStart?.(...args);
+        },
+        onEnd: (...args) => {
+          window.EastokyoGenki2?.setSpeaking(false);
+          userEnd?.(...args);
+        },
+        onError: (...args) => {
+          window.EastokyoGenki2?.setSpeaking(false);
+          userError?.(...args);
+        }
       });
     },
     speakJapanese(text, callbacks = {}) {
+      window.EastokyoGenki2?.setSpeaking(false);
       return speak(text, {
         lang: "ja-JP",
         rate: .76,
         pitch: 1,
-        preferredNames: ["google 日本語", "kyoko", "otoya", "haruka", "nanami", "japanese"],
-        ...callbacks
+        preferredNames: ["google 日本語", "kyoko", "haruka", "nanami", "japanese"],
+        ...callbacks,
+        onStart: (...args) => {
+          window.EastokyoGenki2?.setSpeaking(false);
+          callbacks.onStart?.(...args);
+        },
+        onEnd: (...args) => {
+          window.EastokyoGenki2?.setSpeaking(false);
+          callbacks.onEnd?.(...args);
+        },
+        onError: (...args) => {
+          window.EastokyoGenki2?.setSpeaking(false);
+          callbacks.onError?.(...args);
+        }
       });
     }
   };
