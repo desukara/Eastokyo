@@ -1,0 +1,49 @@
+/* Fix mobile guide visibility and soften Genki2's presentation. */
+@media(max-width:799px){
+  body.eastokyo-luxury.genki2-always-present main{padding-top:0!important}
+  .eastokyo-luxury .genki2-global-presence{
+    top:auto!important;right:14px!important;bottom:176px!important;
+    width:96px!important;height:132px!important
+  }
+  .eastokyo-luxury .g2-robot{
+    bottom:-74px!important;
+    transform:translateX(-50%) scale(.34)!important
+  }
+  .eastokyo-luxury .g2-stage{
+    background:radial-gradient(circle at 50% 26%,rgba(244,239,229,.88),rgba(184,154,92,.12) 62%,transparent 76%)!important;
+    border-color:rgba(184,154,92,.32)!important
+  }
+  .genki2-guide-tab{
+    width:58px!important;height:58px!important;
+    background:#f4efe5!important;color:#141414!important;
+    border:2px solid #b89a5c!important;
+    box-shadow:0 8px 22px rgba(0,0,0,.28)!important;
+    font-size:0!important
+  }
+  .genki2-guide-tab:before{
+    content:"";display:block;width:30px;height:25px;border-radius:45% 45% 42% 42%;
+    background:
+      radial-gradient(circle at 34% 46%,#20272c 0 3px,#98d8ea 4px 7px,#fff 8px 10px,transparent 11px),
+      radial-gradient(circle at 66% 46%,#20272c 0 3px,#98d8ea 4px 7px,#fff 8px 10px,transparent 11px),
+      linear-gradient(145deg,#e8edef,#8d989f);
+    border:1px solid rgba(20,20,20,.28)
+  }
+  .genki2-guide-tab:after{
+    content:"GUIDE";position:absolute;left:50%;bottom:4px;transform:translateX(-50%);
+    font:900 7px/1 Arial,sans-serif;letter-spacing:.08em
+  }
+}
+
+/* Friendlier eyes across every device. */
+.eastokyo-luxury .g2-eye{
+  background:
+    radial-gradient(circle at 44% 37%,#fff 0 7%,transparent 8%),
+    radial-gradient(circle at 50% 50%,#1e272d 0 18%,#8fd2e5 20% 43%,#dff6fb 45% 60%,#f7fbfc 62% 76%,#6c7880 78%)!important;
+  box-shadow:0 0 8px rgba(143,210,229,.35),inset 0 1px 3px rgba(255,255,255,.7)!important
+}
+.eastokyo-luxury .genki2-global-presence.is-angry .g2-eye{
+  background:
+    radial-gradient(circle at 44% 37%,#fff 0 7%,transparent 8%),
+    radial-gradient(circle at 50% 50%,#253038 0 18%,#d8a75a 20% 43%,#f4d79a 45% 60%,#fff7e5 62% 76%,#77644a 78%)!important;
+  box-shadow:0 0 7px rgba(216,167,90,.28)!important
+}
