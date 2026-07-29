@@ -2,6 +2,8 @@
 
 import { createVoiceEngine } from "./genki2/voice.js";
 
+const SOUND_PREFERENCE_KEY = "eastokyo-sound-v2";
+
 const state = {
   awake: false,
   mood: "sleeping",
@@ -19,7 +21,7 @@ const patience = document.querySelector("[data-patience]");
 const meter = document.querySelector("[data-meter]");
 const stage = document.querySelector("[data-genki-stage]");
 const soundButton = document.querySelector(".sound-toggle");
-let soundEnabled = localStorage.getItem("eastokyo-sound") !== "off";
+let soundEnabled = localStorage.getItem(SOUND_PREFERENCE_KEY) !== "off";
 let fallbackTimer = 0;
 let speechToken = 0;
 
@@ -139,7 +141,7 @@ document.querySelectorAll("[data-answer]").forEach((button) => {
 
 soundButton?.addEventListener("click", () => {
   soundEnabled = !soundEnabled;
-  localStorage.setItem("eastokyo-sound", soundEnabled ? "on" : "off");
+  localStorage.setItem(SOUND_PREFERENCE_KEY, soundEnabled ? "on" : "off");
 
   if (!soundEnabled) {
     voice.stop();
