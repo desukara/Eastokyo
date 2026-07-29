@@ -29,17 +29,26 @@ if (!notes.length) {
 }
 
 const panel = document.createElement("aside");
-panel.className = "genki2-guide-panel";
+panel.className = "genki2-guide-panel genki2-guide-card";
 panel.setAttribute("aria-live", "polite");
 panel.innerHTML = `
-  <p class="genki2-guide-panel__eyebrow">GENKI2 / EASTOKYO GUIDE</p>
-  <p class="genki2-guide-panel__copy" data-guide-copy></p>
-  <div class="genki2-guide-panel__actions">
-    <button type="button" data-guide-listen>Listen</button>
-    <button type="button" data-guide-next>Next stop</button>
-    <button type="button" data-guide-close>Close</button>
-  </div>`;
+  <div class="genki2-guide-card__copy">
+    <p class="genki2-guide-panel__eyebrow">GENKI2 / EASTOKYO GUIDE</p>
+    <p class="genki2-guide-panel__copy" data-guide-copy></p>
+    <div class="genki2-guide-panel__actions">
+      <button type="button" data-guide-listen>Listen</button>
+      <button type="button" data-guide-next>Next stop</button>
+      <button type="button" data-guide-close>Close</button>
+    </div>
+  </div>
+  <div class="genki2-guide-card__portrait" aria-label="Genki2 portrait"></div>`;
 document.body.append(panel);
+
+const portrait = panel.querySelector(".genki2-guide-card__portrait");
+if (presence && portrait) {
+  presence.classList.add("is-embedded");
+  portrait.appendChild(presence);
+}
 
 const tab = document.createElement("button");
 tab.type = "button";
