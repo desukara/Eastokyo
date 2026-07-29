@@ -1,6 +1,6 @@
 "use strict";
 
-import "./genki2/presence.js?v=5";
+import "./genki2/presence.js?v=6";
 import { createVoiceEngine } from "./genki2/voice.js?v=2";
 
 const state = { awake: false, mood: "sleeping", patience: 82, score: 0, speaking: false };
@@ -120,7 +120,7 @@ document.querySelectorAll("[data-answer]").forEach((button) => {
       state.patience = Math.min(100, state.patience + 4);
       speak("Correct. Unexpectedly efficient. That greeting means hello.", "proud");
       if (soundEnabled) window.setTimeout(() => speakJapanese("こんにちは"), 2100);
-      localStorage.setItem("eastokyo-demo-score", String(state.score));
+      try { localStorage.setItem("eastokyo-demo-score", String(state.score)); } catch {}
     } else {
       button.classList.add("wrong");
       state.score = Math.max(10, state.score - 8);
@@ -140,6 +140,7 @@ if (stage && matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMed
   stage.addEventListener("pointerleave", () => { if (unit) unit.style.transform = ""; });
 }
 
-const savedScore = Number(localStorage.getItem("eastokyo-demo-score"));
+let savedScore = 0;
+try { savedScore = Number(localStorage.getItem("eastokyo-demo-score")); } catch {}
 if (Number.isFinite(savedScore) && savedScore > 0) state.score = savedScore;
 render();
