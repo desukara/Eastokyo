@@ -1,0 +1,118 @@
+.guide-hero__media.living-hero {
+  --hero-light: 1;
+  --hero-reflection: .58;
+  --hero-x: 50%;
+  --hero-y: 42%;
+  --hero-depth-x: 0px;
+  --hero-depth-y: 0px;
+  position: relative;
+  isolation: isolate;
+  background: #050505;
+}
+
+.living-hero__base,
+.living-hero__light,
+.living-hero__reflection {
+  position: absolute;
+  inset: -1.5%;
+  width: 103%;
+  height: 103%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.living-hero__base {
+  z-index: 1;
+  transform: translate3d(var(--hero-depth-x), var(--hero-depth-y), 0) scale(1.018);
+  filter: saturate(.94) contrast(1.09) brightness(.96);
+  transition: transform 180ms ease-out;
+}
+
+.living-hero__light,
+.living-hero__reflection {
+  z-index: 2;
+  mix-blend-mode: screen;
+  will-change: opacity, filter;
+}
+
+.living-hero__light {
+  opacity: calc(.20 * var(--hero-light));
+  filter: brightness(calc(1.44 * var(--hero-light))) contrast(1.18) saturate(1.18) blur(.65px);
+  clip-path: polygon(0 0,100% 0,100% 55%,76% 47%,53% 51%,33% 49%,0 57%);
+}
+
+.living-hero__reflection {
+  z-index: 3;
+  opacity: calc(.14 * var(--hero-reflection));
+  filter: brightness(1.46) contrast(1.15) saturate(1.08) blur(1.2px);
+  -webkit-mask-image: linear-gradient(to bottom,transparent 0 31%,#000 52%,#000 100%);
+  mask-image: linear-gradient(to bottom,transparent 0 31%,#000 52%,#000 100%);
+}
+
+.living-hero__bloom,
+.living-hero__glass,
+.living-hero__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.living-hero__bloom {
+  z-index: 4;
+  opacity: calc(.42 * var(--hero-light));
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(ellipse at 23% 21%, rgb(255 205 118 / 30%), transparent 27%),
+    radial-gradient(ellipse at 75% 19%, rgb(255 229 176 / 24%), transparent 30%),
+    radial-gradient(ellipse at var(--hero-x) var(--hero-y), rgb(255 235 200 / 12%), transparent 23%);
+  filter: blur(7px);
+}
+
+.living-hero__glass {
+  z-index: 5;
+  background:
+    linear-gradient(115deg, transparent 0 34%, rgb(255 255 255 / 5%) 45%, transparent 57%),
+    radial-gradient(circle at var(--hero-x) var(--hero-y), transparent 0 18%, rgb(255 255 255 / 3%) 30%, transparent 47%);
+  mix-blend-mode: soft-light;
+}
+
+.living-hero__vignette {
+  z-index: 6;
+  box-shadow: inset 0 0 90px rgb(0 0 0 / 24%), inset 0 -110px 140px rgb(0 0 0 / 28%);
+  background: linear-gradient(0deg, rgb(0 0 0 / 64%), transparent 58%);
+}
+
+.living-hero__grain {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  opacity: .055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.58'/%3E%3C/svg%3E");
+  mix-blend-mode: soft-light;
+}
+
+.living-hero.is-visible .living-hero__glass {
+  animation: livingHeroSheen 13s ease-in-out infinite;
+}
+
+@keyframes livingHeroSheen {
+  0%, 72%, 100% { opacity: .45; }
+  78% { opacity: .72; }
+  84% { opacity: .48; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .living-hero__base { transform: scale(1.018); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .living-hero__base { transition: none; transform: scale(1.018); }
+  .living-hero__glass { animation: none !important; }
+  .guide-hero__media.living-hero {
+    --hero-light: 1;
+    --hero-reflection: .56;
+  }
+}
