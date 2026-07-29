@@ -43,22 +43,36 @@ async function selectVoice(language, preferredNames = []) {
 }
 
 async function speak(text, options = {}) {
-  if (!synth || !text) return;
+  if (!synth || !text) {
+    options.onError?.();
+    return null;
+  }
+
   const {
     lang = "en-US",
     rate = 1,
     pitch = 1,
     volume = 1,
     preferredNames = [],
-    cancel = true
+    cancel = true,
+    onStart,
+    onEnd,
+    onBoundary,
+    onError
   } = options;
 
   if (cancel) synth.cancel();
+
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = lang;
   utterance.rate = rate;
   utterance.pitch = pitch;
   utterance.volume = volume;
+  utterance.onstart = () => onStart?.(utterance);
+  utterance.onend = () => onEnd?.(utterance);
+  utterance.onerror = () => onError?.(utterance);
+  utterance.onboundary = (event) => onBoundary?.(event, utterance);
+
   const voice = await selectVoice(lang, preferredNames);
   if (voice) utterance.voice = voice;
   synth.speak(utterance);
@@ -71,20 +85,22 @@ export function createVoiceEngine() {
     stop() {
       synth?.cancel();
     },
-    speakEnglish(text) {
+    speakEnglish(text, callbacks = {}) {
       return speak(text, {
         lang: "en-US",
         rate: .88,
         pitch: .62,
-        preferredNames: ["david", "google uk english male", "daniel", "alex", "mark", "male"]
+        preferredNames: ["david", "google uk english male", "daniel", "alex", "mark", "male"],
+        ...callbacks
       });
     },
-    speakJapanese(text) {
+    speakJapanese(text, callbacks = {}) {
       return speak(text, {
         lang: "ja-JP",
         rate: .76,
         pitch: 1,
-        preferredNames: ["google 日本語", "kyoko", "otoya", "haruka", "nanami", "japanese"]
+        preferredNames: ["google 日本語", "kyoko", "otoya", "haruka", "nanami", "japanese"],
+        ...callbacks
       });
     }
   };
