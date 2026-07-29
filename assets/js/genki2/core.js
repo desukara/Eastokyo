@@ -22,10 +22,19 @@ function randomItem(items) {
 }
 
 export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLabel, soundButton }) {
-  const state = { mood: "curious", patience: 82, score: 0, sound: false, speaking: false };
+  const storedSoundPreference = localStorage.getItem("eastokyo-sound");
+  const state = {
+    mood: "curious",
+    patience: 82,
+    score: 0,
+    sound: storedSoundPreference !== "off",
+    speaking: false
+  };
+
   const voice = createVoiceEngine();
-  let timer = 0;
+  let fallbackTimer = 0;
   let idleTimer = 0;
+  let speechToken = 0;
 
   function render() {
     if (unit) {
@@ -50,33 +59,60 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
     }, 14000 + Math.random() * 8000);
   }
 
+  function finishSpeech(token) {
+    if (token !== speechToken) return;
+    clearTimeout(fallbackTimer);
+    state.speaking = false;
+    render();
+    queueIdleLine();
+  }
+
+  function beginSpeech(token) {
+    if (token !== speechToken) return;
+    state.speaking = true;
+    render();
+  }
+
   function speak(text, mood = state.mood) {
     state.mood = mood;
-    state.speaking = true;
     if (dialogue) dialogue.textContent = text;
-    clearTimeout(timer);
+    clearTimeout(fallbackTimer);
     clearTimeout(idleTimer);
-    timer = window.setTimeout(() => {
-      state.speaking = false;
-      render();
-      queueIdleLine();
-    }, Math.min(3600, 900 + text.length * 36));
 
-    if (state.sound) voice.speakEnglish(text);
+    const token = ++speechToken;
+
+    if (state.sound && voice.available) {
+      voice.speakEnglish(text, {
+        onStart: () => beginSpeech(token),
+        onEnd: () => finishSpeech(token),
+        onError: () => finishSpeech(token)
+      });
+
+      fallbackTimer = window.setTimeout(() => finishSpeech(token), Math.min(12000, 1800 + text.length * 90));
+    } else {
+      beginSpeech(token);
+      fallbackTimer = window.setTimeout(() => finishSpeech(token), Math.min(3600, 900 + text.length * 36));
+    }
+
     render();
   }
 
   function speakJapanese(text) {
-    state.speaking = true;
-    clearTimeout(timer);
+    clearTimeout(fallbackTimer);
     clearTimeout(idleTimer);
-    timer = window.setTimeout(() => {
-      state.speaking = false;
-      render();
-      queueIdleLine();
-    }, 1900);
-    voice.speakJapanese(text);
-    render();
+    const token = ++speechToken;
+
+    if (state.sound && voice.available) {
+      voice.speakJapanese(text, {
+        onStart: () => beginSpeech(token),
+        onEnd: () => finishSpeech(token),
+        onError: () => finishSpeech(token)
+      });
+      fallbackTimer = window.setTimeout(() => finishSpeech(token), 6000);
+    } else {
+      beginSpeech(token);
+      fallbackTimer = window.setTimeout(() => finishSpeech(token), 1900);
+    }
   }
 
   function reward(points = 25) {
@@ -95,9 +131,20 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
 
   function toggleSound() {
     state.sound = !state.sound;
-    if (!state.sound) voice.stop();
+    localStorage.setItem("eastokyo-sound", state.sound ? "on" : "off");
+
+    if (!state.sound) {
+      voice.stop();
+      speechToken += 1;
+      clearTimeout(fallbackTimer);
+      state.speaking = false;
+      render();
+      queueIdleLine();
+      return;
+    }
+
     render();
-    if (state.sound) speak("Audio online. Voice processor calibrated. Try not to scream.", "curious");
+    speak("Audio online. I will remain audible unless you deliberately switch me off.", "curious");
   }
 
   function reactToTap() {
@@ -120,6 +167,9 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
     if (document.hidden) {
       clearTimeout(idleTimer);
       voice.stop();
+      speechToken += 1;
+      state.speaking = false;
+      render();
     } else {
       queueIdleLine();
     }
