@@ -1,6 +1,6 @@
 "use strict";
 
-import "./genki2/presence.js?v=2";
+import "./genki2/presence.js?v=3";
 import { createVoiceEngine } from "./genki2/voice.js";
 
 const state = { awake: false, mood: "sleeping", patience: 82, score: 0, speaking: false };
