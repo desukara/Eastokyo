@@ -1,0 +1,121 @@
+/* Keep the Tokyo-tech effects, but never let the copy panel block the photograph. */
+
+.eastokyo-guide .guide-hero {
+  display: grid !important;
+  grid-template-rows: minmax(620px, 78vh) auto !important;
+  min-height: 0 !important;
+  overflow: visible;
+  background:
+    radial-gradient(circle at 12% 0%, rgb(220 18 58 / 16%), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgb(36 182 255 / 14%), transparent 30%),
+    #05070c;
+}
+
+.eastokyo-guide .guide-hero__media {
+  position: relative !important;
+  inset: auto !important;
+  width: 100% !important;
+  min-height: min(78vh, 860px) !important;
+  grid-row: 1;
+}
+
+.eastokyo-guide .guide-hero__copy {
+  position: relative !important;
+  inset: auto !important;
+  grid-row: 2;
+  width: min(1480px, calc(100vw - 36px)) !important;
+  margin: -1px auto 0;
+  padding: clamp(28px, 4vw, 54px) clamp(24px, 5vw, 72px) !important;
+  border-radius: 0 0 28px 28px;
+  display: grid;
+  grid-template-columns: minmax(180px, .35fr) minmax(0, 1fr) minmax(260px, .75fr);
+  column-gap: clamp(24px, 4vw, 64px);
+  align-items: end;
+  background:
+    linear-gradient(180deg, rgb(8 13 23 / 96%), rgb(4 8 16 / 98%)),
+    radial-gradient(circle at 88% 12%, rgb(52 198 255 / 20%), transparent 34%),
+    radial-gradient(circle at 10% 90%, rgb(255 35 72 / 20%), transparent 36%);
+  backdrop-filter: blur(20px) saturate(1.35);
+  -webkit-backdrop-filter: blur(20px) saturate(1.35);
+  box-shadow:
+    0 28px 80px rgb(0 0 0 / 34%),
+    inset 0 1px rgb(255 255 255 / 14%),
+    0 0 40px rgb(255 38 79 / 10%),
+    0 0 54px rgb(41 191 255 / 9%);
+}
+
+.eastokyo-guide .guide-hero__copy::before {
+  background:
+    linear-gradient(108deg, transparent 0 40%, rgb(255 255 255 / 9%) 49%, transparent 58%),
+    repeating-linear-gradient(90deg, transparent 0 88px, rgb(87 215 255 / 2.5%) 89px) !important;
+}
+
+.eastokyo-guide .guide-label {
+  align-self: start;
+  margin: 4px 0 0;
+}
+
+.eastokyo-guide .guide-hero h1 {
+  max-width: 7ch;
+  margin: 0;
+  font-size: clamp(4rem, 7vw, 8rem);
+}
+
+.eastokyo-guide .guide-hero__copy > p:last-of-type {
+  max-width: 34ch;
+  margin: 0;
+}
+
+.eastokyo-guide .guide-hero__copy > a {
+  grid-column: 3;
+  justify-self: start;
+  margin-top: 24px;
+}
+
+@media (max-width: 980px) {
+  .eastokyo-guide .guide-hero {
+    grid-template-rows: minmax(440px, 62svh) auto !important;
+  }
+
+  .eastokyo-guide .guide-hero__media {
+    min-height: 62svh !important;
+  }
+
+  .eastokyo-guide .guide-hero__copy {
+    width: calc(100vw - 18px) !important;
+    margin-top: 0;
+    padding: 26px 22px 28px !important;
+    border-radius: 0 0 22px 22px;
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+
+  .eastokyo-guide .guide-label,
+  .eastokyo-guide .guide-hero h1,
+  .eastokyo-guide .guide-hero__copy > p:last-of-type,
+  .eastokyo-guide .guide-hero__copy > a {
+    grid-column: 1;
+  }
+
+  .eastokyo-guide .guide-hero__copy > a {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 620px) {
+  .eastokyo-guide .guide-hero {
+    grid-template-rows: minmax(390px, 58svh) auto !important;
+  }
+
+  .eastokyo-guide .guide-hero__media {
+    min-height: 58svh !important;
+  }
+
+  .eastokyo-guide .guide-hero__copy {
+    padding: 22px 18px 24px !important;
+  }
+
+  .eastokyo-guide .guide-hero h1 {
+    font-size: clamp(3rem, 15vw, 4.8rem);
+  }
+}
