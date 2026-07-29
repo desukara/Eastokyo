@@ -12,7 +12,6 @@ function waitForVoices() {
   refreshVoices();
   if (voices.length) return Promise.resolve(voices);
   if (voicesReady) return voicesReady;
-
   voicesReady = new Promise((resolve) => {
     const finish = () => resolve(refreshVoices());
     synth.addEventListener("voiceschanged", finish, { once: true });
@@ -27,9 +26,7 @@ function scoreVoice(voice, language, preferredNames) {
   let score = 0;
   if (lang === language.toLowerCase()) score += 100;
   if (lang.startsWith(language.slice(0, 2).toLowerCase())) score += 60;
-  preferredNames.forEach((preferred, index) => {
-    if (name.includes(preferred)) score += 50 - index;
-  });
+  preferredNames.forEach((preferred, index) => { if (name.includes(preferred)) score += 50 - index; });
   if (voice.localService) score += 4;
   return score;
 }
@@ -43,26 +40,9 @@ async function selectVoice(language, preferredNames = []) {
 }
 
 async function speak(text, options = {}) {
-  if (!synth || !text) {
-    options.onError?.();
-    return null;
-  }
-
-  const {
-    lang = "en-US",
-    rate = 1,
-    pitch = 1,
-    volume = 1,
-    preferredNames = [],
-    cancel = true,
-    onStart,
-    onEnd,
-    onBoundary,
-    onError
-  } = options;
-
+  if (!synth || !text) { options.onError?.(); return null; }
+  const { lang = "en-US", rate = 1, pitch = 1, volume = 1, preferredNames = [], cancel = true, onStart, onEnd, onBoundary, onError } = options;
   if (cancel) synth.cancel();
-
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = lang;
   utterance.rate = rate;
@@ -72,7 +52,6 @@ async function speak(text, options = {}) {
   utterance.onend = () => onEnd?.(utterance);
   utterance.onerror = () => onError?.(utterance);
   utterance.onboundary = (event) => onBoundary?.(event, utterance);
-
   const voice = await selectVoice(lang, preferredNames);
   if (voice) utterance.voice = voice;
   synth.speak(utterance);
@@ -84,17 +63,23 @@ export function createVoiceEngine() {
     available: Boolean(synth),
     stop() {
       synth?.cancel();
+      window.EastokyoGenki2?.setSpeaking(false);
     },
     speakEnglish(text, callbacks = {}) {
+      const { onStart, onEnd, onError, ...rest } = callbacks;
       return speak(text, {
         lang: "en-US",
         rate: .88,
         pitch: .62,
         preferredNames: ["david", "google uk english male", "daniel", "alex", "mark", "male"],
-        ...callbacks
+        ...rest,
+        onStart: (...args) => { window.EastokyoGenki2?.setSpeaking(true); onStart?.(...args); },
+        onEnd: (...args) => { window.EastokyoGenki2?.setSpeaking(false); onEnd?.(...args); },
+        onError: (...args) => { window.EastokyoGenki2?.setSpeaking(false); onError?.(...args); }
       });
     },
     speakJapanese(text, callbacks = {}) {
+      window.EastokyoGenki2?.setSpeaking(false);
       return speak(text, {
         lang: "ja-JP",
         rate: .76,
