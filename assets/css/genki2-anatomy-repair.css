@@ -1,0 +1,97 @@
+/* Desktop/mobile anatomy and kimono repair. Code-only; one canonical Genki2. */
+
+/* Face: keep two clearly separated brows and natural eye spacing. */
+.g2-brow{width:34px!important;height:6px!important;top:61px!important;border-radius:999px!important}
+.g2-brow.left{left:20px!important;right:auto!important;transform:rotate(-5deg)!important}
+.g2-brow.right{right:20px!important;left:auto!important;transform:rotate(5deg)!important}
+.g2-eye.left{left:21px!important}.g2-eye.right{right:21px!important}
+
+/* Kimono: one clean crossed collar, long body, sleeves and proper obi. */
+.g2-torso{overflow:visible!important}
+.g2-shirt{
+  inset:2px 3px -74px!important;
+  border-radius:30px 30px 18px 18px!important;
+  overflow:hidden!important;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px),
+    linear-gradient(145deg,#1c2630 0%,#101820 48%,#263541 100%)!important;
+  box-shadow:inset 0 0 28px rgba(0,0,0,.55),inset 0 1px rgba(255,255,255,.12)!important;
+}
+.g2-shirt:before{
+  content:""!important;position:absolute!important;z-index:2!important;left:50%!important;top:-5px!important;
+  width:126px!important;height:136px!important;transform:translateX(-50%)!important;
+  background:
+    linear-gradient(58deg,transparent 0 45%,#d6dce0 46% 52%,#75818a 53% 56%,transparent 57%),
+    linear-gradient(-58deg,transparent 0 45%,#d6dce0 46% 52%,#75818a 53% 56%,transparent 57%)!important;
+  clip-path:none!important;opacity:1!important;
+}
+.g2-shirt:after{
+  content:""!important;position:absolute!important;z-index:4!important;left:8px!important;right:8px!important;
+  bottom:56px!important;height:31px!important;border-radius:4px!important;transform:none!important;
+  background:linear-gradient(180deg,#58646d,#27313a 52%,#10161b)!important;
+  box-shadow:inset 0 2px rgba(255,255,255,.14),0 -1px rgba(0,0,0,.5)!important;
+}
+.g2-torso:before{display:none!important}
+.g2-torso:after{display:none!important}
+
+/* Sleeves should read as kimono sleeves, not bare robot tubes. */
+.g2-arm{
+  width:60px!important;height:188px!important;border-radius:28px 28px 16px 16px!important;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 14px),
+    linear-gradient(90deg,#111920,#303d47 48%,#10171d)!important;
+}
+.g2-arm.left{left:-8px!important}.g2-arm.right{right:-8px!important}
+.g2-elbow{opacity:.35!important}
+
+/* Hands: mirror anatomy and orient thumbs inward naturally. */
+.g2-arm.left .g2-hand{transform:none!important;transform-origin:50% 0!important}
+.g2-arm.right .g2-hand{transform:scaleX(-1)!important;transform-origin:50% 0!important}
+.g2-arm.left .g2-hand:before{left:-8px!important;right:auto!important;transform:rotate(22deg)!important}
+.g2-arm.right .g2-hand:before{left:-8px!important;right:auto!important;transform:rotate(22deg)!important}
+.g2-hand{bottom:-50px!important;width:52px!important;height:73px!important;border-radius:17px 17px 22px 22px!important}
+.g2-hand:after{top:39px!important;height:32px!important}
+
+/* Hide exposed hips/butt and replace lower body with continuous hakama. */
+.g2-waist{z-index:6!important;top:403px!important;width:154px!important;height:40px!important}
+.g2-hips{display:none!important}
+.g2-trousers{
+  z-index:5!important;top:424px!important;width:170px!important;height:122px!important;
+  border-radius:8px 8px 24px 24px!important;
+  background:
+    linear-gradient(90deg,transparent 49%,rgba(255,255,255,.08) 49% 51%,transparent 51%),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 18px),
+    linear-gradient(90deg,#11181e,#2a343d 48%,#10161b)!important;
+  clip-path:polygon(7% 0,93% 0,100% 100%,58% 100%,50% 54%,42% 100%,0 100%)!important;
+}
+
+/* Legs and feet: straighter stance, distinct left/right placement, no inward duplication. */
+.g2-leg{top:505px!important;width:48px!important;height:58px!important;border-radius:16px 16px 12px 12px!important}
+.g2-leg.left{left:72px!important}.g2-leg.right{right:72px!important}
+.g2-shoe{bottom:0!important;width:66px!important;height:25px!important;border-radius:18px 24px 8px 8px!important}
+.g2-shoe.left{left:56px!important;transform:rotate(-2deg)!important}
+.g2-shoe.right{right:56px!important;transform:scaleX(-1) rotate(-2deg)!important}
+
+@media(max-width:799px){
+  /* Mobile is the same robot, scaled—not a different costume. */
+  .g2-brow{top:34px!important;width:18px!important;height:3px!important}
+  .g2-brow.left{left:13px!important}.g2-brow.right{right:13px!important}
+  .g2-eye.left{left:13px!important}.g2-eye.right{right:13px!important}
+
+  .g2-shirt{inset:2px 2px -41px!important;border-radius:17px 17px 10px 10px!important}
+  .g2-shirt:before{width:69px!important;height:75px!important;top:-3px!important}
+  .g2-shirt:after{left:5px!important;right:5px!important;bottom:31px!important;height:17px!important}
+
+  .g2-arm{width:32px!important;height:104px!important}
+  .g2-arm.left{left:-4px!important}.g2-arm.right{right:-4px!important}
+  .g2-hand{width:28px!important;height:40px!important;bottom:-27px!important;border-radius:9px 9px 12px 12px!important}
+  .g2-hand:before{left:-5px!important;top:12px!important;width:10px!important;height:18px!important}
+  .g2-hand:after{top:21px!important;height:18px!important}
+
+  .g2-waist{top:222px!important;width:84px!important;height:22px!important}
+  .g2-trousers{top:234px!important;width:94px!important;height:67px!important}
+  .g2-leg{top:278px!important;width:26px!important;height:32px!important}
+  .g2-leg.left{left:39px!important}.g2-leg.right{right:39px!important}
+  .g2-shoe{width:36px!important;height:14px!important}
+  .g2-shoe.left{left:31px!important}.g2-shoe.right{right:31px!important}
+}
