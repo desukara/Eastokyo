@@ -1,0 +1,63 @@
+/* Genki2 permanent traditional Japanese men's kimono — code-only. */
+.g2-shirt{
+  inset:4px 4px 8px!important;
+  border-radius:28px 28px 42px 42px!important;
+  background:
+    linear-gradient(62deg,transparent 0 47%,rgba(214,220,224,.9) 48% 52%,transparent 53%),
+    linear-gradient(-62deg,transparent 0 47%,rgba(214,220,224,.9) 48% 52%,transparent 53%),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 12px),
+    linear-gradient(145deg,#202a32 0%,#111820 48%,#26343e 100%)!important;
+  background-size:100% 100%,100% 100%,18px 18px,100% 100%!important;
+  box-shadow:inset 0 0 28px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.16)!important;
+}
+.g2-shirt:before{
+  content:""!important;
+  position:absolute!important;
+  left:50%!important;top:-3px!important;
+  width:104px!important;height:104px!important;
+  transform:translateX(-50%)!important;
+  background:
+    linear-gradient(58deg,transparent 0 45%,#d7dadd 46% 54%,transparent 55%),
+    linear-gradient(-58deg,transparent 0 45%,#d7dadd 46% 54%,transparent 55%)!important;
+  clip-path:none!important;
+  opacity:.96!important;
+}
+.g2-shirt:after{
+  content:""!important;
+  position:absolute!important;
+  left:10px!important;right:10px!important;bottom:18px!important;
+  height:28px!important;
+  transform:none!important;
+  border-radius:4px!important;
+  background:linear-gradient(180deg,#55616a,#263039 52%,#11181e)!important;
+  box-shadow:inset 0 2px 0 rgba(255,255,255,.15),0 -1px 0 rgba(0,0,0,.45)!important;
+}
+.g2-torso:before{
+  content:"";position:absolute;z-index:5;left:50%;top:14px;width:3px;height:148px;transform:translateX(-50%) rotate(15deg);
+  background:rgba(220,225,228,.5);box-shadow:0 0 0 1px rgba(10,16,21,.18);pointer-events:none;
+}
+.g2-torso:after{
+  content:"";position:absolute;z-index:6;left:16px;right:16px;bottom:18px;height:24px;border-radius:3px;
+  background:linear-gradient(180deg,#414c55,#1d252c 58%,#0c1115);box-shadow:inset 0 2px 0 rgba(255,255,255,.12);pointer-events:none;
+}
+.g2-arm{
+  width:54px!important;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 2px,transparent 2px 12px),
+    linear-gradient(90deg,#182128,#35434d 48%,#111820)!important;
+  border-radius:26px 26px 18px 18px!important;
+}
+.g2-arm.left{left:-1px!important}.g2-arm.right{right:-1px!important}
+.g2-elbow{background:linear-gradient(90deg,#121920,#414e57,#161e24)!important}
+.g2-trousers{
+  background:linear-gradient(90deg,#161d23,#2a343c 48%,#11171c)!important;
+}
+.g2-waist{background:linear-gradient(90deg,#141a1f,#4d5962 45%,#202930 70%,#0e1317)!important}
+
+@media(max-width:799px){
+  .g2-shirt:before{width:58px!important;height:58px!important}
+  .g2-shirt:after{left:6px!important;right:6px!important;bottom:10px!important;height:15px!important}
+  .g2-torso:before{top:8px;width:2px;height:82px!important}
+  .g2-torso:after{left:9px;right:9px;bottom:10px;height:13px}
+  .g2-arm{width:29px!important}
+}
