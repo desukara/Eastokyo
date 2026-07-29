@@ -1,5 +1,7 @@
 import { createVoiceEngine } from "./voice.js";
 
+const SOUND_PREFERENCE_KEY = "eastokyo-sound-v2";
+
 const idleLines = [
   "You stopped. I noticed.",
   "This lesson is not going to complete itself.",
@@ -22,7 +24,7 @@ function randomItem(items) {
 }
 
 export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLabel, soundButton }) {
-  const storedSoundPreference = localStorage.getItem("eastokyo-sound");
+  const storedSoundPreference = localStorage.getItem(SOUND_PREFERENCE_KEY);
   const state = {
     mood: "curious",
     patience: 82,
@@ -131,7 +133,7 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
 
   function toggleSound() {
     state.sound = !state.sound;
-    localStorage.setItem("eastokyo-sound", state.sound ? "on" : "off");
+    localStorage.setItem(SOUND_PREFERENCE_KEY, state.sound ? "on" : "off");
 
     if (!state.sound) {
       voice.stop();
