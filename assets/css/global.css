@@ -11,18 +11,5 @@
 @import url("./launch-preview.css");
 @import url("./launch-ready.css");
 
-@import url("./genki2-system.css");
-@import url("./lesson-system.css");
-@import url("./persistent-genki2.css");
-@import url("./mobile-genki-dock.css");
-@import url("./desktop-genki-dialogue.css");
-@import url("./genki2-likeness-correction.css?v=1");
-@import url("./genki2-black-pupils.css?v=1");
-@import url("./genki2-male-kimono.css?v=1");
-@import url("./genki2-anatomy-repair.css?v=1");
-@import url("./genki2-kimono-complete-fix.css?v=1");
-@import url("./magazine-guide.css?v=2");
-@import url("./genki2-friendly-guide-fix.css?v=3");
-@import url("./genki2-layout-stabilization.css?v=1");
-@import url("./genki2-unified-card.css?v=1");
-@import url("./genki2-dom-contained-card.css?v=2");
+/* One magazine-only Genki2 layer. Retired lesson, dock, rail and override files are not loaded. */
+@import url("./magazine-genki2.css?v=1");
