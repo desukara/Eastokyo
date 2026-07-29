@@ -8,7 +8,7 @@
   const style=document.createElement("style");
   style.textContent=`
   html{height:auto!important;min-height:100%!important;overflow-x:hidden!important;overflow-y:auto!important}
-  body.genki2-always-present{--genki2-rail:300px;--genki2-mobile-safe:132px;height:auto!important;min-height:100svh!important;overflow-x:hidden!important;overflow-y:auto!important}
+  body.genki2-always-present{--genki2-rail:300px;--genki2-mobile-stage:190px;height:auto!important;min-height:100svh!important;overflow-x:hidden!important;overflow-y:auto!important}
   body.genki2-always-present.lesson-page{height:auto!important;min-height:100svh!important;overflow-y:auto!important}
   .genki2-global-presence{position:fixed;z-index:2147483000;left:22px;top:50%;width:236px;height:360px;transform:translateY(-50%);display:grid;place-items:center;pointer-events:none}
   .genki2-global-presence__halo{position:absolute;inset:12% 2%;border-radius:50%;background:radial-gradient(circle,rgba(70,231,255,.2),rgba(36,119,255,.06) 48%,transparent 70%);filter:blur(12px);animation:gHalo 3.6s ease-in-out infinite}
@@ -26,25 +26,29 @@
   .speech-panel,.lesson-dialogue,[data-genki-dialogue],[data-terminal-copy]{display:none!important}.lesson-page .lesson-genki-panel{display:none!important}.lesson-page .training-room{display:block!important;height:auto!important;min-height:0!important;overflow:visible!important}.lesson-page .lesson-workspace{height:auto!important;min-height:100svh!important;overflow:visible!important}.genki-stage{display:none!important}.boot-screen{grid-template-columns:1fr!important}
   @media(min-width:800px){body.genki2-always-present main,body.genki2-always-present footer{margin-left:var(--genki2-rail)}body.genki2-always-present .system-bar,body.genki2-always-present .site-header,body.genki2-always-present .lux-header{padding-left:calc(var(--genki2-rail) + 1rem)}}
   @media(max-width:799px){
-    body.genki2-always-present{padding-bottom:var(--genki2-mobile-safe)!important}
-    .genki2-global-presence{left:0!important;right:0!important;top:auto!important;bottom:0!important;width:100%!important;height:118px!important;transform:none!important;display:flex!important;align-items:flex-end!important;justify-content:flex-end!important;padding:0 max(10px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) 10px!important;border-top:1px solid rgba(70,231,255,.18);background:linear-gradient(180deg,rgba(5,6,10,.15),rgba(5,6,10,.92) 35%,rgba(5,6,10,.98));backdrop-filter:blur(12px)}
-    .genki2-global-presence__halo{right:0;left:auto;width:118px;inset-block:4px}
-    .genki2-global-presence__robot{width:86px!important;margin-right:4px!important}
-    .genki2-global-presence__antenna{top:-25px;height:28px;width:4px}
-    .genki2-global-presence__antenna:before{top:-6px;width:11px;height:11px}
-    .genki2-global-presence__head{height:68px;padding:10px 8px 12px}
-    .genki2-global-presence__eye{top:17px;width:17px;height:9px}
-    .genki2-global-presence__eye--left{left:8px}.genki2-global-presence__eye--right{right:8px}
-    .genki2-global-presence__mouth{bottom:8px;width:20px;height:4px;border-bottom-width:2px}
-    .genki2-global-presence__body{height:44px;border-radius:10px 10px 18px 18px}
-    .genki2-global-presence__name{padding-top:7px;font-size:.34rem}
-    .genki2-global-presence__core{width:17px;height:17px;margin-top:5px}
+    body.genki2-always-present main{padding-top:var(--genki2-mobile-stage)!important}
+    body.genki2-always-present footer{position:relative;z-index:1}
+    .genki2-global-presence{left:0!important;right:0!important;top:0!important;bottom:auto!important;width:100%!important;height:var(--genki2-mobile-stage)!important;transform:none!important;display:grid!important;place-items:center!important;padding:18px 0 12px!important;border-bottom:1px solid rgba(70,231,255,.24);background:radial-gradient(circle at 50% 45%,rgba(36,119,255,.22),transparent 44%),linear-gradient(180deg,#0b1020,#05070d)!important;box-shadow:0 18px 40px rgba(0,0,0,.42);overflow:hidden!important}
+    body.genki2-has-system-bar .genki2-global-presence{top:64px!important}
+    body.genki2-has-system-bar main{padding-top:calc(var(--genki2-mobile-stage) + 64px)!important}
+    .genki2-global-presence__halo{inset:4% 20%!important;width:auto!important}
+    .genki2-global-presence__robot{width:108px!important;margin:0!important}
+    .genki2-global-presence__antenna{top:-29px;height:32px;width:5px}
+    .genki2-global-presence__antenna:before{top:-7px;width:13px;height:13px}
+    .genki2-global-presence__head{height:84px;padding:12px 10px 15px}
+    .genki2-global-presence__eye{top:21px;width:20px;height:11px}
+    .genki2-global-presence__eye--left{left:10px}.genki2-global-presence__eye--right{right:10px}
+    .genki2-global-presence__mouth{bottom:9px;width:24px;height:5px;border-bottom-width:3px}
+    .genki2-global-presence__body{height:58px;border-radius:13px 13px 23px 23px}
+    .genki2-global-presence__name{padding-top:9px;font-size:.4rem}
+    .genki2-global-presence__core{width:22px;height:22px;margin-top:6px}
     .genki2-global-presence.is-speaking .genki2-global-presence__mouth{animation-name:gMouthMobile}
   }
-  @keyframes gIdle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}@keyframes gHalo{50%{opacity:.65;transform:scale(1.08)}}@keyframes gAntenna{0%,100%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(5deg)}}@keyframes gBlink{0%,43%,45%,73%,75%,100%{transform:scaleY(1)}44%,74%{transform:scaleY(.08)}}@keyframes gCore{50%{filter:brightness(1.35);transform:scale(1.08)}}@keyframes gTalkBody{from{transform:translateY(0) rotate(-.7deg)}to{transform:translateY(-4px) rotate(.7deg)}}@keyframes gTalkHead{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-2px) rotate(1deg)}}@keyframes gMouth{from{width:28px;height:5px}to{width:54px;height:20px;border-radius:42%}}@keyframes gMouthMobile{from{width:13px;height:2px}to{width:25px;height:9px;border-radius:42%}}@keyframes gTalkEye{from{transform:translateY(0) scaleY(1)}to{transform:translateY(1px) scaleY(.8)}}@media(prefers-reduced-motion:reduce){.genki2-global-presence *{animation:none!important}}
+  @keyframes gIdle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}@keyframes gHalo{50%{opacity:.65;transform:scale(1.08)}}@keyframes gAntenna{0%,100%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(5deg)}}@keyframes gBlink{0%,43%,45%,73%,75%,100%{transform:scaleY(1)}44%,74%{transform:scaleY(.08)}}@keyframes gCore{50%{filter:brightness(1.35);transform:scale(1.08)}}@keyframes gTalkBody{from{transform:translateY(0) rotate(-.7deg)}to{transform:translateY(-4px) rotate(.7deg)}}@keyframes gTalkHead{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-2px) rotate(1deg)}}@keyframes gMouth{from{width:28px;height:5px}to{width:54px;height:20px;border-radius:42%}}@keyframes gMouthMobile{from{width:15px;height:3px}to{width:31px;height:11px;border-radius:42%}}@keyframes gTalkEye{from{transform:translateY(0) scaleY(1)}to{transform:translateY(1px) scaleY(.8)}}@media(prefers-reduced-motion:reduce){.genki2-global-presence *{animation:none!important}}
   `;
   document.head.appendChild(style);
   document.body.classList.add("genki2-always-present");
+  if(document.querySelector(".system-bar"))document.body.classList.add("genki2-has-system-bar");
 
   const presence=document.createElement("div");
   presence.className="genki2-global-presence";presence.setAttribute("aria-label","Genki2 robot teacher");
