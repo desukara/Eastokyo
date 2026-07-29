@@ -1,5 +1,8 @@
+import { createVoiceEngine } from "./voice.js";
+
 export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLabel, soundButton }) {
   const state = { mood: "curious", patience: 82, score: 0, sound: false, speaking: false };
+  const voice = createVoiceEngine();
   let timer = 0;
 
   function render() {
@@ -16,31 +19,23 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
     }
   }
 
-  function speak(text, mood = state.mood, options = {}) {
+  function speak(text, mood = state.mood) {
     state.mood = mood;
     state.speaking = true;
     if (dialogue) dialogue.textContent = text;
     clearTimeout(timer);
-    timer = window.setTimeout(() => { state.speaking = false; render(); }, Math.min(3000, 700 + text.length * 28));
+    timer = window.setTimeout(() => { state.speaking = false; render(); }, Math.min(3200, 800 + text.length * 34));
 
-    if (state.sound && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = options.lang || "en-US";
-      utterance.rate = options.rate || 1;
-      utterance.pitch = options.pitch || .9;
-      window.speechSynthesis.speak(utterance);
-    }
+    if (state.sound) voice.speakEnglish(text);
     render();
   }
 
   function speakJapanese(text) {
-    if (!("speechSynthesis" in window)) return;
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "ja-JP";
-    utterance.rate = .82;
-    window.speechSynthesis.speak(utterance);
+    state.speaking = true;
+    clearTimeout(timer);
+    timer = window.setTimeout(() => { state.speaking = false; render(); }, 1800);
+    voice.speakJapanese(text);
+    render();
   }
 
   function reward(points = 25) {
@@ -57,8 +52,9 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
 
   function toggleSound() {
     state.sound = !state.sound;
+    if (!state.sound) voice.stop();
     render();
-    if (state.sound) speak("Audio online. Speak responsibly.", "curious");
+    if (state.sound) speak("Audio online. Voice processor calibrated.", "curious");
   }
 
   render();
