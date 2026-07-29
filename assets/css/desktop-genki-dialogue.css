@@ -1,0 +1,37 @@
+@media (min-width: 800px) {
+  .lesson-page .lesson-genki-panel {
+    display: block;
+  }
+
+  .lesson-page .compact-genki {
+    top: 30%;
+    width: 190px;
+  }
+
+  .lesson-page .lesson-dialogue {
+    top: auto;
+    right: 1rem;
+    bottom: 6.7rem;
+    left: 1rem;
+    min-height: 92px;
+    max-height: 132px;
+    overflow-y: auto;
+  }
+
+  .lesson-page .lesson-stats {
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+}
+
+@media (min-width: 1180px) and (min-height: 720px) {
+  .lesson-page .compact-genki {
+    top: 31%;
+    width: 210px;
+  }
+
+  .lesson-page .lesson-dialogue {
+    bottom: 7rem;
+  }
+}
