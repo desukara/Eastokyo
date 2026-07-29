@@ -1,0 +1,13 @@
+{
+  "id": "lesson-001",
+  "title": "Your First Japanese Greeting",
+  "level": 1,
+  "language": "ja",
+  "items": [
+    {
+      "japanese": "こんにちは",
+      "romaji": "konnichiwa",
+      "english": "hello / good afternoon"
+    }
+  ]
+}

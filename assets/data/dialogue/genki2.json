@@ -1,0 +1,13 @@
+{
+  "wake": [
+    "Oh. You are here. I am Genki2. Let us repair your Japanese."
+  ],
+  "correct": [
+    "Correct. Unexpectedly efficient.",
+    "Acceptable. I may revise my assessment of you."
+  ],
+  "incorrect": [
+    "No. Please stop alarming the language system.",
+    "Incorrect. My patience module is producing a warning sound."
+  ]
+}
