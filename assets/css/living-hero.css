@@ -3,6 +3,8 @@
   --hero-left: 1;
   --hero-center: 1;
   --hero-right: 1;
+  --hero-sign: 1;
+  --hero-traffic: 1;
   --hero-reflection: .58;
   --hero-haze: .42;
   --hero-prism: .18;
@@ -10,6 +12,10 @@
   --hero-y: 42%;
   --hero-depth-x: 0px;
   --hero-depth-y: 0px;
+  --hero-sign-x: 31%;
+  --hero-sign-y: 36%;
+  --hero-traffic-x: 74%;
+  --hero-traffic-y: 16.5%;
   position: relative;
   isolation: isolate;
   perspective: 1100px;
@@ -69,15 +75,20 @@
 
 .living-hero__bloom {
   z-index: 4;
-  opacity: calc(.56 * var(--hero-haze));
+  opacity: calc(.62 * var(--hero-haze));
   mix-blend-mode: screen;
   background:
+    radial-gradient(ellipse 5.5% 4.5% at var(--hero-sign-x) var(--hero-sign-y), rgb(255 246 158 / calc(.72 * var(--hero-sign))), transparent 58%),
+    radial-gradient(ellipse 17% 13% at var(--hero-sign-x) var(--hero-sign-y), rgb(255 182 22 / calc(.52 * var(--hero-sign))), transparent 64%),
+    radial-gradient(circle 1.8% at var(--hero-traffic-x) var(--hero-traffic-y), rgb(255 226 210 / calc(.98 * var(--hero-traffic))), transparent 49%),
+    radial-gradient(circle 4.5% at var(--hero-traffic-x) var(--hero-traffic-y), rgb(255 30 18 / calc(.82 * var(--hero-traffic))), transparent 57%),
+    radial-gradient(circle 10% at var(--hero-traffic-x) var(--hero-traffic-y), rgb(255 20 12 / calc(.34 * var(--hero-traffic))), transparent 70%),
     radial-gradient(ellipse 28% 30% at 18% 20%, rgb(255 176 86 / calc(.34 * var(--hero-left))), transparent 62%),
     radial-gradient(ellipse 24% 28% at 49% 17%, rgb(255 226 167 / calc(.24 * var(--hero-center))), transparent 60%),
     radial-gradient(ellipse 30% 31% at 82% 20%, rgb(255 206 124 / calc(.32 * var(--hero-right))), transparent 62%),
     radial-gradient(ellipse 24% 18% at 52% 67%, rgb(255 197 112 / calc(.12 * var(--hero-reflection))), transparent 67%),
     radial-gradient(circle at var(--hero-x) var(--hero-y), rgb(255 242 213 / 11%), transparent 22%);
-  filter: blur(8px) saturate(1.1);
+  filter: blur(7px) saturate(1.18);
 }
 
 .living-hero::before,
@@ -93,11 +104,13 @@
   opacity: var(--hero-prism);
   mix-blend-mode: screen;
   background:
+    radial-gradient(circle 2.5% at var(--hero-traffic-x) var(--hero-traffic-y), rgb(255 0 0 / calc(.72 * var(--hero-traffic))), transparent 68%),
+    radial-gradient(ellipse 9% 7% at var(--hero-sign-x) var(--hero-sign-y), rgb(255 205 36 / calc(.46 * var(--hero-sign))), transparent 72%),
     radial-gradient(ellipse 11% 17% at 22% 26%, rgb(255 70 60 / 24%), transparent 67%),
     radial-gradient(ellipse 10% 15% at 24% 26%, rgb(60 205 255 / 18%), transparent 70%),
     radial-gradient(ellipse 12% 17% at 76% 23%, rgb(255 72 176 / 17%), transparent 69%),
     radial-gradient(ellipse 11% 16% at 78% 23%, rgb(92 218 255 / 17%), transparent 70%);
-  filter: blur(5px);
+  filter: blur(4px);
   transform: translate3d(calc(var(--hero-depth-x) * -.3), calc(var(--hero-depth-y) * -.25), 0);
 }
 
@@ -160,6 +173,19 @@
   .living-hero::before { transform: none; }
 }
 
+@media (max-width: 620px) {
+  .guide-hero__media.living-hero {
+    --hero-sign-x: 25%;
+    --hero-sign-y: 36%;
+    --hero-traffic-x: 81%;
+    --hero-traffic-y: 16.5%;
+  }
+
+  .living-hero__bloom {
+    filter: blur(5.5px) saturate(1.22);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .living-hero__base { transition: none; transform: scale(1.022); }
   .living-hero__glass,
@@ -169,6 +195,8 @@
     --hero-left: 1;
     --hero-center: 1;
     --hero-right: 1;
+    --hero-sign: 1.06;
+    --hero-traffic: 1.08;
     --hero-reflection: .58;
     --hero-haze: .42;
     --hero-prism: .12;
