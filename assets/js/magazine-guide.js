@@ -37,15 +37,16 @@ panel.innerHTML = `
   <div class="genki2-guide-panel__actions">
     <button type="button" data-guide-listen>Listen</button>
     <button type="button" data-guide-next>Next stop</button>
-    <button type="button" data-guide-close>Hide guide</button>
+    <button type="button" data-guide-close>Close</button>
   </div>`;
 document.body.append(panel);
 
 const tab = document.createElement("button");
 tab.type = "button";
 tab.className = "genki2-guide-tab";
-tab.textContent = "GENKI2";
+tab.textContent = "GUIDE";
 tab.setAttribute("aria-label", "Open Genki2 guide");
+tab.setAttribute("aria-expanded", "false");
 document.body.append(tab);
 
 const copy = panel.querySelector("[data-guide-copy]");
@@ -81,6 +82,7 @@ function openGuide() {
   body.classList.add("genki2-guide-open");
   presence?.classList.add("is-open");
   panel.hidden = false;
+  tab.setAttribute("aria-expanded", "true");
 }
 
 function closeGuide() {
@@ -90,6 +92,7 @@ function closeGuide() {
   body.classList.remove("genki2-guide-open");
   presence?.classList.remove("is-open");
   panel.hidden = true;
+  tab.setAttribute("aria-expanded", "false");
 }
 
 panel.querySelector("[data-guide-listen]")?.addEventListener("click", speakCurrent);
@@ -97,6 +100,9 @@ panel.querySelector("[data-guide-next]")?.addEventListener("click", () => showNo
 panel.querySelector("[data-guide-close]")?.addEventListener("click", closeGuide);
 tab.addEventListener("click", openGuide);
 robot?.addEventListener("click", openGuide);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && body.classList.contains("genki2-guide-open")) closeGuide();
+});
 
 if ("IntersectionObserver" in window && notes.length > 1) {
   const observer = new IntersectionObserver((entries) => {
@@ -109,5 +115,4 @@ if ("IntersectionObserver" in window && notes.length > 1) {
 }
 
 showNote(0);
-if (matchMedia("(max-width:799px)").matches) closeGuide();
-else openGuide();
+closeGuide();
