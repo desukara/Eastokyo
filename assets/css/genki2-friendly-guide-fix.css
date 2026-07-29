@@ -1,3 +1,6 @@
+/* Remove the old language-app arrival takeover entirely. */
+.genki2-arrival{display:none!important}
+
 /* Fix mobile guide visibility and soften Genki2's presentation. */
 @media(max-width:799px){
   body.eastokyo-luxury.genki2-always-present main{padding-top:0!important}
