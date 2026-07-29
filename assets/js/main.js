@@ -1,5 +1,6 @@
 "use strict";
 
+import "./genki2/presence.js";
 import { createVoiceEngine } from "./genki2/voice.js";
 
 const SOUND_PREFERENCE_KEY = "eastokyo-sound-v2";
@@ -26,11 +27,13 @@ let fallbackTimer = 0;
 let speechToken = 0;
 
 function render() {
-  unit.dataset.mood = state.mood;
-  unit.classList.toggle("is-speaking", state.speaking);
-  emotion.textContent = state.mood.toUpperCase();
-  patience.textContent = `${state.patience}%`;
-  meter.style.width = `${Math.max(10, state.score)}%`;
+  if (unit) {
+    unit.dataset.mood = state.mood;
+    unit.classList.toggle("is-speaking", state.speaking);
+  }
+  if (emotion) emotion.textContent = state.mood.toUpperCase();
+  if (patience) patience.textContent = `${state.patience}%`;
+  if (meter) meter.style.width = `${Math.max(10, state.score)}%`;
   soundButton?.setAttribute("aria-pressed", String(soundEnabled));
   if (soundButton) soundButton.textContent = `SOUND: ${soundEnabled ? "ON" : "OFF"}`;
 }
@@ -50,8 +53,8 @@ function beginSpeech(token) {
 
 function speak(text, mood = state.mood) {
   state.mood = mood;
-  dialogue.textContent = text;
-  terminal.textContent = text;
+  if (dialogue) dialogue.textContent = text;
+  if (terminal) terminal.textContent = text;
   clearTimeout(fallbackTimer);
   const token = ++speechToken;
 
@@ -104,8 +107,8 @@ function resetGenki2() {
   clearTimeout(fallbackTimer);
   state.speaking = false;
   document.querySelectorAll("[data-answer]").forEach((button) => button.classList.remove("correct", "wrong"));
-  dialogue.textContent = "Sleeping. Finally.";
-  terminal.textContent = "Wake Genki2 to begin.";
+  if (dialogue) dialogue.textContent = "Sleeping. Finally.";
+  if (terminal) terminal.textContent = "Wake Genki2 to begin.";
   render();
 }
 
@@ -156,7 +159,7 @@ soundButton?.addEventListener("click", () => {
   speak("Audio online. I will remain audible unless you deliberately switch me off.", "curious");
 });
 
-if (stage && matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMedia("(prefers-reduced-motion:reduce)").matches) {
+if (stage && unit && matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMedia("(prefers-reduced-motion:reduce)").matches) {
   stage.addEventListener("pointermove", (event) => {
     const rect = stage.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - .5;
