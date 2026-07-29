@@ -1,0 +1,56 @@
+:root{--et-black:#090909;--et-paper:#f2eee5;--et-red:#d63b2f;--et-yellow:#f1c84b;--et-green:#3f7f61;--et-rule:rgba(9,9,9,.22)}
+.et-home{background:var(--et-paper);color:var(--et-black)}
+.et-home a{color:inherit}
+.et-home .lux-header{background:rgba(9,9,9,.96);border-bottom:1px solid rgba(242,238,229,.18)}
+.et-home .lux-nav a[aria-current="page"]{text-decoration:underline;text-underline-offset:.35rem}
+.et-hero{position:relative;min-height:88svh;display:grid;align-items:end;overflow:hidden;background:#111;color:var(--et-paper)}
+.et-hero__image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(100%) contrast(1.08)}
+.et-hero__veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,9,9,.92) 0%,rgba(9,9,9,.63) 44%,rgba(9,9,9,.18) 78%),linear-gradient(0deg,rgba(9,9,9,.72),transparent 55%)}
+.et-hero__content{position:relative;z-index:1;padding-top:10rem;padding-bottom:clamp(3rem,7vw,6rem)}
+.et-kicker,.et-label,.et-card__meta,.et-section-head p,.et-ticker{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.et-hero h1{max-width:8.4ch;margin:.55rem 0 1.5rem;font-size:clamp(4.2rem,12vw,10.5rem);line-height:.8;letter-spacing:-.055em}
+.et-hero__standfirst{max-width:44rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.25rem,2.5vw,1.9rem);line-height:1.42}
+.et-hero__actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.et-button{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:.8rem 1.15rem;border:1px solid currentColor;text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.et-button--solid{background:var(--et-paper);color:var(--et-black)}
+.et-ticker{display:flex;gap:2rem;overflow:hidden;padding:1rem max(1.25rem,calc((100vw - 1200px)/2));background:var(--et-yellow);white-space:nowrap}
+.et-intro{padding:clamp(4rem,9vw,8rem) 0;border-bottom:1px solid var(--et-rule)}
+.et-intro__grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:clamp(2rem,8vw,8rem)}
+.et-intro h2,.et-section-head h2{margin:0;font-size:clamp(2.7rem,7vw,6.6rem);line-height:.9;letter-spacing:-.04em}
+.et-intro__copy{max-width:44rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.08rem,2vw,1.35rem);line-height:1.65}
+.et-intro__copy a{text-underline-offset:.2em}
+.et-section{padding:clamp(4rem,9vw,8rem) 0}
+.et-section--dark{background:var(--et-black);color:var(--et-paper)}
+.et-section-head{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:clamp(2rem,5vw,4rem)}
+.et-section-head>a{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;text-underline-offset:.25em}
+.et-feature{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(18rem,.55fr);border-top:1px solid currentColor;border-bottom:1px solid currentColor}
+.et-feature__media{min-height:620px;overflow:hidden}
+.et-feature__media img,.et-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s ease,filter .55s ease}
+.et-feature__copy{display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(2rem,5vw,4rem);border-left:1px solid currentColor}
+.et-feature__copy h3{margin:.65rem 0 1.2rem;font-size:clamp(2.4rem,5vw,5.2rem);line-height:.92}
+.et-feature__copy p{font-family:Georgia,"Times New Roman",serif;font-size:1.1rem;line-height:1.6}
+.et-feature__copy a{margin-top:1.5rem;text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;text-underline-offset:.25em}
+.et-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--et-rule)}
+.et-card{display:grid;grid-template-rows:auto auto;min-width:0;border-bottom:1px solid var(--et-rule)}
+.et-card:nth-child(odd){padding-right:clamp(1.25rem,4vw,4rem);border-right:1px solid var(--et-rule)}
+.et-card:nth-child(even){padding-left:clamp(1.25rem,4vw,4rem)}
+.et-card__media{aspect-ratio:16/10;overflow:hidden;margin-top:clamp(1.5rem,4vw,3rem)}
+.et-card__body{padding:1.4rem 0 clamp(2rem,5vw,4rem)}
+.et-card h3{margin:.55rem 0 .8rem;font-size:clamp(1.9rem,4vw,3.5rem);line-height:1}
+.et-card p{max-width:34rem;font-family:Georgia,"Times New Roman",serif;line-height:1.55}
+.et-card a{text-decoration:none}
+.et-card a:hover h3{text-decoration:underline;text-underline-offset:.12em}
+.et-card:hover img,.et-feature:hover img{transform:scale(1.025);filter:contrast(1.05)}
+.et-guide{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--et-paper);border-bottom:1px solid var(--et-paper)}
+.et-guide a{padding:clamp(1.5rem,3vw,2.6rem);text-decoration:none;border-right:1px solid var(--et-paper)}
+.et-guide a:last-child{border-right:0}
+.et-guide span{display:block;font-size:.7rem;letter-spacing:.12em}
+.et-guide strong{display:block;margin:.45rem 0;font-size:clamp(1.5rem,3vw,2.4rem)}
+.et-guide small{font-family:Georgia,"Times New Roman",serif;opacity:.75}
+.et-partner{padding:clamp(4rem,8vw,7rem) 0;background:var(--et-red);color:#fff}
+.et-partner__grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,8vw,8rem);align-items:end}
+.et-partner h2{margin:0;font-size:clamp(3rem,8vw,7rem);line-height:.85}
+.et-partner p{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.1rem,2vw,1.35rem);line-height:1.55}
+.et-partner a{text-underline-offset:.25em}
+@media(max-width:900px){.et-feature{grid-template-columns:1fr}.et-feature__media{min-height:52svh}.et-feature__copy{border-left:0;border-top:1px solid currentColor}.et-section-head{grid-template-columns:1fr}.et-guide{grid-template-columns:repeat(2,1fr)}.et-guide a:nth-child(2){border-right:0}.et-guide a:nth-child(-n+2){border-bottom:1px solid var(--et-paper)}}
+@media(max-width:680px){.et-hero{min-height:82svh}.et-hero__veil{background:linear-gradient(0deg,rgba(9,9,9,.94) 0%,rgba(9,9,9,.56) 68%,rgba(9,9,9,.2))}.et-hero__content{padding-top:8rem}.et-intro__grid,.et-partner__grid,.et-grid{grid-template-columns:1fr}.et-card:nth-child(n){padding:0;border-right:0}.et-guide{grid-template-columns:1fr}.et-guide a:nth-child(n){border-right:0;border-bottom:1px solid var(--et-paper)}.et-guide a:last-child{border-bottom:0}.et-button{width:100%}}
