@@ -11,120 +11,18 @@
 <meta property="og:description" content="A mobile-first Japanese learning system guided by a robot with personality, memory, and attitude." />
 <title>Eastokyo — Meet Genki2</title>
 <link rel="manifest" href="site.webmanifest" />
-<link rel="stylesheet" href="assets/css/global.css?v=18" />
+<link rel="stylesheet" href="assets/css/global.css?v=19" />
 <script type="module" src="assets/js/main.js?v=3"></script>
 </head>
 <body class="genki-app">
 <a class="skip-link" href="#main-content">Skip to training</a>
 <div class="system-grid" aria-hidden="true"></div>
-<header class="system-bar">
-  <a class="brand-lockup" href="index.html" aria-label="Eastokyo homepage">
-    <span class="brand-lockup__name">EASTOKYO</span>
-    <span class="brand-lockup__mode">LANGUAGE SYSTEM</span>
-  </a>
-  <div class="system-status" aria-label="System status">
-    <span class="status-light"></span>
-    <span>GENKI2 ONLINE</span>
-  </div>
-  <button class="sound-toggle" type="button" aria-pressed="false">SOUND: OFF</button>
-</header>
-
+<header class="system-bar"><a class="brand-lockup" href="index.html" aria-label="Eastokyo homepage"><span class="brand-lockup__name">EASTOKYO</span><span class="brand-lockup__mode">LANGUAGE SYSTEM</span></a><div class="system-status" aria-label="System status"><span class="status-light"></span><span>GENKI2 ONLINE</span></div><button class="sound-toggle" type="button" aria-pressed="false">SOUND: OFF</button></header>
 <main id="main-content">
-  <section class="boot-screen" aria-labelledby="hero-title">
-    <div class="boot-copy">
-      <p class="eyebrow">SYSTEM 02 / JAPANESE TRAINING UNIT</p>
-      <h1 id="hero-title">LEARN JAPANESE FROM A ROBOT THAT FEELS ALIVE.</h1>
-      <p class="hero-dek">Meet Genki2. He teaches, reacts, remembers, celebrates, complains, and refuses to let bad Japanese escape into the world.</p>
-      <div class="hero-actions">
-        <button class="primary-command" type="button" data-command="wake">WAKE GENKI2</button>
-        <a class="secondary-command" href="#lesson-preview">VIEW TRAINING MODE</a>
-      </div>
-      <dl class="system-readout">
-        <div><dt>MODE</dt><dd>BEGINNER</dd></div>
-        <div><dt>VOICE</dt><dd>READY</dd></div>
-        <div><dt>PATIENCE</dt><dd data-patience>82%</dd></div>
-      </dl>
-    </div>
-
-    <div class="genki-stage" data-genki-stage>
-      <div class="genki-aura"></div>
-      <div class="genki-unit" data-mood="sleeping" aria-label="Genki2 robot teacher">
-        <div class="antenna"><span></span></div>
-        <div class="genki-head">
-          <div class="ear ear--left"></div>
-          <div class="ear ear--right"></div>
-          <div class="face-screen">
-            <div class="brow brow--left"></div>
-            <div class="brow brow--right"></div>
-            <div class="eye eye--left"><span></span></div>
-            <div class="eye eye--right"><span></span></div>
-            <div class="mouth"></div>
-          </div>
-          <div class="cheek-light cheek-light--left"></div>
-          <div class="cheek-light cheek-light--right"></div>
-        </div>
-        <div class="genki-neck"></div>
-        <div class="genki-body">
-          <span class="body-label">GENKI2</span>
-          <span class="core-light"></span>
-          <span class="body-code">日本語 / UNIT 02</span>
-        </div>
-      </div>
-      <div class="speech-panel" aria-live="polite">
-        <span class="speech-panel__speaker">GENKI2</span>
-        <p data-genki-dialogue>Sleeping. Finally.</p>
-      </div>
-      <div class="emotion-monitor" aria-hidden="true">
-        <span>EMOTION</span><strong data-emotion>SLEEPING</strong>
-      </div>
-    </div>
-  </section>
-
-  <section class="training-strip" aria-label="Eastokyo training features">
-    <div><span>01</span><strong>GENKI2 TEACHES</strong><p>Clear Japanese explanations built for English speakers.</p></div>
-    <div><span>02</span><strong>GENKI2 REACTS</strong><p>Correct answers, mistakes, silence, and suspicious confidence.</p></div>
-    <div><span>03</span><strong>YOU REMEMBER</strong><p>Short lessons, repeatable drills, and progress stored on your device.</p></div>
-  </section>
-
-  <section class="lesson-preview" id="lesson-preview" aria-labelledby="lesson-title">
-    <div class="lesson-console">
-      <header class="console-header">
-        <div><p class="eyebrow">TRAINING MODULE 001</p><h2 id="lesson-title">YOUR FIRST JAPANESE GREETING</h2></div>
-        <span class="difficulty">LEVEL 01</span>
-      </header>
-      <div class="lesson-display">
-        <p class="japanese-line" lang="ja">こんにちは</p>
-        <p class="romaji-line">KONNICHIWA</p>
-        <p class="meaning-line">Hello / Good afternoon</p>
-      </div>
-      <div class="lesson-question">
-        <p>Which answer means “hello”?</p>
-        <div class="answer-grid">
-          <button type="button" data-answer="wrong">さようなら <small>SAYŌNARA</small></button>
-          <button type="button" data-answer="correct">こんにちは <small>KONNICHIWA</small></button>
-          <button type="button" data-answer="wrong">ありがとう <small>ARIGATŌ</small></button>
-        </div>
-      </div>
-    </div>
-    <aside class="genki-terminal">
-      <p class="terminal-label">LIVE GENKI2 FEED</p>
-      <p data-terminal-copy>Wake Genki2 to begin.</p>
-      <div class="terminal-meter"><span data-meter></span></div>
-      <button type="button" class="reset-command" data-command="reset">RESET UNIT</button>
-    </aside>
-  </section>
-
-  <section class="manifesto-panel">
-    <p class="eyebrow">EASTOKYO DESIGN DIRECTIVE</p>
-    <h2>NOT A LANGUAGE APP WITH A ROBOT STUCK ON TOP.</h2>
-    <p>This is Genki2’s machine. Every lesson, button, warning, sound, reaction, and screen belongs to his Tokyo-built world.</p>
-    <a href="#main-content">RETURN TO GENKI2 ↑</a>
-  </section>
-</main>
-
-<footer class="system-footer">
-  <span>EASTOKYO / GENKI2 LANGUAGE SYSTEM</span>
-  <span>MOBILE-FIRST PROTOTYPE / BUILD 0.1</span>
-</footer>
+<section class="boot-screen" aria-labelledby="hero-title"><div class="boot-copy"><p class="eyebrow">SYSTEM 02 / JAPANESE TRAINING UNIT</p><h1 id="hero-title">LEARN JAPANESE FROM A ROBOT THAT FEELS ALIVE.</h1><p class="hero-dek">Meet Genki2. He teaches, reacts, remembers, celebrates, complains, and refuses to let bad Japanese escape into the world.</p><div class="hero-actions"><button class="primary-command" type="button" data-command="wake">WAKE GENKI2</button><a class="secondary-command" href="lesson.html">BEGIN MODULE 001</a></div><dl class="system-readout"><div><dt>MODE</dt><dd>BEGINNER</dd></div><div><dt>VOICE</dt><dd>READY</dd></div><div><dt>PATIENCE</dt><dd data-patience>82%</dd></div></dl></div><div class="genki-stage" data-genki-stage><div class="genki-aura"></div><div class="genki-unit" data-mood="sleeping" aria-label="Genki2 robot teacher"><div class="antenna"><span></span></div><div class="genki-head"><div class="ear ear--left"></div><div class="ear ear--right"></div><div class="face-screen"><div class="brow brow--left"></div><div class="brow brow--right"></div><div class="eye eye--left"><span></span></div><div class="eye eye--right"><span></span></div><div class="mouth"></div></div><div class="cheek-light cheek-light--left"></div><div class="cheek-light cheek-light--right"></div></div><div class="genki-neck"></div><div class="genki-body"><span class="body-label">GENKI2</span><span class="core-light"></span><span class="body-code">日本語 / UNIT 02</span></div></div><div class="speech-panel" aria-live="polite"><span class="speech-panel__speaker">GENKI2</span><p data-genki-dialogue>Sleeping. Finally.</p></div><div class="emotion-monitor" aria-hidden="true"><span>EMOTION</span><strong data-emotion>SLEEPING</strong></div></div></section>
+<section class="training-strip" aria-label="Eastokyo training features"><div><span>01</span><strong>GENKI2 TEACHES</strong><p>Clear Japanese explanations built for English speakers.</p></div><div><span>02</span><strong>GENKI2 REACTS</strong><p>Correct answers, mistakes, silence, and suspicious confidence.</p></div><div><span>03</span><strong>YOU REMEMBER</strong><p>Short lessons, repeatable drills, and progress stored on your device.</p></div></section>
+<section class="lesson-preview" id="lesson-preview" aria-labelledby="lesson-title"><div class="lesson-console"><header class="console-header"><div><p class="eyebrow">TRAINING MODULE 001</p><h2 id="lesson-title">YOUR FIRST JAPANESE GREETING</h2></div><span class="difficulty">LEVEL 01</span></header><div class="lesson-display"><p class="japanese-line" lang="ja">こんにちは</p><p class="romaji-line">KONNICHIWA</p><p class="meaning-line">Hello / Good afternoon</p></div><div class="lesson-question"><p>Which answer means “hello”?</p><div class="answer-grid"><button type="button" data-answer="wrong">さようなら <small>SAYŌNARA</small></button><button type="button" data-answer="correct">こんにちは <small>KONNICHIWA</small></button><button type="button" data-answer="wrong">ありがとう <small>ARIGATŌ</small></button></div></div></div><aside class="genki-terminal"><p class="terminal-label">LIVE GENKI2 FEED</p><p data-terminal-copy>Wake Genki2 to begin.</p><div class="terminal-meter"><span data-meter></span></div><a class="primary-command" href="lesson.html">ENTER FULL TRAINING</a><button type="button" class="reset-command" data-command="reset">RESET UNIT</button></aside></section>
+<section class="manifesto-panel"><p class="eyebrow">EASTOKYO DESIGN DIRECTIVE</p><h2>NOT A LANGUAGE APP WITH A ROBOT STUCK ON TOP.</h2><p>This is Genki2’s machine. Every lesson, button, warning, sound, reaction, and screen belongs to his Tokyo-built world.</p><a href="lesson.html">BEGIN MODULE 001 →</a></section>
+</main><footer class="system-footer"><span>EASTOKYO / GENKI2 LANGUAGE SYSTEM</span><span>MOBILE-FIRST PROTOTYPE / BUILD 0.2</span></footer>
 </body>
 </html>
