@@ -1,6 +1,6 @@
 "use strict";
 
-import "./genki2/presence.js?v=5";
+import "./genki2/presence.js?v=6";
 import { createGenki2 } from "./genki2/core.js?v=5";
 
 const unit = document.querySelector("[data-genki]");
