@@ -1,0 +1,101 @@
+/* Structural fix: Genki2 lives inside the guide card, so no breakpoint can crop him as a separate fixed widget. */
+.genki2-arrival{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+
+.genki2-guide-card{
+  position:fixed!important;
+  z-index:2147483150!important;
+  right:18px!important;
+  bottom:18px!important;
+  width:320px!important;
+  min-height:142px!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 104px!important;
+  gap:10px!important;
+  align-items:end!important;
+  padding:14px!important;
+  overflow:hidden!important;
+  background:rgba(8,8,8,.97)!important;
+  color:#fff!important;
+  border:1px solid rgba(184,154,92,.38)!important;
+  border-radius:16px!important;
+  box-shadow:0 16px 38px rgba(0,0,0,.36)!important
+}
+.genki2-guide-card[hidden]{display:none!important}
+.genki2-guide-card__copy{min-width:0;align-self:center}
+.genki2-guide-card__portrait{
+  position:relative!important;
+  width:104px!important;
+  height:118px!important;
+  overflow:hidden!important;
+  align-self:end!important;
+  pointer-events:auto!important
+}
+
+.eastokyo-luxury .genki2-global-presence.is-embedded{
+  position:absolute!important;
+  inset:0!important;
+  width:104px!important;
+  height:118px!important;
+  transform:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  contain:layout paint!important;
+  z-index:1!important
+}
+.eastokyo-luxury .genki2-global-presence.is-embedded .g2-stage,
+.eastokyo-luxury .genki2-global-presence.is-embedded .g2-halo{display:none!important}
+.eastokyo-luxury .genki2-global-presence.is-embedded .g2-robot{
+  left:50%!important;
+  top:2px!important;
+  bottom:auto!important;
+  width:246px!important;
+  height:570px!important;
+  transform:translateX(-50%) scale(.43)!important;
+  transform-origin:center top!important;
+  animation:none!important;
+  filter:none!important
+}
+
+.genki2-guide-panel__copy{font-size:.78rem!important;line-height:1.34!important}
+.genki2-guide-panel__actions{display:flex!important;flex-wrap:nowrap!important;gap:4px!important;margin-top:8px!important}
+.genki2-guide-panel button{padding:5px 6px!important;font-size:.48rem!important;white-space:nowrap!important}
+
+/* Dark matte brown eyes, with no glow and no red state. */
+.eastokyo-luxury .g2-eye,
+.eastokyo-luxury .genki2-global-presence.is-angry .g2-eye{
+  background:
+    radial-gradient(circle at 42% 34%,#d8c2a5 0 4%,transparent 5%),
+    radial-gradient(circle at 50% 50%,#100805 0 31%,#2b160f 33% 53%,#4a2b1d 55% 68%,#76563b 70% 76%,#ece5dc 78% 88%,#626a70 90%)!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.2)!important;
+  filter:none!important
+}
+.eastokyo-luxury .g2-brow{height:4px!important;opacity:.56!important}
+
+@media(max-width:799px){
+  .genki2-guide-card{
+    left:8px!important;
+    right:8px!important;
+    bottom:8px!important;
+    width:auto!important;
+    min-height:126px!important;
+    max-height:none!important;
+    grid-template-columns:minmax(0,1fr) 88px!important;
+    gap:8px!important;
+    padding:11px!important;
+    overflow:hidden!important
+  }
+  .genki2-guide-card__portrait{width:88px!important;height:104px!important}
+  .eastokyo-luxury .genki2-global-presence.is-embedded{
+    width:88px!important;
+    height:104px!important
+  }
+  .eastokyo-luxury .genki2-global-presence.is-embedded .g2-robot{
+    top:0!important;
+    transform:translateX(-50%) scale(.37)!important
+  }
+  .genki2-guide-panel__eyebrow{font-size:.47rem!important;margin-bottom:3px!important}
+  .genki2-guide-panel__copy{font-size:.7rem!important;line-height:1.28!important}
+  .genki2-guide-panel__actions{gap:3px!important;margin-top:6px!important}
+  .genki2-guide-panel button{padding:4px 5px!important;font-size:.43rem!important}
+}
