@@ -1,13 +1,15 @@
-:root{--englishire-navy:#112233;--englishire-ivory:#f6f2e8;--englishire-rule:rgba(246,242,232,.22)}
-.publication-header{background:var(--englishire-navy)!important;color:var(--englishire-ivory)!important;border-bottom:1px solid var(--englishire-rule)!important}
-.publication-header__brand{display:flex;align-items:center;gap:clamp(.8rem,2vw,1.5rem);min-width:0;text-decoration:none;color:inherit}
-.publication-header__brand img{display:block;width:clamp(7.5rem,15vw,11rem);height:auto;filter:brightness(0) invert(1)}
-.publication-header__divider{width:1px;height:2.7rem;background:var(--englishire-rule);flex:0 0 auto}
-.publication-header__title{display:flex;flex-direction:column;min-width:0;line-height:1}
-.publication-header__title strong{font-size:clamp(.95rem,1.8vw,1.35rem);letter-spacing:.08em;text-transform:uppercase}
-.publication-header__title small{margin-top:.38rem;font-size:.61rem;letter-spacing:.13em;text-transform:uppercase;opacity:.72}
-.publication-credit{padding:.8rem max(1.25rem,calc((100vw - 1200px)/2));background:var(--englishire-ivory);color:var(--englishire-navy);border-bottom:1px solid rgba(17,34,51,.18);font-size:.68rem;line-height:1.45;letter-spacing:.09em;text-transform:uppercase;text-align:center}
-.publication-credit a{color:inherit;text-underline-offset:.2em}
-.publication-mark{display:flex;align-items:center;gap:.8rem}
-.publication-mark img{width:8.5rem;height:auto;filter:brightness(0) invert(1)}
-@media(max-width:760px){.publication-header__divider{height:2.1rem}.publication-header__title small{display:none}.publication-credit{text-align:left}.publication-header__brand img{width:7.4rem}}
+:root{--englishire-navy:#07163f;--englishire-ivory:#f6f2e8;--englishire-gold:#d7a84a;--englishire-rule:rgba(246,242,232,.22)}
+.publication-header{background:linear-gradient(180deg,#061235 0%,var(--englishire-navy) 100%)!important;color:var(--englishire-ivory)!important;border-bottom:2px solid var(--englishire-gold)!important}
+.publication-header__brand{display:flex;align-items:center;gap:clamp(1rem,2vw,1.65rem);min-width:0;text-decoration:none;color:inherit}
+.publication-header__brand img{display:block;width:clamp(12rem,21vw,18rem);height:auto;filter:none!important}
+.publication-header__divider{width:1px;height:3.45rem;background:rgba(215,168,74,.65);flex:0 0 auto}
+.publication-header__title{display:flex;flex-direction:column;min-width:0;line-height:1;color:var(--englishire-ivory)}
+.publication-header__title strong{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.05rem,2vw,1.55rem);font-weight:500;letter-spacing:.035em;text-transform:none}
+.publication-header__title small{margin-top:.42rem;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--englishire-gold)}
+.publication-credit{margin:0;padding:.78rem max(1.25rem,calc((100vw - 1200px)/2));background:var(--englishire-ivory);color:#112233;border-bottom:1px solid rgba(17,34,51,.18);font-family:Arial,Helvetica,sans-serif;font-size:.68rem;line-height:1.45;letter-spacing:.085em;text-transform:uppercase;text-align:center}
+.publication-credit a{color:inherit;text-underline-offset:.2em;font-weight:700}
+.publication-mark{display:flex;align-items:center;gap:1rem}
+.publication-mark img{width:clamp(11rem,18vw,15rem);height:auto;filter:none!important}
+.publication-mark span{font-family:Georgia,"Times New Roman",serif;font-size:clamp(.95rem,1.5vw,1.25rem);letter-spacing:.04em;color:var(--englishire-ivory)}
+@media(max-width:900px){.publication-header__brand img{width:11.5rem}.publication-header__divider{height:2.8rem}.publication-header__title strong{font-size:1rem}.publication-header__title small{font-size:.55rem}}
+@media(max-width:760px){.publication-header__brand{gap:.75rem}.publication-header__brand img{width:9rem}.publication-header__divider{height:2.25rem}.publication-header__title strong{font-size:.86rem}.publication-header__title small{display:none}.publication-credit{text-align:left;font-size:.62rem}.publication-mark{align-items:flex-start;flex-direction:column}.publication-mark img{width:11rem}}
