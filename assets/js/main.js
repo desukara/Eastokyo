@@ -19,8 +19,9 @@ const patience = document.querySelector("[data-patience]");
 const meter = document.querySelector("[data-meter]");
 const stage = document.querySelector("[data-genki-stage]");
 const soundButton = document.querySelector(".sound-toggle");
-let soundEnabled = false;
-let speakingTimer = 0;
+let soundEnabled = localStorage.getItem("eastokyo-sound") !== "off";
+let fallbackTimer = 0;
+let speechToken = 0;
 
 function render() {
   unit.dataset.mood = state.mood;
@@ -28,21 +29,60 @@ function render() {
   emotion.textContent = state.mood.toUpperCase();
   patience.textContent = `${state.patience}%`;
   meter.style.width = `${Math.max(10, state.score)}%`;
+  soundButton?.setAttribute("aria-pressed", String(soundEnabled));
+  if (soundButton) soundButton.textContent = `SOUND: ${soundEnabled ? "ON" : "OFF"}`;
+}
+
+function finishSpeech(token) {
+  if (token !== speechToken) return;
+  clearTimeout(fallbackTimer);
+  state.speaking = false;
+  render();
+}
+
+function beginSpeech(token) {
+  if (token !== speechToken) return;
+  state.speaking = true;
+  render();
 }
 
 function speak(text, mood = state.mood) {
   state.mood = mood;
-  state.speaking = true;
   dialogue.textContent = text;
   terminal.textContent = text;
-  clearTimeout(speakingTimer);
-  speakingTimer = window.setTimeout(() => {
-    state.speaking = false;
-    render();
-  }, Math.min(3200, 800 + text.length * 34));
+  clearTimeout(fallbackTimer);
+  const token = ++speechToken;
 
-  if (soundEnabled) voice.speakEnglish(text);
+  if (soundEnabled && voice.available) {
+    voice.speakEnglish(text, {
+      onStart: () => beginSpeech(token),
+      onEnd: () => finishSpeech(token),
+      onError: () => finishSpeech(token)
+    });
+    fallbackTimer = window.setTimeout(() => finishSpeech(token), Math.min(12000, 1800 + text.length * 90));
+  } else {
+    beginSpeech(token);
+    fallbackTimer = window.setTimeout(() => finishSpeech(token), Math.min(3600, 900 + text.length * 36));
+  }
+
   render();
+}
+
+function speakJapanese(text) {
+  clearTimeout(fallbackTimer);
+  const token = ++speechToken;
+
+  if (soundEnabled && voice.available) {
+    voice.speakJapanese(text, {
+      onStart: () => beginSpeech(token),
+      onEnd: () => finishSpeech(token),
+      onError: () => finishSpeech(token)
+    });
+    fallbackTimer = window.setTimeout(() => finishSpeech(token), 6000);
+  } else {
+    beginSpeech(token);
+    fallbackTimer = window.setTimeout(() => finishSpeech(token), 1900);
+  }
 }
 
 function wakeGenki2() {
@@ -58,6 +98,9 @@ function resetGenki2() {
   state.patience = 82;
   state.score = 0;
   voice.stop();
+  speechToken += 1;
+  clearTimeout(fallbackTimer);
+  state.speaking = false;
   document.querySelectorAll("[data-answer]").forEach((button) => button.classList.remove("correct", "wrong"));
   dialogue.textContent = "Sleeping. Finally.";
   terminal.textContent = "Wake Genki2 to begin.";
@@ -80,7 +123,7 @@ document.querySelectorAll("[data-answer]").forEach((button) => {
       state.score = Math.min(100, state.score + 43);
       state.patience = Math.min(100, state.patience + 4);
       speak("Correct. Unexpectedly efficient. That greeting means hello.", "proud");
-      if (soundEnabled) window.setTimeout(() => voice.speakJapanese("こんにちは"), 2100);
+      if (soundEnabled) window.setTimeout(() => speakJapanese("こんにちは"), 2100);
       localStorage.setItem("eastokyo-demo-score", String(state.score));
     } else {
       button.classList.add("wrong");
@@ -96,10 +139,19 @@ document.querySelectorAll("[data-answer]").forEach((button) => {
 
 soundButton?.addEventListener("click", () => {
   soundEnabled = !soundEnabled;
-  soundButton.setAttribute("aria-pressed", String(soundEnabled));
-  soundButton.textContent = `SOUND: ${soundEnabled ? "ON" : "OFF"}`;
-  if (!soundEnabled) voice.stop();
-  if (soundEnabled) speak("Audio online. Voice processor calibrated.", "curious");
+  localStorage.setItem("eastokyo-sound", soundEnabled ? "on" : "off");
+
+  if (!soundEnabled) {
+    voice.stop();
+    speechToken += 1;
+    clearTimeout(fallbackTimer);
+    state.speaking = false;
+    render();
+    return;
+  }
+
+  render();
+  speak("Audio online. I will remain audible unless you deliberately switch me off.", "curious");
 });
 
 if (stage && matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMedia("(prefers-reduced-motion:reduce)").matches) {
