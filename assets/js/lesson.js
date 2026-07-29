@@ -1,6 +1,9 @@
 "use strict";
 
-import { createGenki2 } from "./genki2/core.js";
+const storedSoundV2 = localStorage.getItem("eastokyo-sound-v2");
+localStorage.setItem("eastokyo-sound", storedSoundV2 === null ? "on" : storedSoundV2);
+
+import { createGenki2 } from "./genki2/core.js?v=3";
 
 const unit = document.querySelector("[data-genki]");
 const dialogue = document.querySelector("[data-dialogue]");
@@ -26,7 +29,7 @@ function showStep(step) {
   const visibleStep = Math.min(step + 1, 3);
   stepLabel.textContent = step >= 3 ? "COMPLETE" : `STEP ${visibleStep} / 3`;
   progress.style.width = `${step >= 3 ? 100 : visibleStep * 33.333}%`;
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.querySelector(".lesson-workspace")?.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function completeStep(message, mood = "proud", points = 34) {
@@ -88,5 +91,9 @@ document.querySelector("[data-action='restart']")?.addEventListener("click", () 
   showStep(0);
 });
 
-soundButton?.addEventListener("click", genki2.toggleSound);
+soundButton?.addEventListener("click", () => {
+  genki2.toggleSound();
+  localStorage.setItem("eastokyo-sound-v2", genki2.state.sound ? "on" : "off");
+});
+
 showStep(0);
