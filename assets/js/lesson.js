@@ -1,9 +1,7 @@
 "use strict";
 
-const storedSoundV2 = localStorage.getItem("eastokyo-sound-v2");
-localStorage.setItem("eastokyo-sound", storedSoundV2 === null ? "on" : storedSoundV2);
-
-import { createGenki2 } from "./genki2/core.js?v=3";
+import "./genki2/presence.js";
+import { createGenki2 } from "./genki2/core.js?v=4";
 
 const unit = document.querySelector("[data-genki]");
 const dialogue = document.querySelector("[data-dialogue]");
@@ -27,9 +25,9 @@ function showStep(step) {
   currentStep = step;
   cards.forEach((card) => { card.hidden = Number(card.dataset.step) !== step; });
   const visibleStep = Math.min(step + 1, 3);
-  stepLabel.textContent = step >= 3 ? "COMPLETE" : `STEP ${visibleStep} / 3`;
-  progress.style.width = `${step >= 3 ? 100 : visibleStep * 33.333}%`;
-  document.querySelector(".lesson-workspace")?.scrollTo({ top: 0, behavior: "smooth" });
+  if (stepLabel) stepLabel.textContent = step >= 3 ? "COMPLETE" : `STEP ${visibleStep} / 3`;
+  if (progress) progress.style.width = `${step >= 3 ? 100 : visibleStep * 33.333}%`;
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function completeStep(message, mood = "proud", points = 34) {
@@ -40,7 +38,6 @@ function completeStep(message, mood = "proud", points = 34) {
 
 document.querySelector("[data-action='hear']")?.addEventListener("click", () => {
   genki2.speakJapanese("こんにちは");
-  dialogue.textContent = "Listen carefully. The final は is pronounced wa here. Japanese enjoys traps.";
 });
 
 document.querySelector("[data-action='next']")?.addEventListener("click", () => {
@@ -71,7 +68,7 @@ document.querySelectorAll("[data-fragment]").forEach((button) => {
       genki2.speak("Module complete. You assembled konnichiwa without damaging it.", "proud");
       localStorage.setItem("eastokyo-module-001", "complete");
       window.setTimeout(() => {
-        finalScore.textContent = String(genki2.state.score);
+        if (finalScore) finalScore.textContent = String(genki2.state.score);
         showStep(3);
       }, 1000);
     } else {
@@ -89,11 +86,6 @@ document.querySelector("[data-action='restart']")?.addEventListener("click", () 
   document.querySelectorAll(".is-correct,.is-wrong").forEach((item) => item.classList.remove("is-correct", "is-wrong"));
   genki2.render();
   showStep(0);
-});
-
-soundButton?.addEventListener("click", () => {
-  genki2.toggleSound();
-  localStorage.setItem("eastokyo-sound-v2", genki2.state.sound ? "on" : "off");
 });
 
 showStep(0);
