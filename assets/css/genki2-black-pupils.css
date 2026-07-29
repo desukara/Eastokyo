@@ -1,0 +1,11 @@
+/* Genki2 pupil correction: dark pupils in every emotional state. */
+.g2-eye{
+  background:
+    radial-gradient(circle at 50% 48%,#030405 0 9%,#70cdec 10% 29%,#2e7594 31% 43%,#12181d 47% 59%,transparent 62%),
+    linear-gradient(#dbe2e4,#65727a)!important;
+}
+.genki2-global-presence.is-angry .g2-eye{
+  background:
+    radial-gradient(circle at 50% 48%,#030405 0 9%,#ff426e 11% 38%,#6b071f 41% 55%,transparent 58%),
+    linear-gradient(#dbe2e4,#65727a)!important;
+}
