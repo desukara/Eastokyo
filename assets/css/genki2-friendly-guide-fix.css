@@ -1,5 +1,27 @@
 /* Remove the old language-app arrival takeover entirely. */
-.genki2-arrival{display:none!important}
+.genki2-arrival{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+
+/* Make the opened desktop portrait fill its capsule instead of sitting tiny at the bottom. */
+@media(min-width:1101px){
+  .eastokyo-luxury .genki2-global-presence{width:132px!important;height:176px!important}
+  .eastokyo-luxury .g2-robot{
+    bottom:-160px!important;
+    transform:translateX(-50%) scale(.58)!important;
+    transform-origin:center bottom!important;
+    animation:none!important
+  }
+}
+
+/* Tablet keeps a compact but clearly readable portrait. */
+@media(min-width:800px) and (max-width:1100px){
+  .eastokyo-luxury .genki2-global-presence{width:112px!important;height:154px!important}
+  .eastokyo-luxury .g2-robot{
+    bottom:-154px!important;
+    transform:translateX(-50%) scale(.52)!important;
+    transform-origin:center bottom!important;
+    animation:none!important
+  }
+}
 
 /* Fix mobile guide visibility and soften Genki2's presentation. */
 @media(max-width:799px){
@@ -9,8 +31,10 @@
     width:96px!important;height:132px!important
   }
   .eastokyo-luxury .g2-robot{
-    bottom:-74px!important;
-    transform:translateX(-50%) scale(.34)!important
+    bottom:-72px!important;
+    transform:translateX(-50%) scale(.62)!important;
+    transform-origin:center bottom!important;
+    animation:none!important
   }
   .eastokyo-luxury .g2-stage{
     background:radial-gradient(circle at 50% 26%,rgba(244,239,229,.88),rgba(184,154,92,.12) 62%,transparent 76%)!important;
@@ -26,8 +50,8 @@
   .genki2-guide-tab:before{
     content:"";display:block;width:30px;height:25px;border-radius:45% 45% 42% 42%;
     background:
-      radial-gradient(circle at 34% 46%,#20272c 0 3px,#98d8ea 4px 7px,#fff 8px 10px,transparent 11px),
-      radial-gradient(circle at 66% 46%,#20272c 0 3px,#98d8ea 4px 7px,#fff 8px 10px,transparent 11px),
+      radial-gradient(circle at 34% 46%,#241711 0 3px,#8b5a36 4px 7px,#fff8ea 8px 10px,transparent 11px),
+      radial-gradient(circle at 66% 46%,#241711 0 3px,#8b5a36 4px 7px,#fff8ea 8px 10px,transparent 11px),
       linear-gradient(145deg,#e8edef,#8d989f);
     border:1px solid rgba(20,20,20,.28)
   }
@@ -37,16 +61,19 @@
   }
 }
 
-/* Friendlier eyes across every device. */
+/* Warm brown eyes, larger pupils and restrained highlights across every device. */
 .eastokyo-luxury .g2-eye{
   background:
-    radial-gradient(circle at 44% 37%,#fff 0 7%,transparent 8%),
-    radial-gradient(circle at 50% 50%,#1e272d 0 18%,#8fd2e5 20% 43%,#dff6fb 45% 60%,#f7fbfc 62% 76%,#6c7880 78%)!important;
-  box-shadow:0 0 8px rgba(143,210,229,.35),inset 0 1px 3px rgba(255,255,255,.7)!important
+    radial-gradient(circle at 43% 35%,#fff8e9 0 7%,transparent 8%),
+    radial-gradient(circle at 50% 50%,#241711 0 22%,#6f452c 24% 43%,#a87349 45% 58%,#ead6b9 60% 73%,#f7f4ee 75% 84%,#6c7880 86%)!important;
+  box-shadow:0 0 5px rgba(154,112,74,.22),inset 0 1px 3px rgba(255,255,255,.72)!important
 }
 .eastokyo-luxury .genki2-global-presence.is-angry .g2-eye{
   background:
-    radial-gradient(circle at 44% 37%,#fff 0 7%,transparent 8%),
-    radial-gradient(circle at 50% 50%,#253038 0 18%,#d8a75a 20% 43%,#f4d79a 45% 60%,#fff7e5 62% 76%,#77644a 78%)!important;
-  box-shadow:0 0 7px rgba(216,167,90,.28)!important
+    radial-gradient(circle at 43% 35%,#fff8e9 0 7%,transparent 8%),
+    radial-gradient(circle at 50% 50%,#241711 0 22%,#754b2e 24% 43%,#b17a43 45% 58%,#ead2a7 60% 73%,#fff8e8 75% 84%,#74624f 86%)!important;
+  box-shadow:0 0 4px rgba(177,122,67,.2)!important
 }
+.eastokyo-luxury .g2-brow{height:6px!important;opacity:.78!important}
+.eastokyo-luxury .genki2-global-presence.is-angry .g2-brow.left{transform:rotate(8deg) translateY(2px)!important}
+.eastokyo-luxury .genki2-global-presence.is-angry .g2-brow.right{transform:rotate(-8deg) translateY(2px)!important}

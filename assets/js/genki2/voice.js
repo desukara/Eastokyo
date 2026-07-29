@@ -79,9 +79,9 @@ export function createVoiceEngine() {
       const userError = callbacks.onError;
       return speak(text, {
         lang: "en-US",
-        rate: .88,
-        pitch: .62,
-        preferredNames: ["david", "google uk english male", "daniel", "alex", "mark", "male"],
+        rate: .96,
+        pitch: .94,
+        preferredNames: ["samantha", "google us english", "karen", "moira", "tessa", "ava", "susan", "zira", "daniel", "alex"],
         ...callbacks,
         onStart: (...args) => {
           window.EastokyoGenki2?.setSpeaking(true);
