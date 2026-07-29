@@ -21,8 +21,8 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=7" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=7" />
 <link rel="manifest" href="site.webmanifest?v=3" />
-<link rel="stylesheet" href="assets/css/global.css?v=15" />
-<script type="module" src="assets/js/main.js"></script>
+<link rel="stylesheet" href="assets/css/global.css?v=16" />
+<script type="module" src="assets/js/main.js?v=2"></script>
 </head>
 <body class="home-page eastokyo-guide">
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -36,7 +36,15 @@
 </header>
 <main id="main-content">
 <section class="guide-hero">
-  <div class="guide-hero__media"><img src="story-shinjuku-crossing.webp" alt="Shinjuku crossing illuminated by Tokyo signs at night" /></div>
+  <div class="guide-hero__media living-hero" aria-label="Shinjuku crossing illuminated by Tokyo signs at night">
+    <img class="living-hero__base" src="story-shinjuku-crossing.webp" alt="Shinjuku crossing illuminated by Tokyo signs at night" fetchpriority="high" />
+    <img class="living-hero__light" src="story-shinjuku-crossing.webp" alt="" aria-hidden="true" />
+    <img class="living-hero__reflection" src="story-shinjuku-crossing.webp" alt="" aria-hidden="true" />
+    <span class="living-hero__bloom" aria-hidden="true"></span>
+    <span class="living-hero__glass" aria-hidden="true"></span>
+    <span class="living-hero__vignette" aria-hidden="true"></span>
+    <span class="living-hero__grain" aria-hidden="true"></span>
+  </div>
   <div class="guide-hero__copy"><p class="guide-label">Issue No. 01 · Tokyo Now</p><h1>MAKE THE MOST OF TOKYO</h1><p>Where to go, what to eat, where to stay and what is worth your time in the world’s most exciting city.</p><a href="#now">Start exploring →</a></div>
 </section>
 <section class="guide-now" id="now">
