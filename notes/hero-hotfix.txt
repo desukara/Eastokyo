@@ -1,0 +1,1 @@
+Hero separation hotfix prepared after live mobile and desktop screenshots showed cached overlay CSS.
