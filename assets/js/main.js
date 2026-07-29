@@ -1,6 +1,6 @@
 "use strict";
 
-import "./genki2/presence.js?v=3";
+import "./genki2/presence.js?v=4";
 import { createVoiceEngine } from "./genki2/voice.js";
 
 const state = { awake: false, mood: "sleeping", patience: 82, score: 0, speaking: false };
@@ -12,7 +12,6 @@ const terminal = document.querySelector("[data-terminal-copy]");
 const patience = document.querySelector("[data-patience]");
 const meter = document.querySelector("[data-meter]");
 const stage = document.querySelector("[data-genki-stage]");
-const soundButton = document.querySelector(".sound-toggle");
 let soundEnabled = window.EastokyoGenki2Sound?.isOn() ?? true;
 let fallbackTimer = 0;
 let speechToken = 0;
@@ -26,6 +25,7 @@ function render() {
     unit.dataset.mood = state.mood;
     unit.classList.toggle("is-speaking", state.speaking);
   }
+  window.EastokyoGenki2?.setEmotion(state.mood === "sleeping" ? "calm" : state.mood);
   if (emotion) emotion.textContent = state.mood.toUpperCase();
   if (patience) patience.textContent = `${state.patience}%`;
   if (meter) meter.style.width = `${Math.max(10, state.score)}%`;

@@ -1,6 +1,6 @@
 "use strict";
 
-import "./genki2/presence.js?v=3";
+import "./genki2/presence.js?v=4";
 import { createGenki2 } from "./genki2/core.js?v=4";
 
 const unit = document.querySelector("[data-genki]");
@@ -21,6 +21,10 @@ const stepLabel = document.querySelector("[data-step-label]");
 const progress = document.querySelector("[data-progress]");
 const finalScore = document.querySelector("[data-final-score]");
 
+function syncPresence(mood) {
+  window.EastokyoGenki2?.setEmotion(mood);
+}
+
 function showStep(step) {
   currentStep = step;
   cards.forEach((card) => { card.hidden = Number(card.dataset.step) !== step; });
@@ -30,9 +34,14 @@ function showStep(step) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function speak(message, mood) {
+  syncPresence(mood);
+  genki2.speak(message, mood);
+}
+
 function completeStep(message, mood = "proud", points = 34) {
   genki2.reward(points);
-  genki2.speak(message, mood);
+  speak(message, mood);
   window.setTimeout(() => showStep(currentStep + 1), 900);
 }
 
@@ -41,7 +50,7 @@ document.querySelector("[data-action='hear']")?.addEventListener("click", () => 
 });
 
 document.querySelector("[data-action='next']")?.addEventListener("click", () => {
-  genki2.speak("Recognition test initialized. Do not panic visibly.", "curious");
+  speak("Recognition test initialized. Do not panic visibly.", "curious");
   showStep(1);
 });
 
@@ -54,7 +63,7 @@ document.querySelectorAll("[data-answer]").forEach((button) => {
     } else {
       button.classList.add("is-wrong");
       genki2.penalize(12);
-      genki2.speak("Incorrect. That answer has been rejected by both Genki2 and Japan.", "angry");
+      speak("Incorrect. That answer has been rejected by both Genki2 and Japan.", "angry");
     }
   });
 });
@@ -65,7 +74,7 @@ document.querySelectorAll("[data-fragment]").forEach((button) => {
     if (button.dataset.fragment === "correct") {
       button.classList.add("is-correct");
       genki2.reward(40);
-      genki2.speak("Module complete. You assembled konnichiwa without damaging it.", "proud");
+      speak("Module complete. You assembled konnichiwa without damaging it.", "proud");
       localStorage.setItem("eastokyo-module-001", "complete");
       window.setTimeout(() => {
         if (finalScore) finalScore.textContent = String(genki2.state.score);
@@ -74,7 +83,7 @@ document.querySelectorAll("[data-fragment]").forEach((button) => {
     } else {
       button.classList.add("is-wrong");
       genki2.penalize(14);
-      genki2.speak("That creates konbanwa. Useful, but not the machine we are building.", "angry");
+      speak("That creates konbanwa. Useful, but not the machine we are building.", "angry");
     }
   });
 });
@@ -82,7 +91,7 @@ document.querySelectorAll("[data-fragment]").forEach((button) => {
 document.querySelector("[data-action='restart']")?.addEventListener("click", () => {
   genki2.state.score = 0;
   genki2.state.patience = 82;
-  genki2.speak("Module reset. I have forgotten nothing, but we may continue.", "curious");
+  speak("Module reset. I have forgotten nothing, but we may continue.", "curious");
   document.querySelectorAll(".is-correct,.is-wrong").forEach((item) => item.classList.remove("is-correct", "is-wrong"));
   genki2.render();
   showStep(0);
