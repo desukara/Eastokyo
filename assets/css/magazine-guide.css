@@ -1,0 +1,24 @@
+/* Genki2 as Eastokyo's magazine narrator. The robot remains the existing canonical component. */
+.eastokyo-luxury.genki2-always-present{--genki2-rail:0!important;padding-left:0!important}
+.eastokyo-luxury .genki2-global-presence{left:auto!important;right:18px!important;top:auto!important;bottom:18px!important;width:318px!important;height:590px!important;transform:none!important;transition:transform .28s ease,opacity .28s ease!important}
+.eastokyo-luxury .genki2-global-presence.is-collapsed{transform:translateX(calc(100% - 54px))!important}
+.eastokyo-luxury .g2-stage{border-radius:30px!important;background:radial-gradient(circle at 50% 18%,rgba(184,154,92,.18),transparent 39%),linear-gradient(180deg,rgba(15,15,15,.97),rgba(4,4,4,.99))!important;border-color:rgba(184,154,92,.34)!important}
+.eastokyo-luxury .g2-stage:after{opacity:.12!important}
+.genki2-guide-panel{position:fixed;z-index:2147483100;right:350px;bottom:28px;width:min(360px,calc(100vw - 32px));padding:18px 18px 16px;background:rgba(9,9,9,.96);color:#fff;border:1px solid rgba(184,154,92,.45);box-shadow:0 20px 50px rgba(0,0,0,.42);font-family:Arial,Helvetica,sans-serif}
+.genki2-guide-panel[hidden]{display:none}
+.genki2-guide-panel__eyebrow{margin:0 0 8px;color:#b89a5c;font-size:.64rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
+.genki2-guide-panel__copy{margin:0;font-family:Georgia,serif;font-size:1.05rem;line-height:1.55}
+.genki2-guide-panel__actions{display:flex;gap:8px;margin-top:14px}
+.genki2-guide-panel button{appearance:none;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;padding:10px 12px;font-size:.65rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.genki2-guide-panel button:hover,.genki2-guide-panel button:focus-visible{border-color:#b89a5c;color:#b89a5c}
+.genki2-guide-tab{position:fixed;z-index:2147483200;right:18px;bottom:18px;width:54px;height:54px;border:1px solid rgba(184,154,92,.55);border-radius:50%;background:#090909;color:#fff;font-size:.63rem;font-weight:900;letter-spacing:.08em;cursor:pointer;display:none}
+body.genki2-guide-collapsed .genki2-guide-tab{display:block}
+body.genki2-guide-collapsed .genki2-guide-panel{display:none}
+@media(max-width:799px){
+  .eastokyo-luxury .genki2-global-presence{right:8px!important;bottom:72px!important;width:248px!important;height:455px!important}
+  .eastokyo-luxury .genki2-global-presence:not(.is-open){transform:translateY(calc(100% + 90px))!important;pointer-events:none!important}
+  .eastokyo-luxury .genki2-global-presence.is-open{transform:none!important}
+  .genki2-guide-panel{left:12px;right:12px;bottom:12px;width:auto;padding:16px;max-height:42vh;overflow:auto}
+  .genki2-guide-tab,body.genki2-guide-collapsed .genki2-guide-tab{display:block;right:12px;bottom:12px;width:58px;height:58px}
+  body.genki2-guide-open .genki2-guide-tab{display:none}
+}
