@@ -1,24 +1,44 @@
-/* Genki2 as Eastokyo's magazine narrator. The robot remains the existing canonical component. */
+/* Genki2 as Eastokyo's compact magazine narrator. */
 .eastokyo-luxury.genki2-always-present{--genki2-rail:0!important;padding-left:0!important}
-.eastokyo-luxury .genki2-global-presence{left:auto!important;right:18px!important;top:auto!important;bottom:18px!important;width:318px!important;height:590px!important;transform:none!important;transition:transform .28s ease,opacity .28s ease!important}
-.eastokyo-luxury .genki2-global-presence.is-collapsed{transform:translateX(calc(100% - 54px))!important}
-.eastokyo-luxury .g2-stage{border-radius:30px!important;background:radial-gradient(circle at 50% 18%,rgba(184,154,92,.18),transparent 39%),linear-gradient(180deg,rgba(15,15,15,.97),rgba(4,4,4,.99))!important;border-color:rgba(184,154,92,.34)!important}
-.eastokyo-luxury .g2-stage:after{opacity:.12!important}
-.genki2-guide-panel{position:fixed;z-index:2147483100;right:350px;bottom:28px;width:min(360px,calc(100vw - 32px));padding:18px 18px 16px;background:rgba(9,9,9,.96);color:#fff;border:1px solid rgba(184,154,92,.45);box-shadow:0 20px 50px rgba(0,0,0,.42);font-family:Arial,Helvetica,sans-serif}
+.eastokyo-luxury .genki2-global-presence{
+  left:auto!important;right:16px!important;top:auto!important;bottom:16px!important;
+  width:164px!important;height:304px!important;transform:none!important;
+  transition:transform .28s ease,opacity .28s ease!important
+}
+.eastokyo-luxury .genki2-global-presence.is-collapsed{transform:translateX(calc(100% - 46px))!important}
+.eastokyo-luxury .g2-stage{
+  border-radius:22px!important;
+  background:radial-gradient(circle at 50% 18%,rgba(184,154,92,.16),transparent 39%),linear-gradient(180deg,rgba(15,15,15,.96),rgba(4,4,4,.98))!important;
+  border-color:rgba(184,154,92,.34)!important
+}
+.eastokyo-luxury .g2-stage:after{opacity:.08!important}
+.eastokyo-luxury .g2-robot{
+  left:50%!important;bottom:4px!important;
+  transform:translateX(-50%) scale(.5)!important;
+  transform-origin:center bottom!important
+}
+.genki2-guide-panel{
+  position:fixed;z-index:2147483100;right:194px;bottom:18px;
+  width:min(270px,calc(100vw - 32px));padding:13px 14px 12px;
+  background:rgba(9,9,9,.96);color:#fff;border:1px solid rgba(184,154,92,.45);
+  box-shadow:0 16px 36px rgba(0,0,0,.36);font-family:Arial,Helvetica,sans-serif
+}
 .genki2-guide-panel[hidden]{display:none}
-.genki2-guide-panel__eyebrow{margin:0 0 8px;color:#b89a5c;font-size:.64rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}
-.genki2-guide-panel__copy{margin:0;font-family:Georgia,serif;font-size:1.05rem;line-height:1.55}
-.genki2-guide-panel__actions{display:flex;gap:8px;margin-top:14px}
-.genki2-guide-panel button{appearance:none;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;padding:10px 12px;font-size:.65rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.genki2-guide-panel__eyebrow{margin:0 0 6px;color:#b89a5c;font-size:.56rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+.genki2-guide-panel__copy{margin:0;font-family:Georgia,serif;font-size:.88rem;line-height:1.42}
+.genki2-guide-panel__actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.genki2-guide-panel button{appearance:none;border:1px solid rgba(255,255,255,.24);background:transparent;color:#fff;padding:7px 9px;font-size:.56rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
 .genki2-guide-panel button:hover,.genki2-guide-panel button:focus-visible{border-color:#b89a5c;color:#b89a5c}
-.genki2-guide-tab{position:fixed;z-index:2147483200;right:18px;bottom:18px;width:54px;height:54px;border:1px solid rgba(184,154,92,.55);border-radius:50%;background:#090909;color:#fff;font-size:.63rem;font-weight:900;letter-spacing:.08em;cursor:pointer;display:none}
+.genki2-guide-tab{position:fixed;z-index:2147483200;right:14px;bottom:14px;width:46px;height:46px;border:1px solid rgba(184,154,92,.55);border-radius:50%;background:#090909;color:#fff;font-size:.54rem;font-weight:900;letter-spacing:.06em;cursor:pointer;display:none}
 body.genki2-guide-collapsed .genki2-guide-tab{display:block}
 body.genki2-guide-collapsed .genki2-guide-panel{display:none}
 @media(max-width:799px){
-  .eastokyo-luxury .genki2-global-presence{right:8px!important;bottom:72px!important;width:248px!important;height:455px!important}
-  .eastokyo-luxury .genki2-global-presence:not(.is-open){transform:translateY(calc(100% + 90px))!important;pointer-events:none!important}
+  .eastokyo-luxury .genki2-global-presence{right:8px!important;bottom:66px!important;width:132px!important;height:244px!important}
+  .eastokyo-luxury .g2-robot{transform:translateX(-50%) scale(.4)!important}
+  .eastokyo-luxury .genki2-global-presence:not(.is-open){transform:translateY(calc(100% + 80px))!important;pointer-events:none!important}
   .eastokyo-luxury .genki2-global-presence.is-open{transform:none!important}
-  .genki2-guide-panel{left:12px;right:12px;bottom:12px;width:auto;padding:16px;max-height:42vh;overflow:auto}
-  .genki2-guide-tab,body.genki2-guide-collapsed .genki2-guide-tab{display:block;right:12px;bottom:12px;width:58px;height:58px}
+  .genki2-guide-panel{left:10px;right:10px;bottom:10px;width:auto;padding:12px 13px;max-height:32vh;overflow:auto}
+  .genki2-guide-panel__copy{font-size:.84rem}
+  .genki2-guide-tab,body.genki2-guide-collapsed .genki2-guide-tab{display:block;right:10px;bottom:10px;width:48px;height:48px}
   body.genki2-guide-open .genki2-guide-tab{display:none}
 }
