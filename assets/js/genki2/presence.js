@@ -7,7 +7,9 @@
 
   const style=document.createElement("style");
   style.textContent=`
-  body.genki2-always-present{--genki2-rail:300px;--genki2-mobile-safe:168px}
+  html{height:auto!important;min-height:100%!important;overflow-x:hidden!important;overflow-y:auto!important}
+  body.genki2-always-present{--genki2-rail:300px;--genki2-mobile-safe:132px;height:auto!important;min-height:100svh!important;overflow-x:hidden!important;overflow-y:auto!important}
+  body.genki2-always-present.lesson-page{height:auto!important;min-height:100svh!important;overflow-y:auto!important}
   .genki2-global-presence{position:fixed;z-index:2147483000;left:22px;top:50%;width:236px;height:360px;transform:translateY(-50%);display:grid;place-items:center;pointer-events:none}
   .genki2-global-presence__halo{position:absolute;inset:12% 2%;border-radius:50%;background:radial-gradient(circle,rgba(70,231,255,.2),rgba(36,119,255,.06) 48%,transparent 70%);filter:blur(12px);animation:gHalo 3.6s ease-in-out infinite}
   .genki2-global-presence__robot{position:relative;width:208px;pointer-events:auto;cursor:pointer;filter:drop-shadow(0 26px 34px rgba(0,0,0,.55));transform-origin:center bottom;animation:gIdle 3.2s ease-in-out infinite}
@@ -23,8 +25,23 @@
   .genki2-global-presence.is-speaking .genki2-global-presence__robot{animation:gTalkBody .22s infinite alternate}.genki2-global-presence.is-speaking .genki2-global-presence__head{animation:gTalkHead .26s infinite alternate}.genki2-global-presence.is-speaking .genki2-global-presence__mouth{animation:gMouth .15s infinite alternate}.genki2-global-presence.is-speaking .genki2-global-presence__eye{animation:gTalkEye .26s infinite alternate}
   .speech-panel,.lesson-dialogue,[data-genki-dialogue],[data-terminal-copy]{display:none!important}.lesson-page .lesson-genki-panel{display:none!important}.lesson-page .training-room{display:block!important;height:auto!important;min-height:0!important;overflow:visible!important}.lesson-page .lesson-workspace{height:auto!important;min-height:100svh!important;overflow:visible!important}.genki-stage{display:none!important}.boot-screen{grid-template-columns:1fr!important}
   @media(min-width:800px){body.genki2-always-present main,body.genki2-always-present footer{margin-left:var(--genki2-rail)}body.genki2-always-present .system-bar,body.genki2-always-present .site-header,body.genki2-always-present .lux-header{padding-left:calc(var(--genki2-rail) + 1rem)}}
-  @media(max-width:799px){body.genki2-always-present{padding-bottom:var(--genki2-mobile-safe)!important}.genki2-global-presence{left:auto;right:10px;top:auto;bottom:8px;width:126px;height:158px;transform:none}.genki2-global-presence__robot{width:112px}.genki2-global-presence__antenna{top:-30px;height:33px;width:5px}.genki2-global-presence__antenna:before{top:-7px;width:13px;height:13px}.genki2-global-presence__head{height:88px;padding:13px 10px 16px}.genki2-global-presence__eye{top:22px;width:21px;height:12px}.genki2-global-presence__eye--left{left:11px}.genki2-global-presence__eye--right{right:11px}.genki2-global-presence__mouth{bottom:10px;width:25px;height:5px;border-bottom-width:3px}.genki2-global-presence__body{height:66px;border-radius:13px 13px 24px 24px}.genki2-global-presence__name{padding-top:10px;font-size:.42rem}.genki2-global-presence__core{width:24px;height:24px;margin-top:7px}.genki2-global-presence.is-speaking .genki2-global-presence__mouth{animation-name:gMouthMobile}}
-  @keyframes gIdle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}@keyframes gHalo{50%{opacity:.65;transform:scale(1.08)}}@keyframes gAntenna{0%,100%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(5deg)}}@keyframes gBlink{0%,43%,45%,73%,75%,100%{transform:scaleY(1)}44%,74%{transform:scaleY(.08)}}@keyframes gCore{50%{filter:brightness(1.35);transform:scale(1.08)}}@keyframes gTalkBody{from{transform:translateY(0) rotate(-.7deg)}to{transform:translateY(-4px) rotate(.7deg)}}@keyframes gTalkHead{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-2px) rotate(1deg)}}@keyframes gMouth{from{width:28px;height:5px}to{width:54px;height:20px;border-radius:42%}}@keyframes gMouthMobile{from{width:16px;height:3px}to{width:34px;height:12px;border-radius:42%}}@keyframes gTalkEye{from{transform:translateY(0) scaleY(1)}to{transform:translateY(1px) scaleY(.8)}}@media(prefers-reduced-motion:reduce){.genki2-global-presence *{animation:none!important}}
+  @media(max-width:799px){
+    body.genki2-always-present{padding-bottom:var(--genki2-mobile-safe)!important}
+    .genki2-global-presence{left:0!important;right:0!important;top:auto!important;bottom:0!important;width:100%!important;height:118px!important;transform:none!important;display:flex!important;align-items:flex-end!important;justify-content:flex-end!important;padding:0 max(10px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) 10px!important;border-top:1px solid rgba(70,231,255,.18);background:linear-gradient(180deg,rgba(5,6,10,.15),rgba(5,6,10,.92) 35%,rgba(5,6,10,.98));backdrop-filter:blur(12px)}
+    .genki2-global-presence__halo{right:0;left:auto;width:118px;inset-block:4px}
+    .genki2-global-presence__robot{width:86px!important;margin-right:4px!important}
+    .genki2-global-presence__antenna{top:-25px;height:28px;width:4px}
+    .genki2-global-presence__antenna:before{top:-6px;width:11px;height:11px}
+    .genki2-global-presence__head{height:68px;padding:10px 8px 12px}
+    .genki2-global-presence__eye{top:17px;width:17px;height:9px}
+    .genki2-global-presence__eye--left{left:8px}.genki2-global-presence__eye--right{right:8px}
+    .genki2-global-presence__mouth{bottom:8px;width:20px;height:4px;border-bottom-width:2px}
+    .genki2-global-presence__body{height:44px;border-radius:10px 10px 18px 18px}
+    .genki2-global-presence__name{padding-top:7px;font-size:.34rem}
+    .genki2-global-presence__core{width:17px;height:17px;margin-top:5px}
+    .genki2-global-presence.is-speaking .genki2-global-presence__mouth{animation-name:gMouthMobile}
+  }
+  @keyframes gIdle{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)}}@keyframes gHalo{50%{opacity:.65;transform:scale(1.08)}}@keyframes gAntenna{0%,100%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(5deg)}}@keyframes gBlink{0%,43%,45%,73%,75%,100%{transform:scaleY(1)}44%,74%{transform:scaleY(.08)}}@keyframes gCore{50%{filter:brightness(1.35);transform:scale(1.08)}}@keyframes gTalkBody{from{transform:translateY(0) rotate(-.7deg)}to{transform:translateY(-4px) rotate(.7deg)}}@keyframes gTalkHead{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-2px) rotate(1deg)}}@keyframes gMouth{from{width:28px;height:5px}to{width:54px;height:20px;border-radius:42%}}@keyframes gMouthMobile{from{width:13px;height:2px}to{width:25px;height:9px;border-radius:42%}}@keyframes gTalkEye{from{transform:translateY(0) scaleY(1)}to{transform:translateY(1px) scaleY(.8)}}@media(prefers-reduced-motion:reduce){.genki2-global-presence *{animation:none!important}}
   `;
   document.head.appendChild(style);
   document.body.classList.add("genki2-always-present");
