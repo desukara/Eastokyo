@@ -1,7 +1,7 @@
 "use strict";
 
-import "./genki2/presence.js?v=4";
-import { createGenki2 } from "./genki2/core.js?v=4";
+import "./genki2/presence.js?v=6";
+import { createGenki2 } from "./genki2/core.js?v=6";
 
 const unit = document.querySelector("[data-genki]");
 const dialogue = document.querySelector("[data-dialogue]");
@@ -75,7 +75,7 @@ document.querySelectorAll("[data-fragment]").forEach((button) => {
       button.classList.add("is-correct");
       genki2.reward(40);
       speak("Module complete. You assembled konnichiwa without damaging it.", "proud");
-      localStorage.setItem("eastokyo-module-001", "complete");
+      try { localStorage.setItem("eastokyo-module-001", "complete"); } catch {}
       window.setTimeout(() => {
         if (finalScore) finalScore.textContent = String(genki2.state.score);
         showStep(3);
