@@ -1,7 +1,7 @@
 "use strict";
 
-import "./genki2/presence.js?v=4";
-import { createVoiceEngine } from "./genki2/voice.js";
+import "./genki2/presence.js?v=6";
+import { createVoiceEngine } from "./genki2/voice.js?v=3";
 
 const state = { awake: false, mood: "sleeping", patience: 82, score: 0, speaking: false };
 const voice = createVoiceEngine();
@@ -69,16 +69,17 @@ function speak(text, mood = state.mood) {
 function speakJapanese(text) {
   clearTimeout(fallbackTimer);
   const token = ++speechToken;
+  state.speaking = false;
+  window.EastokyoGenki2?.setSpeaking(false);
+  render();
 
   if (soundEnabled && voice.available) {
     voice.speakJapanese(text, {
-      onStart: () => beginSpeech(token),
       onEnd: () => finishSpeech(token),
       onError: () => finishSpeech(token)
     });
     fallbackTimer = window.setTimeout(() => finishSpeech(token), 6000);
   } else {
-    beginSpeech(token);
     fallbackTimer = window.setTimeout(() => finishSpeech(token), 1900);
   }
 }
@@ -118,7 +119,7 @@ document.querySelectorAll("[data-answer]").forEach((button) => {
       state.patience = Math.min(100, state.patience + 4);
       speak("Correct. Unexpectedly efficient. That greeting means hello.", "proud");
       if (soundEnabled) window.setTimeout(() => speakJapanese("こんにちは"), 2100);
-      localStorage.setItem("eastokyo-demo-score", String(state.score));
+      try { localStorage.setItem("eastokyo-demo-score", String(state.score)); } catch {}
     } else {
       button.classList.add("wrong");
       state.score = Math.max(10, state.score - 8);
@@ -138,6 +139,10 @@ if (stage && matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMed
   stage.addEventListener("pointerleave", () => { if (unit) unit.style.transform = ""; });
 }
 
-const savedScore = Number(localStorage.getItem("eastokyo-demo-score"));
+const savedScore = Number(safeStorage("eastokyo-demo-score"));
 if (Number.isFinite(savedScore) && savedScore > 0) state.score = savedScore;
 render();
+
+function safeStorage(key) {
+  try { return localStorage.getItem(key); } catch { return null; }
+}
