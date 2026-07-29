@@ -135,10 +135,10 @@
 
 .living-hero__vignette {
   z-index: 8;
-  box-shadow: inset 0 0 100px rgb(0 0 0 / 26%), inset 0 -120px 150px rgb(0 0 0 / 30%);
+  box-shadow: inset 0 0 100px rgb(0 0 0 / 20%), inset 0 -105px 135px rgb(0 0 0 / 24%);
   background:
-    linear-gradient(0deg, rgb(0 0 0 / 66%), transparent 58%),
-    radial-gradient(circle at 50% 43%, transparent 33%, rgb(0 0 0 / 18%) 100%);
+    linear-gradient(0deg, rgb(0 0 0 / 50%), transparent 52%),
+    radial-gradient(circle at 50% 43%, transparent 40%, rgb(0 0 0 / 12%) 100%);
 }
 
 .living-hero__grain {
@@ -168,9 +168,65 @@
   72% { opacity: .20; }
 }
 
+/* Desktop: let the photograph own the entire hero. Copy floats over it instead of shrinking it. */
+@media (min-width: 981px) {
+  .guide-hero {
+    position: relative;
+    display: block;
+    min-height: clamp(680px, 78vh, 920px);
+    overflow: hidden;
+  }
+
+  .guide-hero__media {
+    position: absolute;
+    inset: 0;
+    min-height: 100%;
+  }
+
+  .guide-hero__copy {
+    position: absolute;
+    z-index: 12;
+    left: clamp(2rem, 5vw, 5.5rem);
+    bottom: clamp(2.2rem, 6vw, 5.5rem);
+    width: min(700px, 58vw);
+    padding: 0;
+    justify-content: flex-end;
+    text-shadow: 0 3px 26px rgb(0 0 0 / 85%);
+  }
+
+  .guide-hero__copy::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -4rem -6rem -3rem -4rem;
+    background: radial-gradient(ellipse at 30% 70%, rgb(0 0 0 / 48%), transparent 68%);
+    pointer-events: none;
+  }
+
+  .guide-hero h1 {
+    max-width: 8ch;
+    font-size: clamp(5rem, 8vw, 9.5rem);
+  }
+
+  .guide-hero__copy > p:last-of-type {
+    max-width: 43ch;
+  }
+}
+
 @media (hover: none), (pointer: coarse) {
   .living-hero__base { transform: scale(1.022); }
   .living-hero::before { transform: none; }
+}
+
+@media (max-width: 980px) {
+  .guide-hero__media.living-hero {
+    min-height: 480px;
+  }
+
+  .living-hero__vignette {
+    box-shadow: inset 0 0 44px rgb(0 0 0 / 8%);
+    background: linear-gradient(0deg, rgb(0 0 0 / 16%), transparent 40%);
+  }
 }
 
 @media (max-width: 620px) {
@@ -179,10 +235,23 @@
     --hero-sign-y: 36%;
     --hero-traffic-x: 81%;
     --hero-traffic-y: 16.5%;
+    min-height: 430px;
+  }
+
+  .living-hero__base {
+    filter: saturate(1.02) contrast(1.08) brightness(1);
   }
 
   .living-hero__bloom {
     filter: blur(5.5px) saturate(1.22);
+  }
+
+  .living-hero__glass {
+    opacity: .34;
+  }
+
+  .living-hero__grain {
+    opacity: .025;
   }
 }
 
