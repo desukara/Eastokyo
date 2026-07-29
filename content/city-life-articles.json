@@ -1,0 +1,82 @@
+{
+  "publication": "Eastokyo Magazine",
+  "section": "City Life",
+  "publisherPartner": {
+    "name": "Englishire",
+    "url": "https://englishire.com/"
+  },
+  "articles": [
+    {
+      "order": 1,
+      "slug": "the-end-of-the-easy-teacher",
+      "title": "The End of the Easy Teacher",
+      "section": "Recruitment",
+      "legacyUrl": "https://englishire.com/easy-teacher.html",
+      "eastokyoUrl": "https://eastokyo.com/the-end-of-the-easy-teacher.html",
+      "status": "source-preserved"
+    },
+    {
+      "order": 2,
+      "slug": "hiring-foreign-teachers-in-japan",
+      "title": "Hiring Foreign Teachers in Japan",
+      "section": "Hiring",
+      "legacyUrl": "https://englishire.com/hiring-foreign-teachers-in-japan.html",
+      "eastokyoUrl": "https://eastokyo.com/hiring-foreign-teachers-in-japan.html",
+      "status": "source-preserved"
+    },
+    {
+      "order": 3,
+      "slug": "real-cost-of-english-teacher-turnover",
+      "title": "The Real Cost of English Teacher Turnover",
+      "section": "Retention",
+      "legacyUrl": "https://englishire.com/real-cost-of-english-teacher-turnover.html",
+      "eastokyoUrl": "https://eastokyo.com/real-cost-of-english-teacher-turnover.html",
+      "status": "source-preserved"
+    },
+    {
+      "order": 4,
+      "slug": "how-schools-can-handle-staff-shortages",
+      "title": "How Schools Can Handle Staff Shortages",
+      "section": "Continuity",
+      "legacyUrl": "https://englishire.com/how-schools-can-handle-staff-shortages.html",
+      "eastokyoUrl": "https://eastokyo.com/how-schools-can-handle-staff-shortages.html",
+      "status": "source-preserved"
+    },
+    {
+      "order": 5,
+      "slug": "emergency-classroom-coverage",
+      "title": "Emergency Classroom Coverage",
+      "section": "Operations",
+      "legacyUrl": "https://englishire.com/emergency-classroom-coverage.html",
+      "eastokyoUrl": "https://eastokyo.com/emergency-classroom-coverage.html",
+      "status": "source-preserved"
+    },
+    {
+      "order": 6,
+      "slug": "backup-teacher-eikaiwa",
+      "title": "Backup-Teacher Eikaiwa",
+      "section": "Eikaiwa",
+      "legacyUrl": "https://englishire.com/backup-teacher-eikaiwa.html",
+      "eastokyoUrl": "https://eastokyo.com/backup-teacher-eikaiwa.html",
+      "status": "source-preserved"
+    },
+    {
+      "order": 7,
+      "slug": "eikaiwa-school-operations",
+      "title": "Eikaiwa School Operations: Why Continuity Matters",
+      "section": "Management",
+      "legacyUrl": "https://englishire.com/eikaiwa-school-operations.html",
+      "eastokyoUrl": "https://eastokyo.com/eikaiwa-school-operations.html",
+      "status": "source-preserved"
+    },
+    {
+      "order": 8,
+      "slug": "school-collapse-after-three-decades",
+      "title": "School Collapse After Three Decades",
+      "section": "Institutional Failure",
+      "legacyUrl": "https://englishire.com/school-collapse-after-three-decades.html",
+      "eastokyoUrl": "https://eastokyo.com/school-collapse-after-three-decades.html",
+      "status": "source-preserved"
+    }
+  ]
+}
