@@ -1,0 +1,136 @@
+/* Genki2 likeness and quality correction — code-only, no image assets. */
+html,body{overflow-x:hidden!important;overflow-y:auto!important}
+.genki2-kibi,[data-kibi],[class*="kibi" i],[aria-label*="Kibi" i]{display:none!important}
+
+/* Rebalance the silhouette: adult humanoid proportions rather than toy proportions. */
+.genki2-global-presence{width:360px!important;height:640px!important}
+.g2-robot{width:258px!important;height:590px!important;bottom:8px!important}
+.g2-head{
+  top:6px!important;width:154px!important;height:176px!important;
+  border-radius:45% 45% 40% 40%/35% 35% 58% 58%!important;
+  background:
+    linear-gradient(104deg,rgba(255,255,255,.78),transparent 20%),
+    radial-gradient(ellipse at 50% 68%,rgba(225,232,235,.72),transparent 48%),
+    linear-gradient(142deg,#eef2f3 0%,#aeb7bd 31%,#616c74 57%,#d7dcde 80%,#7d8991 100%)!important;
+  box-shadow:inset 12px 5px 17px rgba(255,255,255,.62),inset -16px -14px 24px rgba(24,33,40,.36),0 0 22px rgba(66,201,255,.11)!important;
+}
+/* Wider jaw and fuller lower face, avoiding the generic narrow android mask. */
+.g2-head:after{
+  content:"";position:absolute;z-index:1;left:17px;right:17px;top:84px;bottom:7px;
+  border-radius:38% 38% 47% 47%/27% 27% 62% 62%;
+  background:linear-gradient(145deg,rgba(242,246,247,.32),rgba(73,84,92,.12));
+  box-shadow:inset 0 -1px 0 rgba(255,255,255,.32);pointer-events:none;
+}
+.g2-hair{
+  left:-8px!important;right:-8px!important;top:-24px!important;height:82px!important;
+  border-radius:52% 55% 24% 28%/68% 70% 28% 31%!important;
+  background:
+    radial-gradient(ellipse at 12% 45%,#6b4734 0 8%,transparent 9%),
+    radial-gradient(ellipse at 29% 22%,#4f3124 0 12%,transparent 13%),
+    radial-gradient(ellipse at 48% 18%,#6e4935 0 13%,transparent 14%),
+    radial-gradient(ellipse at 68% 22%,#4b2e22 0 13%,transparent 14%),
+    radial-gradient(ellipse at 88% 46%,#684431 0 9%,transparent 10%),
+    linear-gradient(145deg,#75513c 0%,#3d261d 35%,#1e1411 68%,#684633 100%)!important;
+  clip-path:polygon(0 72%,2% 41%,8% 22%,17% 10%,28% 3%,41% 7%,50% 0,61% 6%,73% 2%,86% 12%,96% 34%,100% 73%,94% 61%,88% 75%,80% 59%,72% 73%,63% 57%,54% 72%,45% 56%,35% 72%,26% 57%,18% 74%,10% 60%,5% 75%)!important;
+}
+.g2-hair:before{
+  content:"";position:absolute;left:2px;right:2px;bottom:-15px;height:34px;
+  background:radial-gradient(ellipse at 10% 20%,#533426 0 24%,transparent 26%),radial-gradient(ellipse at 90% 20%,#533426 0 24%,transparent 26%);
+  pointer-events:none;
+}
+.g2-hair:after{opacity:.42!important;background:repeating-linear-gradient(100deg,transparent 0 8px,rgba(255,255,255,.1) 9px 10px,transparent 11px 18px)!important}
+
+/* Human-derived facial spacing. */
+.g2-brow{top:62px!important;width:43px!important;height:6px!important;background:linear-gradient(90deg,#3b2b25,#655147)!important}
+.g2-brow.left{left:21px!important;transform:rotate(-4deg)!important}.g2-brow.right{right:21px!important;transform:rotate(4deg)!important}
+.g2-eye{
+  top:76px!important;width:34px!important;height:17px!important;border-radius:55% 45% 52% 48%!important;
+  background:radial-gradient(circle at 50% 48%,#f8ffff 0 8%,#70cdec 10% 29%,#2e7594 31% 43%,#12181d 47% 59%,transparent 62%),linear-gradient(#dbe2e4,#65727a)!important;
+  box-shadow:0 0 9px rgba(93,198,231,.55),inset 0 1px 3px rgba(255,255,255,.32)!important;
+}
+.g2-eye.left{left:22px!important}.g2-eye.right{right:22px!important}
+.g2-nose{
+  top:84px!important;width:22px!important;height:35px!important;border-right:0!important;border-bottom:0!important;
+  background:linear-gradient(100deg,transparent 0 42%,rgba(43,53,60,.5) 44% 50%,rgba(255,255,255,.36) 52% 56%,transparent 58%),radial-gradient(ellipse at 50% 86%,rgba(48,58,65,.32) 0 34%,transparent 37%)!important;
+  border-radius:44% 44% 52% 52%!important;
+}
+.g2-cheek{top:103px!important;width:37px!important;height:24px!important;opacity:.72!important}
+.g2-cheek.left{left:12px!important}.g2-cheek.right{right:12px!important}
+.g2-mouth{
+  bottom:25px!important;width:48px!important;height:17px!important;border:0!important;border-radius:0!important;
+  background:
+    linear-gradient(180deg,transparent 0 43%,#3c2a29 45% 52%,transparent 54%),
+    radial-gradient(ellipse at 50% 62%,rgba(86,48,47,.55) 0 28%,transparent 31%)!important;
+  box-shadow:none!important;
+}
+.g2-mouth:before{content:"";position:absolute;left:7px;right:7px;top:8px;height:5px;border-bottom:2px solid rgba(43,31,31,.82);border-radius:50%}
+.g2-chin{bottom:4px!important;width:63px!important;height:25px!important;opacity:.48!important}
+.g2-ear{top:73px!important;width:18px!important;height:38px!important}
+
+/* More believable adult neck/torso relationship. */
+.g2-neck{top:165px!important;width:62px!important;height:48px!important}
+.g2-torso{top:198px!important;width:205px!important;height:222px!important;border-radius:38px 38px 46px 46px!important}
+.g2-shoulder{top:211px!important;width:72px!important;height:76px!important}
+.g2-arm{top:238px!important;width:45px!important;height:181px!important}
+.g2-waist{top:407px!important}.g2-hips{top:438px!important}.g2-trousers{top:445px!important}.g2-leg{top:486px!important}
+
+/* Mechanical hands with distinct palm, thumb and four articulated fingers. */
+.g2-hand{
+  left:-5px!important;bottom:-54px!important;width:54px!important;height:78px!important;
+  clip-path:none!important;border-radius:18px 18px 22px 22px!important;
+  background:linear-gradient(145deg,#e8edef,#8c989f 62%,#3c474e)!important;
+  box-shadow:inset -7px -8px 11px rgba(0,0,0,.2),inset 5px 4px 8px rgba(255,255,255,.35)!important;
+}
+.g2-hand:before{
+  content:"";position:absolute;left:-8px;top:24px;width:18px;height:33px;border-radius:12px 4px 10px 12px;
+  background:linear-gradient(135deg,#dce2e5,#66737b);transform:rotate(24deg);transform-origin:right top;
+  box-shadow:inset -3px -3px 5px rgba(0,0,0,.18);
+}
+.g2-hand:after{
+  content:""!important;position:absolute!important;left:6px!important;right:6px!important;top:41px!important;height:35px!important;
+  background:
+    linear-gradient(90deg,transparent 0 3px,#cbd2d5 3px 10px,transparent 10px 12px,#cbd2d5 12px 19px,transparent 19px 21px,#cbd2d5 21px 28px,transparent 28px 30px,#cbd2d5 30px 37px,transparent 37px)!important;
+  clip-path:polygon(0 0,100% 0,100% 100%,82% 100%,79% 27%,70% 100%,56% 100%,53% 25%,45% 100%,30% 100%,28% 25%,20% 100%,4% 100%)!important;
+}
+.g2-elbow{top:79px!important}
+
+/* Clothing refinement and less noisy print. */
+.g2-shirt{
+  background-color:#174a63!important;
+  background-image:radial-gradient(circle at 18px 18px,#e8b568 0 4px,transparent 5px),radial-gradient(circle at 45px 37px,#65c5b7 0 6px,transparent 7px),linear-gradient(135deg,transparent 45%,rgba(245,220,132,.55) 46% 49%,transparent 50%)!important;
+  background-size:64px 64px,79px 79px,96px 96px!important;
+}
+.g2-shirt:before{width:72px!important;height:72px!important;background:#0d1c25!important;clip-path:polygon(0 0,50% 48%,100% 0,74% 100%,26% 100%)!important}
+.g2-trousers{background:linear-gradient(90deg,#b8a57f,#e3d3ad 48%,#a9936c)!important}
+.g2-shoe{background:linear-gradient(135deg,#69442e,#2c1c15 70%)!important}
+
+/* Speaking should move lips, not inflate the whole mouth into a cartoon hole. */
+.genki2-global-presence.is-speaking .g2-mouth{border:0!important;background:radial-gradient(ellipse at 50% 62%,#382527 0 42%,#171316 44% 58%,transparent 60%)!important;animation:g2-lip-sync .16s infinite alternate!important}
+.genki2-global-presence.is-speaking .g2-mouth:before{display:none!important}
+@keyframes g2-lip-sync{from{transform:translateX(-50%) scaleY(.48);width:44px}to{transform:translateX(-50%) scaleY(1.06);width:49px}}
+
+/* Contain gestures and prevent clipping/overlap. */
+.g2-stage{overflow:hidden!important}
+.genki2-global-presence.is-wave .g2-arm.right{transform-origin:50% 8%!important}
+
+@media(min-width:800px){
+  body.genki2-always-present{--genki2-rail:390px!important}
+  body.genki2-always-present main,body.genki2-always-present footer{margin-left:var(--genki2-rail)!important}
+}
+@media(max-width:799px){
+  body.genki2-always-present{--genki2-mobile-stage:270px!important}
+  .genki2-global-presence{width:100%!important;height:270px!important;left:0!important;right:0!important}
+  .g2-robot{width:139px!important;height:319px!important;bottom:-76px!important}
+  .g2-head{width:83px!important;height:96px!important}.g2-hair{height:45px!important;top:-13px!important}
+  .g2-eye{top:42px!important;width:18px!important;height:10px!important}.g2-eye.left{left:12px!important}.g2-eye.right{right:12px!important}
+  .g2-brow{top:34px!important;width:23px!important}.g2-nose{top:46px!important;width:12px!important;height:20px!important}
+  .g2-mouth{bottom:14px!important;width:28px!important;height:10px!important}.g2-chin{width:34px!important}
+  .g2-ear{top:40px!important;width:10px!important;height:21px!important}
+  .g2-neck{top:91px!important}.g2-torso{top:108px!important;width:111px!important;height:122px!important}
+  .g2-shoulder{top:115px!important}.g2-arm{top:130px!important}.g2-waist{top:224px!important}.g2-hips{top:241px!important}.g2-trousers{top:245px!important}.g2-leg{top:267px!important}
+  .g2-hand{width:30px!important;height:43px!important;bottom:-30px!important;border-radius:10px!important}
+  .g2-hand:before{left:-5px!important;top:13px!important;width:10px!important;height:18px!important}
+  .g2-hand:after{left:4px!important;right:4px!important;top:22px!important;height:20px!important}
+  body.genki2-has-system-bar main{padding-top:calc(var(--genki2-mobile-stage) + 64px)!important}
+}
+@media(prefers-reduced-motion:reduce){.genki2-global-presence *{animation:none!important}}
