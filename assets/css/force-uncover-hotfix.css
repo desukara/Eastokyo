@@ -1,0 +1,52 @@
+/* Cache-safe hard override: the hero photograph and copy panel must remain separate. */
+.eastokyo-guide .guide-hero {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: minmax(620px, 78vh) auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+.eastokyo-guide .guide-hero__media {
+  position: relative !important;
+  inset: auto !important;
+  grid-row: 1 !important;
+  width: 100% !important;
+  min-height: min(78vh, 860px) !important;
+}
+
+.eastokyo-guide .guide-hero__copy {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  grid-row: 2 !important;
+  width: min(1480px, calc(100vw - 36px)) !important;
+  margin: 0 auto !important;
+  transform: none !important;
+}
+
+@media (max-width: 980px) {
+  .eastokyo-guide .guide-hero {
+    grid-template-rows: minmax(440px, 62svh) auto !important;
+  }
+
+  .eastokyo-guide .guide-hero__media {
+    min-height: 62svh !important;
+  }
+
+  .eastokyo-guide .guide-hero__copy {
+    width: calc(100vw - 18px) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .eastokyo-guide .guide-hero {
+    grid-template-rows: minmax(390px, 58svh) auto !important;
+  }
+
+  .eastokyo-guide .guide-hero__media {
+    min-height: 58svh !important;
+  }
+}
