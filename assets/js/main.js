@@ -1,5 +1,7 @@
 "use strict";
 
+import { createVoiceEngine } from "./genki2/voice.js";
+
 const state = {
   awake: false,
   mood: "sleeping",
@@ -8,6 +10,7 @@ const state = {
   speaking: false
 };
 
+const voice = createVoiceEngine();
 const unit = document.querySelector(".genki-unit");
 const dialogue = document.querySelector("[data-genki-dialogue]");
 const emotion = document.querySelector("[data-emotion]");
@@ -36,15 +39,9 @@ function speak(text, mood = state.mood) {
   speakingTimer = window.setTimeout(() => {
     state.speaking = false;
     render();
-  }, Math.min(2600, 700 + text.length * 28));
+  }, Math.min(3200, 800 + text.length * 34));
 
-  if (soundEnabled && "speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.rate = 1.02;
-    utterance.pitch = .88;
-    window.speechSynthesis.speak(utterance);
-  }
+  if (soundEnabled) voice.speakEnglish(text);
   render();
 }
 
@@ -52,7 +49,7 @@ function wakeGenki2() {
   state.awake = true;
   state.mood = "curious";
   state.score = Math.max(state.score, 14);
-  speak("Oh. You are here. I am Genki2. Let us repair your Japanese.", "curious");
+  speak("Oh. You are here. I am Genki two. Let us repair your Japanese.", "curious");
 }
 
 function resetGenki2() {
@@ -60,6 +57,7 @@ function resetGenki2() {
   state.mood = "sleeping";
   state.patience = 82;
   state.score = 0;
+  voice.stop();
   document.querySelectorAll("[data-answer]").forEach((button) => button.classList.remove("correct", "wrong"));
   dialogue.textContent = "Sleeping. Finally.";
   terminal.textContent = "Wake Genki2 to begin.";
@@ -81,7 +79,8 @@ document.querySelectorAll("[data-answer]").forEach((button) => {
       button.classList.add("correct");
       state.score = Math.min(100, state.score + 43);
       state.patience = Math.min(100, state.patience + 4);
-      speak("Correct. Unexpectedly efficient. Konnichiwa means hello.", "proud");
+      speak("Correct. Unexpectedly efficient. That greeting means hello.", "proud");
+      if (soundEnabled) window.setTimeout(() => voice.speakJapanese("こんにちは"), 2100);
       localStorage.setItem("eastokyo-demo-score", String(state.score));
     } else {
       button.classList.add("wrong");
@@ -99,7 +98,8 @@ soundButton?.addEventListener("click", () => {
   soundEnabled = !soundEnabled;
   soundButton.setAttribute("aria-pressed", String(soundEnabled));
   soundButton.textContent = `SOUND: ${soundEnabled ? "ON" : "OFF"}`;
-  if (soundEnabled) speak("Audio online. This may have been a mistake.", "curious");
+  if (!soundEnabled) voice.stop();
+  if (soundEnabled) speak("Audio online. Voice processor calibrated.", "curious");
 });
 
 if (stage && matchMedia("(hover:hover) and (pointer:fine)").matches && !matchMedia("(prefers-reduced-motion:reduce)").matches) {
