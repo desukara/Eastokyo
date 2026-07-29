@@ -1,37 +1,51 @@
 @media (min-width: 800px) {
   .lesson-page .lesson-genki-panel {
-    display: block;
+    display: grid !important;
+    grid-template-rows: minmax(0, 1fr) auto auto !important;
+    align-items: stretch !important;
+    gap: .75rem !important;
+    padding: 1.25rem 1rem 1rem !important;
   }
 
   .lesson-page .compact-genki {
-    top: 30%;
-    width: 190px;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    grid-row: 1 !important;
+    align-self: center !important;
+    justify-self: center !important;
+    width: 190px !important;
+    margin: 0 !important;
+    transform: none !important;
   }
 
   .lesson-page .lesson-dialogue {
-    top: auto;
-    right: 1rem;
-    bottom: 6.7rem;
-    left: 1rem;
-    min-height: 92px;
-    max-height: 132px;
-    overflow-y: auto;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    min-height: 92px !important;
+    max-height: 132px !important;
+    margin: 0 !important;
+    overflow-y: auto !important;
   }
 
   .lesson-page .lesson-stats {
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    grid-row: 3 !important;
+    width: 100% !important;
+    margin: 0 !important;
   }
 }
 
 @media (min-width: 1180px) and (min-height: 720px) {
   .lesson-page .compact-genki {
-    top: 31%;
-    width: 210px;
-  }
-
-  .lesson-page .lesson-dialogue {
-    bottom: 7rem;
+    width: 210px !important;
   }
 }
