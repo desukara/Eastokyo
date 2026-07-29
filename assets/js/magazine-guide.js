@@ -1,7 +1,7 @@
 "use strict";
 
 import "./genki2/presence.js?v=6";
-import { createVoiceEngine } from "./genki2/voice.js?v=3";
+import { createVoiceEngine } from "./genki2/voice.js?v=4";
 
 const voice = createVoiceEngine();
 const body = document.body;
