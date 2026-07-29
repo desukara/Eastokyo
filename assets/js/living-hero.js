@@ -17,17 +17,23 @@ if (hero) {
       left: { current: 1, target: 1, speed: .095, min: .91, max: 1.08 },
       center: { current: 1, target: 1, speed: .075, min: .94, max: 1.06 },
       right: { current: 1, target: 1, speed: .082, min: .92, max: 1.09 },
+      sign: { current: 1.04, target: 1.04, speed: .085, min: .98, max: 1.12 },
+      traffic: { current: 1.04, target: 1.04, speed: .24, min: .96, max: 1.10 },
       reflection: { current: .58, target: .58, speed: .035, min: .52, max: .65 },
       haze: { current: .42, target: .42, speed: .025, min: .37, max: .49 },
       prism: { current: .18, target: .18, speed: .022, min: .12, max: .24 }
     };
 
     let nextChange = performance.now();
+    let nextSignChange = performance.now() + 500;
+    let nextTrafficChange = performance.now() + 700;
+    let trafficBurstSteps = 0;
     let frameId = 0;
     const between = (min, max) => Math.random() * (max - min) + min;
 
     const setNormalTargets = () => {
-      Object.values(channels).forEach((channel) => {
+      ["light", "left", "center", "right", "reflection", "haze", "prism"].forEach((name) => {
+        const channel = channels[name];
         channel.target = between(channel.min, channel.max);
       });
     };
@@ -57,9 +63,50 @@ if (hero) {
       }
     };
 
+    const animateSign = (now) => {
+      if (now < nextSignChange) return;
+
+      if (Math.random() < .16) {
+        channels.sign.target = between(1.15, 1.26);
+        nextSignChange = now + between(90, 170);
+      } else {
+        channels.sign.target = between(.99, 1.11);
+        nextSignChange = now + between(850, 2100);
+      }
+    };
+
+    const animateTraffic = (now) => {
+      if (now < nextTrafficChange) return;
+
+      if (trafficBurstSteps > 0) {
+        channels.traffic.target = trafficBurstSteps % 2 === 0
+          ? between(.30, .54)
+          : between(1.28, 1.58);
+        trafficBurstSteps -= 1;
+        nextTrafficChange = now + between(65, 125);
+
+        if (trafficBurstSteps === 0) {
+          channels.traffic.target = between(1.02, 1.12);
+          nextTrafficChange = now + between(1300, 3300);
+        }
+        return;
+      }
+
+      if (Math.random() < .78) {
+        trafficBurstSteps = Math.floor(between(3, 7));
+        channels.traffic.target = between(.36, .60);
+        nextTrafficChange = now + between(70, 130);
+      } else {
+        channels.traffic.target = between(.98, 1.12);
+        nextTrafficChange = now + between(900, 2200);
+      }
+    };
+
     const animate = (now) => {
       if (!document.hidden && hero.classList.contains("is-visible")) {
         if (now >= nextChange) chooseState(now);
+        animateSign(now);
+        animateTraffic(now);
 
         Object.entries(channels).forEach(([name, channel]) => {
           channel.current += (channel.target - channel.current) * channel.speed;
