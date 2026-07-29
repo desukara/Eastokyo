@@ -100,12 +100,20 @@ export function createGenki2({ unit, dialogue, moodLabel, patienceLabel, scoreLa
     if (state.sound) speak("Audio online. Voice processor calibrated. Try not to scream.", "curious");
   }
 
-  unit?.addEventListener("click", () => {
+  function reactToTap() {
     speak(randomItem(tapLines), Math.random() > .8 ? "angry" : "curious");
+  }
+
+  unit?.addEventListener("click", reactToTap);
+  unit?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      reactToTap();
+    }
   });
 
   ["pointerdown", "keydown", "touchstart"].forEach((eventName) => {
-    window.addEventListener(eventName, queueIdleLine, { passive: true });
+    window.addEventListener(eventName, queueIdleLine, { passive: eventName !== "keydown" });
   });
 
   document.addEventListener("visibilitychange", () => {
