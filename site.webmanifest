@@ -1,18 +1,10 @@
 {
-  "name": "Eastokyo Magazine",
+  "name": "Eastokyo — Genki2 Language System",
   "short_name": "Eastokyo",
-  "description": "Photography and stories from East Tokyo.",
-  "lang": "en",
-  "start_url": "/",
+  "description": "Learn Japanese from a robot that feels alive.",
+  "start_url": "./",
   "display": "standalone",
-  "background_color": "#f4ecdf",
-  "theme_color": "#171717",
-  "icons": [
-    {
-      "src": "assets/images/brand/eastokyo-crow.jpg?v=3",
-      "sizes": "256x256",
-      "type": "image/jpeg",
-      "purpose": "any"
-    }
-  ]
+  "background_color": "#05060a",
+  "theme_color": "#05060a",
+  "lang": "en"
 }
