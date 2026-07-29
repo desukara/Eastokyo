@@ -1,0 +1,73 @@
+/* Final responsive placement correction for the Eastokyo guide. */
+.genki2-arrival{display:none!important;visibility:hidden!important;opacity:0!important;pointer-events:none!important}
+
+/* Matte dark-brown eyes: no glow, no red state. */
+.eastokyo-luxury .g2-eye,
+.eastokyo-luxury .genki2-global-presence.is-angry .g2-eye{
+  background:
+    radial-gradient(circle at 42% 34%,#f6ead7 0 5%,transparent 6%),
+    radial-gradient(circle at 50% 50%,#160d09 0 25%,#3f2417 27% 47%,#68412b 49% 63%,#b88b62 65% 72%,#f3eee6 74% 86%,#667079 88%)!important;
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.58)!important;
+  filter:none!important
+}
+.eastokyo-luxury .g2-brow{opacity:.68!important;height:5px!important}
+.eastokyo-luxury .genki2-global-presence.is-angry .g2-brow.left{transform:rotate(5deg) translateY(1px)!important}
+.eastokyo-luxury .genki2-global-presence.is-angry .g2-brow.right{transform:rotate(-5deg) translateY(1px)!important}
+
+/* Default/laptop: compact corner guide, never the oversized article-covering layout. */
+@media(min-width:800px){
+  .eastokyo-luxury .genki2-global-presence{
+    right:18px!important;bottom:150px!important;width:96px!important;height:126px!important
+  }
+  .eastokyo-luxury .g2-robot{
+    bottom:-130px!important;transform:translateX(-50%) scale(.44)!important;
+    transform-origin:center bottom!important;animation:none!important
+  }
+  .eastokyo-luxury .g2-stage{
+    border-radius:48px 48px 14px 14px!important;
+    background:rgba(244,239,229,.09)!important;
+    border-color:rgba(184,154,92,.22)!important;
+    box-shadow:0 8px 20px rgba(0,0,0,.18)!important
+  }
+  .genki2-guide-panel{
+    right:18px!important;bottom:18px!important;width:224px!important;
+    padding:10px 11px!important;border-radius:9px!important
+  }
+  .genki2-guide-panel__copy{font-size:.78rem!important;line-height:1.36!important}
+  .genki2-guide-panel__actions{margin-top:7px!important;gap:4px!important}
+  .genki2-guide-panel button{padding:5px 7px!important;font-size:.5rem!important}
+}
+
+/* True wide screens get a side-by-side editorial rail. */
+@media(min-width:1500px){
+  .eastokyo-luxury .genki2-global-presence{right:24px!important;bottom:24px!important;width:104px!important;height:138px!important}
+  .eastokyo-luxury .g2-robot{bottom:-132px!important;transform:translateX(-50%) scale(.47)!important}
+  .genki2-guide-panel{right:140px!important;bottom:24px!important;width:232px!important}
+}
+
+/* Mobile: short bottom sheet plus a modest head-and-shoulders portrait. */
+@media(max-width:799px){
+  body.eastokyo-luxury.genki2-always-present main{padding-top:0!important}
+  .eastokyo-luxury .genki2-global-presence{
+    top:auto!important;right:16px!important;bottom:132px!important;width:78px!important;height:104px!important
+  }
+  .eastokyo-luxury .g2-robot{
+    bottom:-120px!important;transform:translateX(-50%) scale(.40)!important;
+    transform-origin:center bottom!important;animation:none!important
+  }
+  .eastokyo-luxury .g2-stage{
+    border-radius:40px 40px 12px 12px!important;
+    background:rgba(244,239,229,.1)!important;
+    border-color:rgba(184,154,92,.2)!important;
+    box-shadow:0 7px 18px rgba(0,0,0,.16)!important
+  }
+  .genki2-guide-panel{
+    left:10px!important;right:10px!important;bottom:10px!important;width:auto!important;
+    min-height:0!important;max-height:142px!important;overflow:auto!important;
+    padding:10px 88px 10px 12px!important;border-radius:11px!important
+  }
+  .genki2-guide-panel__eyebrow{font-size:.49rem!important;margin-bottom:4px!important}
+  .genki2-guide-panel__copy{font-size:.74rem!important;line-height:1.32!important}
+  .genki2-guide-panel__actions{margin-top:7px!important;gap:4px!important;flex-wrap:nowrap!important}
+  .genki2-guide-panel button{padding:5px 6px!important;font-size:.47rem!important;white-space:nowrap!important}
+}
