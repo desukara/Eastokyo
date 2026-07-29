@@ -1,12 +1,20 @@
 "use strict";
 
-import "./genki2/presence.js?v=6";
+import "./genki2/presence.js?v=7";
 import { createVoiceEngine } from "./genki2/voice.js?v=4";
 
 const voice = createVoiceEngine();
 const body = document.body;
 const presence = document.querySelector(".genki2-global-presence");
-const robot = document.querySelector(".g2-robot");
+let robot = document.querySelector(".g2-robot");
+
+/* presence.js still contains retired language-app click handlers. Clone the button once
+   so the magazine owns the only live robot interaction without rebuilding the character. */
+if (robot) {
+  const cleanRobot = robot.cloneNode(true);
+  robot.replaceWith(cleanRobot);
+  robot = cleanRobot;
+}
 
 const pageNotes = [
   { selector: ".lux-hero", mood: "curious", text: "Welcome to Eastokyo. I am Genki2, your guide to the city and to this issue." },
@@ -47,6 +55,7 @@ document.body.append(panel);
 const portrait = panel.querySelector(".genki2-guide-card__portrait");
 if (presence && portrait) {
   presence.classList.add("is-embedded");
+  presence.setAttribute("aria-label", "Genki2, Eastokyo magazine guide");
   portrait.appendChild(presence);
 }
 
