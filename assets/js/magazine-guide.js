@@ -8,14 +8,25 @@ const body = document.body;
 const presence = document.querySelector(".genki2-global-presence");
 const robot = document.querySelector(".g2-robot");
 
-const notes = [
+const pageNotes = [
   { selector: ".lux-hero", mood: "curious", text: "Welcome to Eastokyo. I am Genki2, your guide to the city and to this issue." },
   { selector: "#issue", mood: "calm", text: "Tokyo is too large for a checklist. Eastokyo edits the city down to places worth your attention." },
   { selector: "#stay", mood: "proud", text: "A good Tokyo hotel changes the rhythm of the trip. This issue begins above the city." },
   { selector: "#eat", mood: "curious", text: "Tokyo rewards people who cross town for one exceptional table, counter, cafe, or bar." },
   { selector: "#do", mood: "calm", text: "Every neighborhood is its own world. Slow down and let one part of the city become the whole day." },
-  { selector: "#night", mood: "proud", text: "After dark, Tokyo becomes another city. I will show you where the atmosphere is worth staying out for." }
-].map((note) => ({ ...note, element: document.querySelector(note.selector) })).filter((note) => note.element);
+  { selector: "#night", mood: "proud", text: "After dark, Tokyo becomes another city. I will show you where the atmosphere is worth staying out for." },
+  { selector: ".about-lux-hero,.about-mast", mood: "curious", text: "This is Eastokyo: an independent magazine devoted to the places, people, and atmosphere that make Tokyo extraordinary." },
+  { selector: ".about-lux-statement,.about-statement", mood: "calm", text: "The aim is simple: fewer generic lists, more places with a real reason to remember them." },
+  { selector: ".about-principles,.about-lux-pillars", mood: "proud", text: "Good guidance depends on judgment, accuracy, and clear disclosure. That is how this magazine works." },
+  { selector: ".about-issue,.about-lux-issue", mood: "curious", text: "Every issue is edited as a journey through Tokyo, not a pile of disconnected recommendations." }
+];
+
+let notes = pageNotes.map((note) => ({ ...note, element: document.querySelector(note.selector) })).filter((note) => note.element);
+if (!notes.length) {
+  const anchor = document.querySelector("main") || document.body;
+  const title = document.querySelector("h1")?.textContent?.replace(/\s+/g, " ").trim();
+  notes = [{ element: anchor, mood: "calm", text: title ? `You are reading ${title}. I will stay nearby while you explore Eastokyo.` : "I am Genki2, your guide to Eastokyo and the city beyond it." }];
+}
 
 const panel = document.createElement("aside");
 panel.className = "genki2-guide-panel";
@@ -47,7 +58,6 @@ function setSpeaking(on) {
 }
 
 function showNote(index, shouldScroll = false) {
-  if (!notes.length) return;
   currentIndex = (index + notes.length) % notes.length;
   const note = notes[currentIndex];
   copy.textContent = note.text;
@@ -56,7 +66,6 @@ function showNote(index, shouldScroll = false) {
 }
 
 function speakCurrent() {
-  if (!notes.length) return;
   const token = ++speakingToken;
   const text = notes[currentIndex].text;
   if (!voice.available || window.EastokyoGenki2Sound?.isOn?.() === false) return;
@@ -89,7 +98,7 @@ panel.querySelector("[data-guide-close]")?.addEventListener("click", closeGuide)
 tab.addEventListener("click", openGuide);
 robot?.addEventListener("click", openGuide);
 
-if ("IntersectionObserver" in window) {
+if ("IntersectionObserver" in window && notes.length > 1) {
   const observer = new IntersectionObserver((entries) => {
     const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
     if (!visible) return;
