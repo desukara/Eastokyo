@@ -1,0 +1,7 @@
+html,body{height:auto!important;min-height:100%!important;overflow-x:hidden!important;overflow-y:auto!important}
+body.genki-app,body.lesson-page{height:auto!important;min-height:100svh!important;overflow-y:auto!important}
+.lesson-page .training-room{display:block!important;height:auto!important;min-height:100svh!important;overflow:visible!important}
+.lesson-page .lesson-genki-panel{position:relative!important;display:block!important;height:auto!important;min-height:220px!important;overflow:visible!important}
+.lesson-page .lesson-workspace{height:auto!important;min-height:100svh!important;overflow:visible!important}
+.genki-stage,.compact-genki{visibility:visible!important;opacity:1!important}
+@media(min-width:800px){.lesson-page .training-room{display:grid!important;grid-template-columns:minmax(340px,420px) minmax(0,1fr)!important}.lesson-page .lesson-genki-panel{position:sticky!important;top:64px!important;height:calc(100svh - 64px)!important;overflow:hidden!important}.lesson-page .lesson-workspace{min-height:calc(100svh - 64px)!important}}
