@@ -31,7 +31,7 @@
 .et-feature__copy p{font-family:Georgia,"Times New Roman",serif;font-size:1.1rem;line-height:1.6}
 .et-feature__copy a{margin-top:1.5rem;text-transform:uppercase;letter-spacing:.08em;font-size:.76rem;text-underline-offset:.25em}
 .et-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--et-rule)}
-.et-card{display:grid;grid-template-rows:aspect-ratio auto;min-width:0;border-bottom:1px solid var(--et-rule)}
+.et-card{display:grid;grid-template-rows:auto auto;min-width:0;border-bottom:1px solid var(--et-rule)}
 .et-card:nth-child(odd){padding-right:clamp(1.25rem,4vw,4rem);border-right:1px solid var(--et-rule)}
 .et-card:nth-child(even){padding-left:clamp(1.25rem,4vw,4rem)}
 .et-card__media{aspect-ratio:16/10;overflow:hidden;margin-top:clamp(1.5rem,4vw,3rem)}
