@@ -1,0 +1,40 @@
+/* Editorial coverage spread: designed as magazine contents, not a utility grid. */
+.et-home #profession + .et-section--dark{padding-block:clamp(3.25rem,5vw,5rem);overflow:hidden}
+.et-home #profession + .et-section--dark .et-section-head{grid-template-columns:minmax(0,.72fr) minmax(13rem,.28fr);align-items:end;margin-bottom:clamp(1.5rem,3vw,2.5rem);padding-bottom:1.25rem;border-bottom:1px solid rgba(242,238,229,.42)}
+.et-home #profession + .et-section--dark .et-section-head h2{max-width:11ch;font-size:clamp(2.5rem,4vw,4.15rem);line-height:.93}
+.et-home #profession + .et-section--dark .et-section-head>a{justify-self:end;text-decoration:none}
+.et-home #profession + .et-section--dark .et-guide{display:grid;grid-template-columns:1.45fr repeat(3,minmax(0,1fr));border:0;gap:0}
+.et-home #profession + .et-section--dark .et-guide a{position:relative;display:flex;min-height:17rem;flex-direction:column;justify-content:flex-end;padding:clamp(1.2rem,2.2vw,2rem);border:0;border-left:1px solid rgba(242,238,229,.42);text-decoration:none;transition:background-color .25s ease,color .25s ease}
+.et-home #profession + .et-section--dark .et-guide a:first-child{min-height:22rem;border-left:0;background:var(--et-paper);color:var(--et-black)}
+.et-home #profession + .et-section--dark .et-guide a::after{content:"↗";position:absolute;top:1rem;right:1rem;font-size:.9rem;opacity:.65}
+.et-home #profession + .et-section--dark .et-guide span{font-size:.63rem;letter-spacing:.18em}
+.et-home #profession + .et-section--dark .et-guide strong{max-width:8ch;margin:.75rem 0 .65rem;font-size:clamp(1.8rem,2.7vw,3rem);line-height:.93;letter-spacing:-.03em}
+.et-home #profession + .et-section--dark .et-guide a:first-child strong{font-size:clamp(2.5rem,4vw,4.5rem)}
+.et-home #profession + .et-section--dark .et-guide small{max-width:18rem;font-size:clamp(.92rem,1vw,1.05rem);line-height:1.45;opacity:.72}
+.et-home #profession + .et-section--dark .et-guide a:hover,.et-home #profession + .et-section--dark .et-guide a:focus-visible{background:var(--et-yellow);color:var(--et-black)}
+
+@media(max-width:1024px) and (min-width:681px){
+  .et-home #profession + .et-section--dark .et-section-head{grid-template-columns:1fr auto}
+  .et-home #profession + .et-section--dark .et-guide{grid-template-columns:1.25fr 1fr}
+  .et-home #profession + .et-section--dark .et-guide a{min-height:13rem;border-top:1px solid rgba(242,238,229,.42)}
+  .et-home #profession + .et-section--dark .et-guide a:nth-child(odd){border-left:0}
+  .et-home #profession + .et-section--dark .et-guide a:first-child{min-height:16rem;grid-row:span 2;border-top:0}
+  .et-home #profession + .et-section--dark .et-guide a:nth-child(4){grid-column:2}
+}
+
+@media(max-width:680px){
+  .et-home #profession + .et-section--dark{padding:2.6rem 0 0}
+  .et-home #profession + .et-section--dark .et-section-head{display:block;margin-bottom:0;padding-bottom:1.25rem;border-bottom:1px solid rgba(242,238,229,.42)}
+  .et-home #profession + .et-section--dark .et-section-head h2{max-width:11ch;font-size:clamp(2rem,8vw,2.75rem)}
+  .et-home #profession + .et-section--dark .et-section-head>a{display:inline-block;margin-top:1rem;font-size:.68rem}
+  .et-home #profession + .et-section--dark .et-guide{display:block;margin-inline:-1.25rem}
+  .et-home #profession + .et-section--dark .et-guide a,
+  .et-home #profession + .et-section--dark .et-guide a:first-child{min-height:0;padding:1.25rem 1.25rem 1.35rem;border:0;border-bottom:1px solid rgba(242,238,229,.35);background:transparent;color:var(--et-paper)}
+  .et-home #profession + .et-section--dark .et-guide a:first-child{padding-top:1.5rem;background:var(--et-paper);color:var(--et-black)}
+  .et-home #profession + .et-section--dark .et-guide a::after{top:1.1rem;right:1.25rem}
+  .et-home #profession + .et-section--dark .et-guide span{font-size:.58rem}
+  .et-home #profession + .et-section--dark .et-guide strong,
+  .et-home #profession + .et-section--dark .et-guide a:first-child strong{max-width:none;margin:.45rem 2rem .35rem 0;font-size:clamp(1.6rem,7vw,2.15rem)}
+  .et-home #profession + .et-section--dark .et-guide small{display:block;max-width:28rem;font-size:.9rem;line-height:1.4}
+  .et-home #profession + .et-section--dark .et-guide a:last-child{border-bottom:0;padding-bottom:1.7rem}
+}
