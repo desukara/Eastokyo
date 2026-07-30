@@ -1,0 +1,43 @@
+/* Eastokyo contributor community: energetic, inclusive and editorially serious. */
+.community-hero{background:#090909;color:#f2eee5;padding:clamp(4rem,8vw,7.5rem) 0 clamp(3rem,6vw,5rem);overflow:hidden}
+.community-hero__grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(18rem,.75fr);gap:clamp(2.5rem,7vw,7rem);align-items:end}
+.community-eyebrow,.community-card__label,.community-step span,.community-callout__label{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.community-hero h1{max-width:10ch;margin:.55rem 0 0;font-size:clamp(3.8rem,8vw,8.2rem);line-height:.84;letter-spacing:-.05em;text-wrap:balance}
+.community-hero__copy{max-width:34rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.08rem,1.55vw,1.35rem);line-height:1.55}
+.community-hero__copy p{margin:0 0 1rem}
+.community-hero__note{display:block;padding-top:1rem;border-top:1px solid rgba(242,238,229,.35);font-family:Arial,sans-serif;font-size:.72rem;line-height:1.5;letter-spacing:.08em;text-transform:uppercase}
+.community-intro{padding:clamp(3rem,6vw,5.5rem) 0;border-bottom:1px solid rgba(9,9,9,.22)}
+.community-intro__grid{display:grid;grid-template-columns:minmax(15rem,.65fr) minmax(0,1.35fr);gap:clamp(2rem,7vw,7rem)}
+.community-intro h2{max-width:10ch;margin:0;font-size:clamp(2.6rem,5vw,5.3rem);line-height:.9;letter-spacing:-.04em}
+.community-intro__copy{max-width:43rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1rem,1.25vw,1.18rem);line-height:1.62}
+.community-intro__copy p:first-child{font-size:clamp(1.25rem,2vw,1.65rem);line-height:1.45}
+.community-paths{padding:clamp(3rem,6vw,6rem) 0;background:#f2eee5}
+.community-paths__head{display:grid;grid-template-columns:1fr minmax(18rem,.5fr);gap:2rem;align-items:end;margin-bottom:2rem;padding-bottom:1.25rem;border-bottom:1px solid #090909}
+.community-paths__head h2{max-width:11ch;margin:.4rem 0 0;font-size:clamp(2.8rem,5vw,5.6rem);line-height:.9;letter-spacing:-.04em}
+.community-paths__head p:last-child{font-family:Georgia,"Times New Roman",serif;font-size:1.05rem;line-height:1.5}
+.community-paths__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));border-top:1px solid #090909}
+.community-card{display:flex;min-height:18rem;flex-direction:column;justify-content:space-between;padding:clamp(1.35rem,2.5vw,2.4rem);border-right:1px solid #090909;border-bottom:1px solid #090909}
+.community-card:nth-child(1){grid-column:span 5;background:#d63b2f;color:#fff}
+.community-card:nth-child(2){grid-column:span 7;border-right:0}
+.community-card:nth-child(3),.community-card:nth-child(4),.community-card:nth-child(5){grid-column:span 4}
+.community-card:nth-child(5){border-right:0}
+.community-card:nth-child(6){grid-column:1/-1;min-height:13rem;background:#f1c84b;border-right:0}
+.community-card h3{max-width:12ch;margin:1.25rem 0 .8rem;font-size:clamp(1.75rem,3vw,3.5rem);line-height:.94;letter-spacing:-.035em}
+.community-card p{max-width:34rem;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:1rem;line-height:1.5}
+.community-card__action{display:block;margin-top:1.5rem;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.community-process{background:#090909;color:#f2eee5;padding:clamp(3rem,6vw,6rem) 0}
+.community-process__grid{display:grid;grid-template-columns:minmax(17rem,.7fr) minmax(0,1.3fr);gap:clamp(2.5rem,7vw,7rem)}
+.community-process h2{max-width:10ch;margin:.5rem 0 0;font-size:clamp(2.7rem,5vw,5.3rem);line-height:.9;letter-spacing:-.04em}
+.community-steps{border-top:1px solid rgba(242,238,229,.45)}
+.community-step{display:grid;grid-template-columns:3.25rem minmax(0,1fr);gap:1rem;padding:1.35rem 0;border-bottom:1px solid rgba(242,238,229,.3)}
+.community-step h3{margin:0 0 .4rem;font-size:clamp(1.35rem,2.2vw,2.15rem);line-height:1}
+.community-step p{max-width:38rem;margin:0;font-family:Georgia,"Times New Roman",serif;line-height:1.55;opacity:.82}
+.community-callout{background:#d63b2f;color:#fff;padding:clamp(3rem,6vw,6rem) 0}
+.community-callout__grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(18rem,.8fr);gap:clamp(2rem,7vw,7rem);align-items:end}
+.community-callout h2{max-width:11ch;margin:.5rem 0 0;font-size:clamp(3rem,6vw,6.7rem);line-height:.87;letter-spacing:-.045em}
+.community-callout__copy{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.55}
+.community-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.community-button{display:inline-flex;min-height:3rem;align-items:center;justify-content:center;padding:.8rem 1.1rem;border:1px solid currentColor;color:inherit;text-decoration:none;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.community-button--solid{background:#f2eee5;color:#090909;border-color:#f2eee5}
+@media(max-width:980px){.community-hero__grid,.community-intro__grid,.community-process__grid,.community-callout__grid{grid-template-columns:1fr;gap:2rem}.community-hero h1{max-width:11ch}.community-paths__head{grid-template-columns:1fr}.community-card:nth-child(n){grid-column:span 6}.community-card:nth-child(even){border-right:0}.community-card:nth-child(6){grid-column:1/-1}.community-process h2{max-width:12ch}}
+@media(max-width:680px){.community-hero{padding:3rem 0 2.75rem}.community-hero h1{font-size:clamp(3rem,14vw,4.7rem);max-width:9ch}.community-hero__copy{font-size:1rem}.community-intro{padding:2.75rem 0}.community-intro h2{font-size:clamp(2.35rem,10vw,3.25rem)}.community-intro__copy p:first-child{font-size:1.15rem}.community-paths{padding:2.75rem 0 0}.community-paths__head h2{font-size:clamp(2.45rem,10vw,3.5rem)}.community-paths__grid{display:block;margin-inline:-1.25rem}.community-card,.community-card:nth-child(n){min-height:0;padding:1.5rem 1.25rem;border-right:0}.community-card h3{font-size:clamp(1.8rem,8vw,2.45rem)}.community-card:nth-child(6){padding-bottom:1.9rem}.community-process{padding:2.75rem 0}.community-process h2{font-size:clamp(2.35rem,10vw,3.35rem)}.community-step{grid-template-columns:2.5rem 1fr}.community-step p{font-size:.95rem}.community-callout{padding:2.75rem 0}.community-callout h2{font-size:clamp(2.8rem,12vw,4.2rem)}.community-actions{display:grid}.community-button{width:100%}}
