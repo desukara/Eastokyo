@@ -1,4 +1,5 @@
 @import url("./magazine-spread.css?v=1");
+@import url("./coverage-spread.css?v=1");
 :root{--et-black:#090909;--et-paper:#f2eee5;--et-red:#d63b2f;--et-yellow:#f1c84b;--et-green:#3f7f61;--et-rule:rgba(9,9,9,.22)}
 .et-home{background:var(--et-paper);color:var(--et-black)}
 .et-home a{color:inherit}
