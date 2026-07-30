@@ -1,4 +1,4 @@
-name: Import publication media
+name: Finish publication media transfer
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  import-media:
+  finish-transfer:
     runs-on: ubuntu-latest
     steps:
       - name: Check out transfer branch
@@ -20,38 +20,88 @@ jobs:
         with:
           ref: agent/own-publication-media
 
-      - name: Download verified Englishire publication assets
+      - name: Download and verify publication assets
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p assets/media
           base="https://raw.githubusercontent.com/desukara/Englishire/main"
-          curl --fail --location --retry 3 "$base/englishire-logo.png" -o assets/media/englishire-logo.png
-          curl --fail --location --retry 3 "$base/favicon.ico" -o favicon.ico
-          curl --fail --location --retry 3 "$base/favicon-32x32.png" -o favicon-32x32.png
-          curl --fail --location --retry 3 "$base/favicon-16x16.png" -o favicon-16x16.png
-          curl --fail --location --retry 3 "$base/apple-touch-icon.png" -o apple-touch-icon.png
-          curl --fail --location --retry 3 "$base/hiring-foreign-teachers-in-japan.png" -o assets/media/hiring-foreign-teachers-in-japan.png
-          curl --fail --location --retry 3 "$base/real-cost-of-english-teacher-turnover.png" -o assets/media/real-cost-of-english-teacher-turnover.png
-          curl --fail --location --retry 3 "$base/how-schools-can-handle-staff-shortages.png" -o assets/media/how-schools-can-handle-staff-shortages.png
-          curl --fail --location --retry 3 "$base/emergency-classroom-coverage.png" -o assets/media/emergency-classroom-coverage.png
-          curl --fail --location --retry 3 "$base/backup-teacher-eikaiwa.png" -o assets/media/backup-teacher-eikaiwa.png
-          curl --fail --location --retry 3 "$base/eikaiwa-school-operations.png" -o assets/media/eikaiwa-school-operations.png
-          curl --fail --location --retry 3 "$base/school-collapse-after-three-decades-article.png" -o assets/media/school-collapse-after-three-decades-article.png
-          test -s assets/media/englishire-logo.png
-          test -s favicon.ico
-          test -s assets/media/school-collapse-after-three-decades-article.png
+          files=(
+            englishire-logo.png
+            hiring-foreign-teachers-in-japan.png
+            real-cost-of-english-teacher-turnover.png
+            how-schools-can-handle-staff-shortages.png
+            emergency-classroom-coverage.png
+            backup-teacher-eikaiwa.png
+            eikaiwa-school-operations.png
+            school-collapse-after-three-decades-article.png
+            easy-teacher-article.png
+          )
+          for file in "${files[@]}"; do
+            curl --fail --location --retry 3 "$base/$file" -o "assets/media/$file"
+            test -s "assets/media/$file"
+          done
+          for file in favicon.ico favicon-32x32.png favicon-16x16.png apple-touch-icon.png; do
+            curl --fail --location --retry 3 "$base/$file" -o "$file"
+            test -s "$file"
+          done
 
-      - name: Commit imported binary files
+      - name: Point publication source at Eastokyo-owned media
         shell: bash
         run: |
           set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              "https://englishire.com/englishire-logo.png": "assets/media/englishire-logo.png",
+              "https://englishire.com/favicon.ico": "favicon.ico",
+              "https://englishire.com/favicon-32x32.png": "favicon-32x32.png",
+              "https://englishire.com/favicon-16x16.png": "favicon-16x16.png",
+              "https://englishire.com/apple-touch-icon.png": "apple-touch-icon.png",
+          }
+          media = [
+              "hiring-foreign-teachers-in-japan.png",
+              "real-cost-of-english-teacher-turnover.png",
+              "how-schools-can-handle-staff-shortages.png",
+              "emergency-classroom-coverage.png",
+              "backup-teacher-eikaiwa.png",
+              "eikaiwa-school-operations.png",
+              "school-collapse-after-three-decades-article.png",
+              "easy-teacher-article.png",
+          ]
+          for name in media:
+              replacements[f"https://englishire.com/{name}"] = f"https://eastokyo.com/assets/media/{name}"
+
+          changed = []
+          for path in Path(".").rglob("*.html"):
+              text = path.read_text(encoding="utf-8")
+              updated = text
+              for old, new in replacements.items():
+                  updated = updated.replace(old, new)
+              if updated != text:
+                  path.write_text(updated, encoding="utf-8")
+                  changed.append(str(path))
+          print("Updated HTML files:")
+          print("\n".join(changed))
+          PY
+
+      - name: Confirm no unintended Englishire media dependencies remain
+        shell: bash
+        run: |
+          set -euo pipefail
+          if grep -RInE 'https://englishire\.com/[^"'"' ]+\.(png|ico|webp|jpg|jpeg)' --include='*.html' .; then
+            echo "Unmigrated Englishire-hosted media reference found."
+            exit 1
+          fi
+
+      - name: Commit completed handoff and remove one-time workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm .github/workflows/import-publication-media.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/media favicon.ico favicon-32x32.png favicon-16x16.png apple-touch-icon.png
-          if git diff --cached --quiet; then
-            echo "Publication media already imported."
-            exit 0
-          fi
-          git commit -m "Import Eastokyo publication media"
+          git add -A
+          git commit -m "Make Eastokyo publication media self-contained"
           git push origin HEAD:agent/own-publication-media
