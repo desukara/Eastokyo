@@ -1,0 +1,51 @@
+/* Eastokyo About: manifesto, field map and publisher relationship. */
+.about-editorial{background:#f2eee5;color:#090909}
+.about-editorial a{color:inherit}
+.about-hero{padding:clamp(4rem,8vw,8rem) 0 clamp(3rem,6vw,5.5rem);border-bottom:1px solid rgba(9,9,9,.28)}
+.about-hero__topline{display:flex;justify-content:space-between;gap:2rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(9,9,9,.28);font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.about-hero__grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(18rem,.65fr);gap:clamp(2.5rem,7vw,7rem);align-items:end;padding-top:clamp(2rem,4vw,3.5rem)}
+.about-hero h1{max-width:10ch;margin:0;font-size:clamp(4rem,8.6vw,9rem);line-height:.82;letter-spacing:-.055em;text-wrap:balance}
+.about-hero__dek{max-width:35rem;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.5}
+.about-thesis{padding:clamp(3.5rem,7vw,7rem) 0}
+.about-thesis__grid{display:grid;grid-template-columns:minmax(15rem,.52fr) minmax(0,1.48fr);gap:clamp(2rem,8vw,8rem)}
+.about-kicker{margin:0;font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.about-thesis__copy{max-width:49rem}
+.about-thesis__copy p{margin:0 0 1.25rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.15rem,1.8vw,1.55rem);line-height:1.55}
+.about-thesis__copy p:first-child{font-size:clamp(1.75rem,3.2vw,3.4rem);line-height:1.08;letter-spacing:-.025em}
+.about-field{background:#090909;color:#f2eee5;padding:clamp(3.5rem,7vw,6.5rem) 0}
+.about-field__head{display:grid;grid-template-columns:.62fr 1.38fr;gap:2rem;align-items:end;padding-bottom:1.5rem;border-bottom:1px solid rgba(242,238,229,.35)}
+.about-field__head h2{max-width:12ch;margin:0;font-size:clamp(2.8rem,5.5vw,5.8rem);line-height:.9;letter-spacing:-.045em}
+.about-field__grid{display:grid;grid-template-columns:1.25fr repeat(3,1fr)}
+.about-field article{display:flex;min-height:20rem;flex-direction:column;justify-content:space-between;padding:clamp(1.4rem,2.8vw,2.5rem);border-left:1px solid rgba(242,238,229,.35)}
+.about-field article:first-child{border-left:0;background:#f1c84b;color:#090909}
+.about-field span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase}
+.about-field h3{max-width:9ch;margin:2rem 0 .8rem;font-size:clamp(1.8rem,3vw,3.25rem);line-height:.92;letter-spacing:-.035em}
+.about-field p{max-width:21rem;margin:0;font-family:Georgia,"Times New Roman",serif;font-size:1rem;line-height:1.48;opacity:.8}
+.about-relationship{padding:clamp(3.5rem,7vw,7rem) 0;background:#d63b2f;color:#fff}
+.about-relationship__grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(20rem,.95fr);gap:clamp(2.5rem,7vw,7rem);align-items:start}
+.about-relationship h2{max-width:10ch;margin:.5rem 0 0;font-size:clamp(3rem,6vw,6.5rem);line-height:.86;letter-spacing:-.05em}
+.about-relationship__copy{max-width:38rem;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.05rem,1.4vw,1.3rem);line-height:1.55}
+.about-relationship__copy p{margin:0 0 1.2rem}
+.about-relationship__roles{display:grid;grid-template-columns:1fr 1fr;margin-top:2rem;border-top:1px solid rgba(255,255,255,.5);border-bottom:1px solid rgba(255,255,255,.5)}
+.about-relationship__roles div{padding:1.3rem 1.3rem 1.5rem}
+.about-relationship__roles div+div{border-left:1px solid rgba(255,255,255,.5)}
+.about-relationship__roles strong{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+.about-relationship__roles span{display:block;margin-top:.6rem;font-size:.95rem;line-height:1.45}
+.about-standards{padding:clamp(3.5rem,7vw,6.5rem) 0}
+.about-standards__head{display:flex;justify-content:space-between;gap:2rem;align-items:end;padding-bottom:1.25rem;border-bottom:1px solid rgba(9,9,9,.28)}
+.about-standards__head h2{max-width:10ch;margin:0;font-size:clamp(2.5rem,4.7vw,4.8rem);line-height:.92;letter-spacing:-.04em}
+.about-standards__grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.about-standard{padding:clamp(1.5rem,3vw,2.7rem);border-right:1px solid rgba(9,9,9,.28);border-bottom:1px solid rgba(9,9,9,.28)}
+.about-standard:nth-child(3n){border-right:0}
+.about-standard span{font-size:.62rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+.about-standard h3{margin:2.3rem 0 .75rem;font-size:clamp(1.55rem,2.4vw,2.5rem);line-height:.98}
+.about-standard p{margin:0;font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+.about-next{padding:0 0 clamp(4rem,7vw,7rem)}
+.about-next__grid{display:grid;grid-template-columns:1.25fr .75fr;border-top:1px solid #090909;border-bottom:1px solid #090909}
+.about-next a{display:flex;min-height:15rem;flex-direction:column;justify-content:space-between;padding:clamp(1.5rem,3vw,2.7rem);text-decoration:none}
+.about-next a:first-child{background:#090909;color:#f2eee5}
+.about-next a+a{border-left:1px solid #090909}
+.about-next small{font-size:.62rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.about-next strong{max-width:12ch;font-size:clamp(2rem,3.6vw,4rem);line-height:.92;letter-spacing:-.035em}
+@media(max-width:1024px) and (min-width:681px){.about-hero__grid{grid-template-columns:1.15fr .85fr;gap:2.5rem}.about-field__grid{grid-template-columns:1fr 1fr}.about-field article{min-height:16rem;border-top:1px solid rgba(242,238,229,.35)}.about-field article:nth-child(odd){border-left:0}.about-standards__grid{grid-template-columns:1fr 1fr}.about-standard:nth-child(3n){border-right:1px solid rgba(9,9,9,.28)}.about-standard:nth-child(even){border-right:0}}
+@media(max-width:680px){.about-hero{padding:2.75rem 0 2.5rem}.about-hero__topline{display:block;line-height:1.7}.about-hero__topline span:last-child{display:block}.about-hero__grid,.about-thesis__grid,.about-field__head,.about-relationship__grid{display:block}.about-hero__grid{padding-top:1.75rem}.about-hero h1{font-size:clamp(3.1rem,14.5vw,4.8rem);max-width:9ch}.about-hero__dek{margin-top:1.5rem;font-size:1.05rem}.about-thesis{padding:2.75rem 0}.about-thesis__copy{margin-top:1.5rem}.about-thesis__copy p{font-size:1.02rem}.about-thesis__copy p:first-child{font-size:clamp(1.65rem,7.6vw,2.35rem)}.about-field{padding:2.75rem 0 0}.about-field__head h2{margin-top:.7rem;font-size:clamp(2.45rem,11vw,3.5rem)}.about-field__grid{display:block;margin-inline:-1.25rem}.about-field article{min-height:0;padding:1.4rem 1.25rem 1.6rem;border-left:0;border-top:1px solid rgba(242,238,229,.35)}.about-field h3{max-width:12ch;margin:1.2rem 0 .6rem;font-size:clamp(1.85rem,8vw,2.6rem)}.about-relationship{padding:2.9rem 0}.about-relationship h2{font-size:clamp(2.8rem,12vw,4rem)}.about-relationship__copy{margin-top:1.5rem;font-size:1rem}.about-relationship__roles{grid-template-columns:1fr}.about-relationship__roles div+div{border-left:0;border-top:1px solid rgba(255,255,255,.5)}.about-standards{padding:2.75rem 0}.about-standards__head{display:block}.about-standards__head h2{margin-top:.7rem;font-size:clamp(2.25rem,10vw,3.2rem)}.about-standards__grid{display:block}.about-standard,.about-standard:nth-child(n){padding:1.35rem 0 1.5rem;border-right:0}.about-standard h3{margin:1.2rem 0 .55rem;font-size:1.75rem}.about-next{padding-bottom:3rem}.about-next__grid{display:block}.about-next a{min-height:11rem}.about-next a+a{border-left:0;border-top:1px solid #090909}.about-next strong{font-size:clamp(2rem,9vw,2.8rem)}}
