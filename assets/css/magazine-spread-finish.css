@@ -1,0 +1,32 @@
+/* Final issue-spread balance: compact masthead, clean mobile closer and safer guide clearance. */
+.et-home #profession .et-section-head{
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(1.5rem,4vw,4rem);
+  align-items:end;
+  margin-bottom:clamp(1.75rem,3vw,2.75rem);
+  padding-bottom:1rem;
+}
+.et-home #profession .et-section-head h2{
+  max-width:15ch;
+  font-size:clamp(2.35rem,3.35vw,3.8rem);
+  line-height:.94;
+}
+.et-home #profession .et-section-head>a{
+  margin:0 0 .25rem;
+  white-space:nowrap;
+}
+
+@media(max-width:1024px) and (min-width:681px){
+  .et-home #profession .et-section-head h2{max-width:13ch;font-size:clamp(2.35rem,5vw,3.35rem)}
+  .et-home #profession .et-section-head{gap:1.5rem;margin-bottom:2rem}
+}
+
+@media(max-width:680px){
+  .et-home #profession{padding-bottom:0!important}
+  .et-home #profession .et-section-head{margin-bottom:1.15rem;padding-bottom:.9rem}
+  .et-home #profession .et-section-head h2{max-width:13ch;font-size:clamp(1.95rem,7.5vw,2.45rem)}
+  .et-home #profession .et-card:nth-child(4)::before{left:.65rem!important;top:1.9rem!important}
+  .et-home #profession .et-card:last-child>a{padding-bottom:2.25rem!important}
+  .et-home #profession + .et-section--dark{margin-top:0!important}
+  .genki2-guide-tab{width:38px!important;height:38px!important;right:7px!important;bottom:max(7px,env(safe-area-inset-bottom))!important;font-size:.39rem!important}
+}
