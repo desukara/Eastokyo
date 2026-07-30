@@ -51,7 +51,7 @@
 .community-email a{color:inherit;font-size:clamp(1.15rem,2vw,1.55rem);text-underline-offset:.2em;overflow-wrap:anywhere}
 .community-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.4rem}
 .community-button{display:inline-flex;min-height:3rem;align-items:center;justify-content:center;padding:.8rem 1.1rem;border:1px solid currentColor;color:inherit;text-decoration:none;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
-.community-button--solid{background:#f2eee5;color:#090909;border-color:#f2eee5}
+.community-callout .community-button--solid,.community-callout .community-button--solid:visited,.community-callout .community-button--solid:hover,.community-callout .community-button--solid:focus-visible{background:#f2eee5!important;color:#090909!important;border-color:#f2eee5!important}
 @media(max-width:980px){
  .community-hero__grid,.community-intro__grid,.community-process__grid,.community-callout__grid{grid-template-columns:1fr;gap:2rem}
  .community-hero h1{max-width:12ch}
