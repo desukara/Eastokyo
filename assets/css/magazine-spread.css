@@ -1,0 +1,64 @@
+/* Eastokyo homepage archive: editorial issue spread across desktop, tablet and mobile. */
+.et-home #profession{padding-block:clamp(3.25rem,5vw,5.5rem)}
+.et-home #profession .et-section-head{grid-template-columns:minmax(0,.72fr) minmax(15rem,.28fr);align-items:end;margin-bottom:clamp(2rem,4vw,3.5rem);padding-bottom:1.35rem;border-bottom:1px solid var(--et-rule)}
+.et-home #profession .et-section-head h2{max-width:10ch;font-size:clamp(2.5rem,4vw,4.6rem)}
+.et-home #profession .et-section-head>a{justify-self:end;align-self:end;text-decoration:none}
+
+.et-home #profession .et-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:0;border:0}
+.et-home #profession .et-card{display:block;min-width:0;padding:0;border:0!important;position:relative}
+.et-home #profession .et-card:nth-child(1){grid-column:1/span 7;padding-right:clamp(1.25rem,2.4vw,2.75rem);border-right:1px solid var(--et-rule)!important}
+.et-home #profession .et-card:nth-child(2){grid-column:8/-1;padding-left:clamp(1.25rem,2.4vw,2.75rem)}
+.et-home #profession .et-card:nth-child(3){grid-column:1/span 5;margin-top:clamp(2.75rem,5vw,5.5rem);padding-right:clamp(1.25rem,2.4vw,2.75rem)}
+.et-home #profession .et-card:nth-child(4){grid-column:6/-1;margin-top:clamp(2.75rem,5vw,5.5rem);padding-left:clamp(1.25rem,2.4vw,2.75rem);border-left:1px solid var(--et-rule)!important}
+.et-home #profession .et-card>a{display:block;text-decoration:none!important;color:inherit}
+.et-home #profession .et-card>a:hover h3,.et-home #profession .et-card>a:focus-visible h3{text-decoration:none!important;color:var(--et-red)}
+.et-home #profession .et-card__media{margin:0;overflow:hidden;background:#ddd}
+.et-home #profession .et-card:nth-child(1) .et-card__media{aspect-ratio:4/3}
+.et-home #profession .et-card:nth-child(2) .et-card__media{aspect-ratio:5/4}
+.et-home #profession .et-card:nth-child(3) .et-card__media{aspect-ratio:1/1}
+.et-home #profession .et-card:nth-child(4) .et-card__media{aspect-ratio:16/9}
+.et-home #profession .et-card__body{padding:1rem 0 0}
+.et-home #profession .et-card__meta{margin:0 0 .55rem;font-size:.66rem;letter-spacing:.16em}
+.et-home #profession .et-card h3{max-width:13ch;margin:0 0 .7rem;font-size:clamp(2rem,3vw,3.65rem);line-height:.94;letter-spacing:-.035em;text-decoration:none!important;text-wrap:balance}
+.et-home #profession .et-card:nth-child(2) h3,.et-home #profession .et-card:nth-child(3) h3{font-size:clamp(1.75rem,2.4vw,2.85rem)}
+.et-home #profession .et-card p{max-width:34rem;margin:0;font-size:clamp(.95rem,1.05vw,1.08rem);line-height:1.48}
+.et-home #profession .et-card:nth-child(1)::before,.et-home #profession .et-card:nth-child(4)::before{position:absolute;z-index:2;top:.8rem;left:.8rem;padding:.38rem .55rem;background:var(--et-yellow);color:var(--et-black);font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.et-home #profession .et-card:nth-child(1)::before{content:"Lead essay"}
+.et-home #profession .et-card:nth-child(4)::before{content:"Case study"}
+
+/* Tablet: a lead story, two compact stories, then a full-width closer. */
+@media(max-width:1024px) and (min-width:681px){
+  .et-home #profession .et-section-head{grid-template-columns:1fr auto}
+  .et-home #profession .et-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.5rem}
+  .et-home #profession .et-card:nth-child(n){grid-column:auto;margin:0;padding:0;border:0!important}
+  .et-home #profession .et-card:nth-child(1),.et-home #profession .et-card:nth-child(4){grid-column:1/-1}
+  .et-home #profession .et-card:nth-child(1)>a,.et-home #profession .et-card:nth-child(4)>a{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(15rem,.85fr);align-items:stretch;border-top:1px solid var(--et-rule);border-bottom:1px solid var(--et-rule)}
+  .et-home #profession .et-card:nth-child(4)>a{grid-template-columns:minmax(15rem,.8fr) minmax(0,1.2fr)}
+  .et-home #profession .et-card:nth-child(4) .et-card__media{order:2}
+  .et-home #profession .et-card:nth-child(1) .et-card__media,.et-home #profession .et-card:nth-child(4) .et-card__media{aspect-ratio:16/10}
+  .et-home #profession .et-card:nth-child(1) .et-card__body,.et-home #profession .et-card:nth-child(4) .et-card__body{display:flex;flex-direction:column;justify-content:center;padding:1.5rem}
+  .et-home #profession .et-card:nth-child(2) .et-card__media,.et-home #profession .et-card:nth-child(3) .et-card__media{aspect-ratio:4/3}
+  .et-home #profession .et-card h3{font-size:clamp(1.8rem,4vw,2.8rem)}
+}
+
+/* Mobile: alternating full-width editorial panels, not stacked blog cards. */
+@media(max-width:680px){
+  .et-home #profession{padding-block:2.5rem}
+  .et-home #profession .et-section-head{display:block;margin-bottom:1.5rem;padding-bottom:1rem}
+  .et-home #profession .et-section-head h2{max-width:12ch;font-size:clamp(2rem,8vw,2.7rem)}
+  .et-home #profession .et-section-head>a{display:inline-block;margin-top:1rem;font-size:.68rem}
+  .et-home #profession .et-grid{display:block}
+  .et-home #profession .et-card:nth-child(n){margin:0;padding:0;border:0!important}
+  .et-home #profession .et-card>a{padding:1.15rem 0 1.7rem;border-top:1px solid var(--et-rule)}
+  .et-home #profession .et-card:nth-child(even){margin-inline:-1.25rem;background:var(--et-black);color:var(--et-paper)}
+  .et-home #profession .et-card:nth-child(even)>a{padding:1.4rem 1.25rem 1.85rem;border-top-color:rgba(242,238,229,.3)}
+  .et-home #profession .et-card__media,.et-home #profession .et-card:nth-child(n) .et-card__media{aspect-ratio:16/10;margin:0 0 1rem}
+  .et-home #profession .et-card:nth-child(even) .et-card__media{margin-inline:-1.25rem;width:calc(100% + 2.5rem)}
+  .et-home #profession .et-card__body{padding:0}
+  .et-home #profession .et-card__meta{font-size:.62rem;margin-bottom:.45rem}
+  .et-home #profession .et-card h3,.et-home #profession .et-card:nth-child(2) h3,.et-home #profession .et-card:nth-child(3) h3{max-width:14ch;margin-bottom:.55rem;font-size:clamp(1.7rem,7.2vw,2.25rem);line-height:.98}
+  .et-home #profession .et-card p{font-size:.95rem;line-height:1.45}
+  .et-home #profession .et-card:nth-child(1)::before,.et-home #profession .et-card:nth-child(4)::before{top:1.85rem;left:.65rem;font-size:.52rem}
+  .et-home #profession .et-card:nth-child(4)::before{left:-.6rem}
+  .genki2-guide-tab{width:42px!important;height:42px!important;right:8px!important;bottom:max(8px,env(safe-area-inset-bottom))!important;font-size:.43rem!important}
+}
