@@ -1,0 +1,60 @@
+name: Render visual audit
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install playwright
+          npx playwright install --with-deps chromium
+      - name: Serve site and capture screenshots
+        run: |
+          python3 -m http.server 4173 >/tmp/eastokyo-http.log 2>&1 &
+          cat > /tmp/capture.mjs <<'EOF'
+          import { chromium } from 'playwright';
+          import fs from 'node:fs';
+          const pages = [
+            'index.html','city-life.html','the-end-of-the-easy-teacher.html',
+            'hiring-foreign-teachers-in-japan.html','real-cost-of-english-teacher-turnover.html',
+            'how-schools-can-handle-staff-shortages.html','emergency-classroom-coverage.html',
+            'backup-teacher-eikaiwa.html','eikaiwa-school-operations.html',
+            'school-collapse-after-three-decades.html','about.html','work-with-us.html'
+          ];
+          const viewports = [
+            {name:'desktop', width:1440, height:1100},
+            {name:'tablet', width:820, height:1180},
+            {name:'samsung', width:412, height:915}
+          ];
+          fs.mkdirSync('visual-audit', {recursive:true});
+          const browser = await chromium.launch({headless:true});
+          for (const vp of viewports) {
+            const context = await browser.newContext({viewport:{width:vp.width,height:vp.height}, deviceScaleFactor:1});
+            const page = await context.newPage();
+            for (const file of pages) {
+              await page.goto(`http://127.0.0.1:4173/${file}`, {waitUntil:'networkidle'});
+              await page.screenshot({path:`visual-audit/${vp.name}-${file.replace('.html','')}.png`, fullPage:true});
+            }
+            await context.close();
+          }
+          await browser.close();
+          EOF
+          node /tmp/capture.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eastokyo-visual-audit
+          path: visual-audit/*.png
+          retention-days: 7
