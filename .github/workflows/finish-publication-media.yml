@@ -1,17 +1,21 @@
 name: Complete publication media handoff
 
 on:
-  push:
+  pull_request:
     branches:
-      - agent/own-publication-media
-    paths:
-      - .github/workflows/finish-publication-media.yml
+      - main
+    types:
+      - opened
+      - synchronize
+      - reopened
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   complete:
+    if: github.head_ref == 'agent/own-publication-media'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -69,10 +73,9 @@ jobs:
           extensions = (".png", ".ico", ".jpg", ".jpeg", ".webp")
           for path in Path(".").rglob("*.html"):
               text = path.read_text(encoding="utf-8")
-              if "https://englishire.com/" in text and any(ext in text for ext in extensions):
-                  for line_number, line in enumerate(text.splitlines(), 1):
-                      if "https://englishire.com/" in line and any(ext in line for ext in extensions):
-                          leftovers.append(f"{path}:{line_number}")
+              for line_number, line in enumerate(text.splitlines(), 1):
+                  if "https://englishire.com/" in line and any(ext in line for ext in extensions):
+                      leftovers.append(f"{path}:{line_number}")
           if leftovers:
               raise SystemExit("Remaining external media: " + ", ".join(leftovers))
           PY
