@@ -16,7 +16,7 @@ function normalisePublicationChrome() {
   const brand = document.querySelector(".publication-header__brand");
   if (brand instanceof HTMLAnchorElement) {
     brand.href = "index.html";
-    brand.setAttribute("aria-label", "Eastokyo Magazine homepage");
+    brand.setAttribute("aria-label", "Eastokyo Education Review homepage");
   }
 
   const nav = document.querySelector(".publication-header .lux-nav");
@@ -65,7 +65,7 @@ if (robot) {
 }
 
 const pageNotes = [
-  { selector: ".et-hero", mood: "curious", text: "Welcome to Eastokyo Magazine. I am Genki2, your guide to the English-teaching profession in Tokyo and across Japan." },
+  { selector: ".et-hero", mood: "curious", text: "Welcome to Eastokyo Education Review. I am Genki2, your guide to the English-teaching profession in Tokyo and across Japan." },
   { selector: ".et-intro,.ae-opening", mood: "calm", text: "Eastokyo looks past the familiar story of coming to Japan and examines the work, judgment and institutions behind English teaching." },
   { selector: ".et-feature,.mf-cover", mood: "proud", text: "The lead story asks what the profession requires now—and what schools and teachers can no longer afford to leave unexamined." },
   { selector: ".et-grid,.mf-sequence", mood: "curious", text: "Move through the issue by beat: recruitment, retention, continuity, management, classrooms and professional life." },
@@ -78,7 +78,7 @@ let notes = pageNotes.map((note) => ({ ...note, element: document.querySelector(
 if (!notes.length) {
   const anchor = document.querySelector("main") || document.body;
   const title = document.querySelector("h1")?.textContent?.replace(/\s+/g, " ").trim();
-  notes = [{ element: anchor, mood: "calm", text: title ? `You are reading ${title}. I will stay nearby while you explore Eastokyo Magazine.` : "I am Genki2, your guide to Eastokyo Magazine and the English-teaching profession." }];
+  notes = [{ element: anchor, mood: "calm", text: title ? `You are reading ${title}. I will stay nearby while you explore Eastokyo Education Review.` : "I am Genki2, your guide to Eastokyo Education Review and the English-teaching profession." }];
 }
 
 const panel = document.createElement("aside");

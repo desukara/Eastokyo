@@ -2,7 +2,7 @@
 
 ## Positioning
 
-Eastokyo Magazine is Englishire's independent digital publication for the English-teaching profession in Tokyo and across Japan. It is not a travel, restaurant, neighborhood, nightlife or general Tokyo-culture magazine.
+Eastokyo Education Review is Englishire's independent digital publication for the English-teaching profession in Tokyo and across Japan. It is not a travel, restaurant, neighborhood, nightlife or general Tokyo-culture magazine.
 
 ## Page decisions
 

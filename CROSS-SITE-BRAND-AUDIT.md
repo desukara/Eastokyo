@@ -2,7 +2,7 @@
 
 ## Canonical roles
 
-- **Eastokyo Magazine** is Englishire's independent digital publication for the English-teaching profession in Tokyo and across Japan.
+- **Eastokyo Education Review** is Englishire's independent digital publication for the English-teaching profession in Tokyo and across Japan.
 - **Englishire** is the temporary English teacher-cover service for Tokyo schools.
 - Eastokyo reports on the profession. Englishire supports schools in practice.
 
