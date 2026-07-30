@@ -8,6 +8,54 @@ const body = document.body;
 const presence = document.querySelector(".genki2-global-presence");
 let robot = document.querySelector(".g2-robot");
 
+const currentFile = window.location.pathname.endsWith("/")
+  ? "index.html"
+  : window.location.pathname.split("/").pop() || "index.html";
+
+function normalisePublicationChrome() {
+  const brand = document.querySelector(".publication-header__brand");
+  if (brand instanceof HTMLAnchorElement) {
+    brand.href = "index.html";
+    brand.setAttribute("aria-label", "Eastokyo Magazine homepage");
+  }
+
+  const nav = document.querySelector(".publication-header .lux-nav");
+  if (nav instanceof HTMLElement) {
+    const items = [
+      ["index.html", "Latest"],
+      ["city-life.html", "Magazine"],
+      ["about.html", "About"],
+      ["work-with-us.html", "Contribute"],
+      ["https://englishire.com/", "Englishire ↗"]
+    ];
+    nav.setAttribute("aria-label", "Primary navigation");
+    nav.innerHTML = items.map(([href, label]) => `<a href="${href}">${label}</a>`).join("");
+    nav.querySelectorAll("a").forEach((link) => {
+      if (link.getAttribute("href") === currentFile) link.setAttribute("aria-current", "page");
+    });
+  }
+
+  const footerNav = document.querySelector(".publication-footer__nav");
+  if (footerNav instanceof HTMLElement) {
+    footerNav.setAttribute("aria-label", "Publication navigation");
+    footerNav.innerHTML = '<a href="city-life.html">Magazine</a><a href="about.html">About</a><a href="work-with-us.html">Contribute</a><a href="editorial-policy.html">Editorial Policy</a><a href="contact.html">Contact</a>';
+  }
+
+  const serviceLink = document.querySelector(".publication-footer__service");
+  if (serviceLink instanceof HTMLAnchorElement) {
+    serviceLink.href = "https://englishire.com/contact.html";
+    serviceLink.textContent = "Request teacher cover →";
+    serviceLink.setAttribute("aria-label", "Request temporary teacher cover from Englishire");
+  }
+
+  const footerIdentity = document.querySelector(".publication-footer__identity > p");
+  if (footerIdentity instanceof HTMLElement) {
+    footerIdentity.textContent = "Englishire's independent digital magazine for the English-teaching profession in Tokyo and across Japan.";
+  }
+}
+
+normalisePublicationChrome();
+
 /* presence.js still contains retired language-app click handlers. Clone the button once
    so the magazine owns the only live robot interaction without rebuilding the character. */
 if (robot) {
@@ -17,23 +65,20 @@ if (robot) {
 }
 
 const pageNotes = [
-  { selector: ".lux-hero", mood: "curious", text: "Welcome to Eastokyo. I am Genki2, your guide to the city and to this issue." },
-  { selector: "#issue", mood: "calm", text: "Tokyo is too large for a checklist. Eastokyo edits the city down to places worth your attention." },
-  { selector: "#stay", mood: "proud", text: "A good Tokyo hotel changes the rhythm of the trip. This issue begins above the city." },
-  { selector: "#eat", mood: "curious", text: "Tokyo rewards people who cross town for one exceptional table, counter, cafe, or bar." },
-  { selector: "#do", mood: "calm", text: "Every neighborhood is its own world. Slow down and let one part of the city become the whole day." },
-  { selector: "#night", mood: "proud", text: "After dark, Tokyo becomes another city. I will show you where the atmosphere is worth staying out for." },
-  { selector: ".about-lux-hero,.about-mast", mood: "curious", text: "This is Eastokyo: an independent magazine devoted to the places, people, and atmosphere that make Tokyo extraordinary." },
-  { selector: ".about-lux-statement,.about-statement", mood: "calm", text: "The aim is simple: fewer generic lists, more places with a real reason to remember them." },
-  { selector: ".about-principles,.about-lux-pillars", mood: "proud", text: "Good guidance depends on judgment, accuracy, and clear disclosure. That is how this magazine works." },
-  { selector: ".about-issue,.about-lux-issue", mood: "curious", text: "Every issue is edited as a journey through Tokyo, not a pile of disconnected recommendations." }
+  { selector: ".et-hero", mood: "curious", text: "Welcome to Eastokyo Magazine. I am Genki2, your guide to the English-teaching profession in Tokyo and across Japan." },
+  { selector: ".et-intro,.ae-opening", mood: "calm", text: "Eastokyo looks past the familiar story of coming to Japan and examines the work, judgment and institutions behind English teaching." },
+  { selector: ".et-feature,.mf-cover", mood: "proud", text: "The lead story asks what the profession requires now—and what schools and teachers can no longer afford to leave unexamined." },
+  { selector: ".et-grid,.mf-sequence", mood: "curious", text: "Move through the issue by beat: recruitment, retention, continuity, management, classrooms and professional life." },
+  { selector: ".ae-field,.cc-paths", mood: "proud", text: "This magazine grows through teachers, writers, school leaders, researchers and people willing to share what the profession actually feels like." },
+  { selector: ".es-standard,.ae-standards", mood: "calm", text: "Trust depends on evidence, fairness, clear disclosure and corrections that are visible when they matter." },
+  { selector: ".et-service-gateway,.pp-section--red", mood: "curious", text: "Eastokyo is the publication. Englishire is the teacher-cover service. The relationship is visible, and the two jobs remain distinct." }
 ];
 
 let notes = pageNotes.map((note) => ({ ...note, element: document.querySelector(note.selector) })).filter((note) => note.element);
 if (!notes.length) {
   const anchor = document.querySelector("main") || document.body;
   const title = document.querySelector("h1")?.textContent?.replace(/\s+/g, " ").trim();
-  notes = [{ element: anchor, mood: "calm", text: title ? `You are reading ${title}. I will stay nearby while you explore Eastokyo.` : "I am Genki2, your guide to Eastokyo and the city beyond it." }];
+  notes = [{ element: anchor, mood: "calm", text: title ? `You are reading ${title}. I will stay nearby while you explore Eastokyo Magazine.` : "I am Genki2, your guide to Eastokyo Magazine and the English-teaching profession." }];
 }
 
 const panel = document.createElement("aside");
