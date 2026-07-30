@@ -1,0 +1,51 @@
+name: Finalize Education Review brand
+
+on:
+  push:
+    branches:
+      - agent/education-review-brand
+    paths:
+      - .github/workflows/finalize-education-review.yml
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/education-review-brand
+      - name: Apply contextual corrections
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          replacements = {
+            'Eastokyo Education Review — English teaching, schools and the education industry in Japan. of Englishire': 'Eastokyo Education Review — English Teaching, Schools and the Education Industry in Japan',
+            '"alternateName":"English teaching, schools and the education industry in Japan."': '"alternateName":"Eastokyo"',
+            '<a class="publication-header__brand" href="https://englishire.com/" aria-label="Englishire homepage">': '<a class="publication-header__brand" href="index.html" aria-label="Eastokyo Education Review homepage">',
+            'https://englishire.com/hiring-foreign-teachers-in-japan.html': 'hiring-foreign-teachers-in-japan.html',
+            'https://englishire.com/real-cost-of-english-teacher-turnover.html': 'real-cost-of-english-teacher-turnover.html',
+            'https://englishire.com/how-schools-can-handle-staff-shortages.html': 'how-schools-can-handle-staff-shortages.html',
+            'https://englishire.com/school-collapse-after-three-decades.html': 'school-collapse-after-three-decades.html',
+          }
+          changed = []
+          for path in Path('.').rglob('*.html'):
+              original = path.read_text(encoding='utf-8')
+              updated = original
+              for old, new in replacements.items():
+                  updated = updated.replace(old, new)
+              if updated != original:
+                  path.write_text(updated, encoding='utf-8')
+                  changed.append(str(path))
+          print('Corrected', len(changed), 'HTML files')
+          PY
+      - name: Commit contextual corrections
+        run: |
+          rm -f .github/workflows/finalize-education-review.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Finalize Eastokyo Education Review branding"
+          git push origin HEAD:agent/education-review-brand
