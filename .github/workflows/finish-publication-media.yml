@@ -40,6 +40,7 @@ jobs:
         run: |
           python3 - <<'PY'
           from pathlib import Path
+          import re
 
           replacements = {
               "https://englishire.com/englishire-logo.png": "assets/media/englishire-logo.png",
@@ -69,15 +70,13 @@ jobs:
               if updated != original:
                   path.write_text(updated, encoding="utf-8")
 
+          external_media = re.compile(r"https://englishire\.com/[^\s\"'<>]+\.(?:png|ico|jpe?g|webp)(?:\?[^\s\"'<>]*)?", re.I)
           leftovers = []
-          extensions = (".png", ".ico", ".jpg", ".jpeg", ".webp")
           for path in Path(".").rglob("*.html"):
-              text = path.read_text(encoding="utf-8")
-              for line_number, line in enumerate(text.splitlines(), 1):
-                  if "https://englishire.com/" in line and any(ext in line for ext in extensions):
-                      leftovers.append(f"{path}:{line_number}")
+              matches = external_media.findall(path.read_text(encoding="utf-8"))
+              leftovers.extend(f"{path}: {url}" for url in matches)
           if leftovers:
-              raise SystemExit("Remaining external media: " + ", ".join(leftovers))
+              raise SystemExit("Remaining external media: " + "; ".join(leftovers))
           PY
 
       - name: Commit completed transfer
