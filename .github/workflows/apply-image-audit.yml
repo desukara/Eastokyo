@@ -1,0 +1,41 @@
+name: Apply image audit
+
+on:
+  push:
+    branches: [agent/image-runway-audit]
+    paths: [.github/workflows/apply-image-audit.yml]
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/image-runway-audit
+      - name: Retire confirmed unused image stock
+        run: |
+          rm -f \
+            01-hero-contained-rubbish.webp \
+            02-curated-owl-topiary.webp \
+            03-ikebukuro-crossing.webp \
+            04-service-robot.webp \
+            05-public-maintenance.webp \
+            06-backstage-delivery-wide.webp \
+            07-smile-beside-the-crack.webp \
+            08-collection-worker-action.webp \
+            09-collection-worker-portrait.webp \
+            10-service-alley.webp \
+            assets/images/brand/eastokyo-crow.jpg \
+            eastokyo-logo.png
+          rm -rf audit
+          rm -f .github/workflows/image-audit.yml .github/workflows/apply-image-audit.yml
+      - name: Commit audit decisions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Retire unused Eastokyo image stock"
+          git push origin HEAD:agent/image-runway-audit
